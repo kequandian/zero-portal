@@ -1,0 +1,17 @@
+{
+  "name": "mall-api-gateway",
+  "version": "0.0.1",
+  "description": "",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "connect-multiparty": "^2.2.0",
+    "fs-extra": "^7.0.1",
+    "kqd-api-gateway": "git+ssh://jfeat@120.79.49.72:/home/jfeat/git/api-gateway.git",
+    "node-fetch": "^2.3.0"
+  }
+}

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+	<title>i-Softto</title>
+	<link href="css/base.css" rel="stylesheet" />
+	<link href="css/product.css" rel="stylesheet" />
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+	 crossorigin="anonymous"></script>
+	<!-- <script src="//cdn.jsdelivr.net/npm/velocity-animate@2.0/velocity.min.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.0/velocity.min.js"></script>
+	<script src="js/polyfill.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/config.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/base.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/product.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mag.js" type="text/javascript" charset="utf-8"></script>
+	<script src='js/compatible.js' type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body id='body'>
+	<div class='version_update'></div>
+	<header>
+		<div class="roof-text">欢迎来到i-softto官网</div>
+		<div class="nav">
+			<div class='nav-logo'>
+				<img src="img/icon/logo.png">
+			</div>
+			<ul>
+				<a href="index.html">
+					<li><span>首页</span></li>
+					<div class='nav_line'></div>
+				</a>
+				<a href="about.html">
+					<li id="nav-2"><span>关于i-softto</span></li>
+				</a>
+				<a href="test.html">
+					<li id="nav-3"><span>体验中心</span></li>
+				</a>
+				<a href="product.html">
+					<li id="nav-4" class="active"><span>产品中心</span></li>
+				</a>
+				<a href="ingredient.html">
+					<li id="nav-5"><span>成分党</span></li>
+				</a>
+				<a href="vipCenter.html">
+					<li id="nav-6"><span>会员中心</span></li>
+				</a>
+				<a href="beautyClass.html">
+					<li id="nav-7"><span>美丽课堂</span></li>
+				</a>
+				<!-- <div class='search'>
+					<img src='img/icon/search.png'/>
+					<input type='text'/>
+				</div> -->
+			</ul>
+			<div class="nav-menu"></div>
+		</div>
+	</header>
+	<div class='container'>
+		<div class="product-list-title">产品详情</div>
+
+		<div class="bg">
+			<div class="bg_left">
+				<div class="show">
+					<img class="firstImage" src="" alt="">
+					<div class="mask"></div>
+				</div>
+				<div class="smallshow">
+					<p class="prev prevnone"></p>
+					<div class="middle_box">
+						<ul class="middle">
+							<!-- <li><img src="img/1.jpg" alt=""></li> -->
+						</ul>
+					</div>
+					<p class="next "></p>
+				</div>
+			</div>
+			<div class="bg_right">
+				<div class="bigshow">
+					<div class="bigitem">
+						<img class="firstImage" src="" alt="">
+					</div>
+				</div>
+			</div>
+			<div>
+				<div class="product-info-box">
+					<div class="product-info-title"></div>
+					<div class="product-info-shortTitle"></div>
+					<div class="product-info-price"></div>
+					<div class="product-info-code">
+						<div class="code-text">请用微信扫码下单</div>
+						<div class="qrcode"></div>
+					</div>
+					<div class="product-info-button">立即购买</div>
+				</div>
+			</div>
+		</div>
+		<div class="product-list-title">产品描述</div>
+		<div class="product-description"></div>
+
+	</div>
+
+	<div id='stern-style'>
+		<div class='icon_hover_show'>
+			<!-- <div class='icon_hover_qrcode'></div> -->
+			<img class='qrcode_servers' src='img/icon/icon_servers.png'/>
+			<img class='qrcode_public' src='img/icon/icon_public.png'/>
+			<div>打开微信扫码二维码</div>
+		</div>
+		<div class='footer_fixed'>
+			<div class='infomation'>
+				<div class='imfomation-icon'>
+					<div>
+						<img src="img/icon/mallIcon_new.png"/>
+						<span>服务号</span>
+					</div>
+					<!-- <div>
+						<img src="img/icon/wechatIcon.png"/>
+						<span>官方微信</span>
+					</div> -->
+					<div>
+						<img src="img/icon/publicIcon_new.png"/>
+						<span>公众号</span>
+					</div>
+				</div>
+				<div class='imfomation-text'>
+					<div>地址：广州市天河区珠江西路17号广晟国际大厦12楼</div>
+					<div>Copyright © 2015-2018 索芙特智慧个人护理用品有限公司 版权所有 粤ICP备18075692号-2</div>
+				</div>
+			</div>
+			<div class='stern'>
+				<div class='stern-dec'>
+					<img src='img/icon/footerIcon.png'/>
+					<span>懂成分&nbsp;&nbsp;&nbsp;更懂你</span>
+				</div>
+				<div class='stern-backtop'>
+					<a href="#">
+						<img src='img/icon/backTopIcon.png'/>
+						<span>返回顶部</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		$(function () {
+			/*
+			 show  //正常状态的框
+			 bigshow   // 放大的框的盒子
+			 smallshow  //缩小版的框
+			 mask   //放大的区域（黑色遮罩）
+			 bigitem  //放大的框
+			 */
+			var product = new Product();
+			var obj = new mag('.show', '.bigshow', '.smallshow', '.mask', '.bigitem');
+			product.getProductDetails(function () {
+				obj.init();
+			});
+		});
+	</script>
+	<script src="./js/jqueryCode.js"></script>
+</body>
+
+
+</html>

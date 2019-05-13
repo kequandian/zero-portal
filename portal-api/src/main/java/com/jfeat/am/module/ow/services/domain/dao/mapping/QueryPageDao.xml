@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jfeat.am.module.ow.services.domain.dao.QueryPageDao">
+    <sql id="Base_Column_List">
+            ow_page.*
+        </sql>
+    
+    <resultMap id="PageMap" type="com.jfeat.am.module.ow.services.domain.model.record.PageRecord">
+        <id column="id" property="id"></id>
+        <result column="name" property="name"/>
+        <result column="type" property="type"/>
+        <result column="url" property="url"/>
+        <result column="constant" property="constant"/>
+    </resultMap>
+    <select id="findPagePage" resultMap="PageMap">
+        SELECT ow_page.*
+        FROM ow_page
+        WHERE 1=1
+        <if test="record.id != null and record.id>0 ">
+            AND ow_page.id LIKE CONCAT('%',#{record.id},'%')
+        </if>
+        <if test="record.name != null and record.name !=''">
+            AND ow_page.name LIKE CONCAT('%',#{record.name},'%')
+        </if>
+        <if test="record.type != null and record.type!= ''">
+            AND ow_page.type LIKE CONCAT('%',#{record.type},'%')
+        </if>
+        <if test="record.url != null and record.url!= ''">
+            AND ow_page.url LIKE CONCAT('%',#{record.url},'%')
+        </if>
+    </select>
+</mapper>

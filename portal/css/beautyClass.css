@@ -1,0 +1,261 @@
+.pc-slide {
+	width: 70vw;
+	-webkit-width:70vw;
+	margin: 0 auto;
+}
+
+.view .swiper-container {
+	width: 70vw;
+	-webkit-width:70vw;
+	max-height: 500px;
+}
+
+.view .arrow-left {
+	background: url('img/beautyClass/index_tab_l.png') no-repeat left top;
+	position: absolute;
+	left: 10px;
+	top: 50%;
+	margin-top: -25px;
+	width: 28px;
+	height: 51px;
+	z-index: 10;
+}
+
+.view .arrow-right {
+	background: url('img/beautyClass/index_tab_r.png') no-repeat left bottom;
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	margin-top: -25px;
+	width: 28px;
+	height: 51px;
+	z-index: 10;
+}
+
+.preview {
+	/* position: relative; */
+	width: 100%;
+	margin-top: 10px;
+  /* margin-left: 17%;
+  margin-right: 17%; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.preview .previewContent{
+	position: relative;
+	width: 700px;
+}
+
+.preview .swiper-container {
+	max-width: 630px;
+	height: 85px;
+	margin-left: 35px;
+}
+
+.view .swiper-slide.swiper-slide-active {
+	/* width:100% !important; */
+}
+
+.view .swiper-slide {
+	width:65vw;
+	display: flex;
+	justify-content: center;
+	background: linear-gradient(#fff,#383030);
+}
+
+.preview .swiper-wrapper {
+	display: flex;
+	justify-content: center;
+}
+
+.preview .swiper-slide {
+	width: 87px;
+	height: 82px;
+	cursor:pointer;
+}
+
+.preview .slide6 {
+	width: 82px;
+}
+
+.preview .arrow-left {
+	/* background: url('img/beautyClass/feel3.png') no-repeat left top; */
+	position: absolute;
+	left: 10px;
+	top: 50%;
+	margin-top: -9px;
+	width: 9px;
+	height: 18px;
+	z-index: 10;
+	padding: 10px 10px;
+}
+
+.preview .arrow-right {
+	/* background: url('img/beautyClass/feel4.png') no-repeat left bottom; */
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	margin-top: -9px;
+	width: 9px;
+	height: 18px;
+	z-index: 10;
+}
+
+.preview img {
+  width: 82px;
+  height: 82px;
+	padding: 1px;
+}
+
+.preview .active-nav img {
+  /* width: 82px; */
+  /* height: 82px; */
+	padding: 0;
+	border: 1px solid #F00;
+}
+
+/* 美丽知识 */
+.beauty_knowledge {
+  background-color: #f2f2f461;
+	margin: 2em 0;
+}
+
+.beauty_knowledge_title {
+  background-color: #b99c56;
+  font-size: 1.2rem;
+  padding:0.3em 10vw;
+  color:#fff;
+	margin-bottom: 1em;
+}
+
+.beauty_knowledge_list {
+  margin: 0 10%;
+  display: flex;
+  flex-direction: column;
+}
+
+.beauty_knowledge_item {
+  display: flex;
+  justify-content: space-between;
+  height:150px;
+  font-size: 0.9rem;
+  padding:0.8em;
+  margin: 1em 0;
+  background-color: #fff;
+	border:1px solid #f2f2f2;
+	transition: all .2s;
+}
+
+.beauty_knowledge_list>div:hover,
+.trend_infomation_list>div:hover {
+	box-shadow: 0 0 15px #d6c8c8;
+}
+
+.beauty_knowledge_item_left {
+	width:20%;
+	display: flex;
+	margin-right: 0.8em;
+	/* align-items: center;
+	justify-content: center; */
+}
+
+.beauty_knowledge_item_image {
+  background-repeat: no-repeat;
+  background-size: contain;
+	/* background-position: center; */
+	width:100%;
+	height:100%;
+}
+
+.beauty_knowledge_item_content {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
+
+.beauty_knowledge_item .item_content {
+  margin: 0.6em 0;
+  color:#bdbebe;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:98px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  /*autoprefixer: off*/
+  -webkit-box-orient: vertical;
+  /*autoprefixer: on*/
+}
+
+.beauty_knowledge_item_content div:first-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  /*autoprefixer: off*/
+  -webkit-box-orient: vertical;
+  /*autoprefixer: on*/
+}
+
+.knowledge_pagenation,
+.trend_pagenation {
+  width: 60%;
+  margin: 0em auto;
+  display: flex;
+  justify-content: flex-end;
+  text-align: center;
+  padding: 1em 0;
+}
+
+.knowledge_pagenation_number,
+.trend_infomation_number {
+  display: inline-block;
+}
+
+.knowledge_pagenation_continer span,
+.trend_pagenation_continer span {
+  padding: 0.3em 0.8em;
+  background-color: #fff;
+  border:1px solid #ddd;
+  border-radius: 4px;
+}
+
+.knowledge_pagenation_continer ul li,
+.trend_pagenation_continer ul li{
+	padding: 0.3em 0.8em;
+	display: inline-block;
+	text-align: center;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	margin: 0 4px;
+	cursor: pointer;
+}
+
+.knowledge_pagenation_number .current_page,
+.trend_pagenation_number .current_page {
+  background-color: #b99c56;
+  color:#fff;
+}
+
+
+/* 潮流资讯 */
+.trend_infomation_list {
+	margin: 0 10%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.trend_infomation_number {
+	display: inline-block;
+}
+
+.trend_infomation_number .current_page {
+	background-color: #b99c56;
+  color:#fff;
+}

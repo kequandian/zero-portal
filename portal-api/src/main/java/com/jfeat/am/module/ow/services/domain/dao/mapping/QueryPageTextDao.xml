@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jfeat.am.module.ow.services.domain.dao.QueryPageTextDao">
+    <sql id="Base_Column_List">
+            ow_page_text.*
+        </sql>
+    <select id="findPageTextPage" resultType="PageTextRecord" parameterType="PageTextRecord">
+      SELECT ow_page_text.*
+            FROM ow_page_text
+            WHERE 1=1
+                                    <if test="record.id != null and record.id>0 ">
+                 AND ow_page_text.id LIKE CONCAT('%',#{record.id},'%')
+        </if>
+                                                <if test="record.pageId != null and record.pageId>0 ">
+                 AND ow_page_text.page_id LIKE CONCAT('%',#{record.pageId},'%')
+        </if>
+                                <if test="record.content != null and record.content!= ''">
+                 AND ow_page_text.content LIKE CONCAT('%',#{record.content},'%')
+        </if>
+             </select>
+</mapper>
