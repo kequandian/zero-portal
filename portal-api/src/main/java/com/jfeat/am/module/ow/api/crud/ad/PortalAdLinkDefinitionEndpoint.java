@@ -1,10 +1,9 @@
 package com.jfeat.am.module.ow.api.crud.ad;
 
-import com.jfeat.am.common.constant.tips.SuccessTip;
-import com.jfeat.am.common.constant.tips.Tip;
-import com.jfeat.am.common.controller.BaseController;
 import com.jfeat.am.module.advertisement.services.persistence.model.AdLinkDefinition;
 import com.jfeat.am.module.advertisement.services.service.AdLinkDefinitionService;
+import com.jfeat.crud.base.tips.SuccessTip;
+import com.jfeat.crud.base.tips.Tip;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -19,7 +18,7 @@ import javax.annotation.Resource;
  */
 @RestController
 @RequestMapping("/api/banner/definition")
-public class PortalAdLinkDefinitionEndpoint extends BaseController {
+public class PortalAdLinkDefinitionEndpoint  {
 
     @Resource
     private AdLinkDefinitionService adLinkDefinitionService;

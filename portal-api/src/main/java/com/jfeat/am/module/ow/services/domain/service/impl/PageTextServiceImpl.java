@@ -3,8 +3,8 @@ package com.jfeat.am.module.ow.services.domain.service.impl;
 import com.jfeat.am.module.ow.services.domain.service.PageTextService;
 
 import com.jfeat.am.module.ow.services.crud.service.impl.CRUDPageTextServiceImpl;
+import com.jfeat.crud.base.request.Ids;
 import org.springframework.stereotype.Service;
-import com.jfeat.am.common.constant.tips.Ids;
 import javax.annotation.Resource;
 import com.jfeat.am.module.ow.services.persistence.dao.PageTextMapper;
 /**

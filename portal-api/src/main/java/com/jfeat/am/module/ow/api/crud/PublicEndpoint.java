@@ -1,10 +1,6 @@
 package com.jfeat.am.module.ow.api.crud;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
-import com.jfeat.am.common.constant.tips.SuccessTip;
-import com.jfeat.am.common.constant.tips.Tip;
-import com.jfeat.am.common.controller.BaseController;
-import com.jfeat.am.common.crud.CRUD;
 import com.jfeat.am.module.ow.services.definite.RootMenu;
 import com.jfeat.am.module.ow.services.domain.dao.QueryMenuDao;
 import com.jfeat.am.module.ow.services.domain.dao.QueryPageDao;
@@ -20,6 +16,9 @@ import com.jfeat.am.module.ow.services.persistence.dao.PageMapper;
 import com.jfeat.am.module.ow.services.persistence.dao.PageTextMapper;
 import com.jfeat.am.module.ow.services.persistence.model.Menu;
 import com.jfeat.am.module.ow.services.persistence.model.Page;
+import com.jfeat.crud.base.tips.SuccessTip;
+import com.jfeat.crud.base.tips.Tip;
+import com.jfeat.crud.plus.CRUD;
 import com.jfeat.images.services.domain.service.StockImagesService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -37,7 +36,7 @@ import java.util.stream.Stream;
 @RestController
 @Api("MUASKIN官网api")
 @RequestMapping("/api/pub/ow")
-public class PublicEndpoint extends BaseController {
+public class PublicEndpoint {
     @Resource
     private PageService pageService;
     @Resource

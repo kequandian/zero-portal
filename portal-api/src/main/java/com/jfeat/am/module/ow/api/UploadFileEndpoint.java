@@ -1,8 +1,6 @@
 package com.jfeat.am.module.ow.api;
 
-import com.jfeat.am.common.constant.tips.SuccessTip;
-import com.jfeat.am.common.constant.tips.Tip;
-import com.jfeat.am.common.controller.BaseController;
+
 import com.jfeat.am.common.controller.FileInfo;
 import com.jfeat.oss.OSSUtil;
 import io.swagger.annotations.Api;
@@ -18,7 +16,7 @@ import static com.jfeat.am.common.controller.FileController.getExtensionName;
 @Api(value = "Service")
 @RestController
 @RequestMapping("/api/upload")
-public class UploadFileEndpoint  extends BaseController {
+public class UploadFileEndpoint   {
 
     /**
      * 访问URL 参考

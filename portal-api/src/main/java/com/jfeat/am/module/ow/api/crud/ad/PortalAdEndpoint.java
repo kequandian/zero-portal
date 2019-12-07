@@ -1,11 +1,6 @@
 package com.jfeat.am.module.ow.api.crud.ad;
 
 import com.baomidou.mybatisplus.plugins.Page;
-import com.jfeat.am.common.constant.tips.SuccessTip;
-import com.jfeat.am.common.constant.tips.Tip;
-import com.jfeat.am.common.controller.BaseController;
-import com.jfeat.am.common.exception.BusinessCode;
-import com.jfeat.am.common.exception.BusinessException;
 import com.jfeat.am.module.advertisement.services.domain.dao.QueryAdLibraryDao;
 import com.jfeat.am.module.advertisement.services.domain.model.record.AdLibraryRecord;
 import com.jfeat.am.module.advertisement.services.persistence.dao.AdGroupMapper;
@@ -13,6 +8,10 @@ import com.jfeat.am.module.advertisement.services.persistence.model.Ad;
 import com.jfeat.am.module.advertisement.services.persistence.model.AdGroup;
 import com.jfeat.am.module.advertisement.services.persistence.model.AdGroupedModel;
 import com.jfeat.am.module.advertisement.services.service.AdService;
+import com.jfeat.crud.base.exception.BusinessCode;
+import com.jfeat.crud.base.exception.BusinessException;
+import com.jfeat.crud.base.tips.SuccessTip;
+import com.jfeat.crud.base.tips.Tip;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
@@ -32,7 +31,7 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("/api")
 @Api("AD-轮播图")
-public class PortalAdEndpoint extends BaseController {
+public class PortalAdEndpoint {
 
     @Resource
     private AdService adService;

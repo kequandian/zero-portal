@@ -1,14 +1,13 @@
 package com.jfeat.am.module.ow.api.crud.ad;
 
-import com.jfeat.am.common.constant.tips.Ids;
-import com.jfeat.am.common.constant.tips.SuccessTip;
-import com.jfeat.am.common.constant.tips.Tip;
-import com.jfeat.am.common.controller.BaseController;
-import com.jfeat.am.common.exception.BusinessCode;
-import com.jfeat.am.common.exception.BusinessException;
 import com.jfeat.am.module.advertisement.services.domain.dao.QueryAdLibraryDao;
 import com.jfeat.am.module.advertisement.services.persistence.model.AdLibrary;
 import com.jfeat.am.module.advertisement.services.service.AdLibraryService;
+import com.jfeat.crud.base.exception.BusinessCode;
+import com.jfeat.crud.base.exception.BusinessException;
+import com.jfeat.crud.base.request.Ids;
+import com.jfeat.crud.base.tips.SuccessTip;
+import com.jfeat.crud.base.tips.Tip;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.dao.DuplicateKeyException;
@@ -28,7 +27,7 @@ import javax.annotation.Resource;
 @RestController
 @Api("AD-轮播图")
 @RequestMapping("/api/banner/libraries")
-public class PortalAdLibraryEndpoint extends BaseController {
+public class PortalAdLibraryEndpoint  {
 
 
     @Resource

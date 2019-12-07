@@ -1,10 +1,9 @@
 package com.jfeat.am.module.ow.api.crud.ad;
 
-import com.jfeat.am.common.constant.tips.SuccessTip;
-import com.jfeat.am.common.constant.tips.Tip;
-import com.jfeat.am.common.controller.BaseController;
 import com.jfeat.am.module.advertisement.services.persistence.model.AdGroup;
 import com.jfeat.am.module.advertisement.services.service.AdGroupService;
+import com.jfeat.crud.base.tips.SuccessTip;
+import com.jfeat.crud.base.tips.Tip;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
@@ -22,7 +21,7 @@ import javax.annotation.Resource;
 @RestController
 @RequestMapping("/api")
 @Api("AD-轮播图")
-public class PortalAdGroupEndpoint extends BaseController {
+public class PortalAdGroupEndpoint {
 
     @Resource
     private AdGroupService adGroupService;

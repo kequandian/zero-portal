@@ -1,11 +1,5 @@
 package com.jfeat.am.module.ow.api.crud;
 
-import com.jfeat.am.common.constant.tips.ErrorTip;
-import com.jfeat.am.common.constant.tips.SuccessTip;
-import com.jfeat.am.common.constant.tips.Tip;
-import com.jfeat.am.common.controller.BaseController;
-import com.jfeat.am.common.exception.BusinessCode;
-import com.jfeat.am.common.exception.BusinessException;
 import com.jfeat.am.module.log.annotation.BusinessLog;
 import com.jfeat.am.module.ow.services.domain.dao.QueryMenuDao;
 import com.jfeat.am.module.ow.services.domain.model.record.MenuRecord;
@@ -13,6 +7,11 @@ import com.jfeat.am.module.ow.services.domain.request.ElementRequest;
 import com.jfeat.am.module.ow.services.domain.service.MenuService;
 import com.jfeat.am.module.ow.services.domain.service.PageService;
 import com.jfeat.am.module.ow.services.persistence.model.Menu;
+import com.jfeat.crud.base.exception.BusinessCode;
+import com.jfeat.crud.base.exception.BusinessException;
+import com.jfeat.crud.base.tips.ErrorTip;
+import com.jfeat.crud.base.tips.SuccessTip;
+import com.jfeat.crud.base.tips.Tip;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.dao.DuplicateKeyException;
@@ -33,7 +32,7 @@ import java.util.List;
 @RestController
 @Api("MUASKIN官网api")
 @RequestMapping("/api/ow/menus")
-public class MenuEndpoint extends BaseController {
+public class MenuEndpoint  {
     @Resource
     MenuService menuService;
 

@@ -1,16 +1,15 @@
 package com.jfeat.am.module.ow.api.crud;
 
-import com.jfeat.am.common.constant.tips.ErrorTip;
-import com.jfeat.am.common.constant.tips.SuccessTip;
-import com.jfeat.am.common.constant.tips.Tip;
-import com.jfeat.am.common.controller.BaseController;
-import com.jfeat.am.common.exception.BusinessCode;
 import com.jfeat.am.module.log.annotation.BusinessLog;
 import com.jfeat.am.module.ow.services.domain.dao.QueryPageDao;
 import com.jfeat.am.module.ow.services.domain.model.record.PageRecord;
 import com.jfeat.am.module.ow.services.domain.service.PageService;
 import com.jfeat.am.module.ow.services.persistence.dao.PageMapper;
 import com.jfeat.am.module.ow.services.persistence.model.Page;
+import com.jfeat.crud.base.exception.BusinessCode;
+import com.jfeat.crud.base.tips.ErrorTip;
+import com.jfeat.crud.base.tips.SuccessTip;
+import com.jfeat.crud.base.tips.Tip;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
@@ -29,7 +28,7 @@ import javax.annotation.Resource;
 @RestController
 @Api("MUASKIN官网api")
 @RequestMapping("/api/ow/pages")
-public class PageEndpoint extends BaseController {
+public class PageEndpoint  {
 
     @Resource
     private PageService pageService;

@@ -2,11 +2,6 @@ package com.jfeat.am.module.ow.api.crud;
 
 
 import com.baomidou.mybatisplus.plugins.Page;
-import com.jfeat.am.common.constant.tips.SuccessTip;
-import com.jfeat.am.common.constant.tips.Tip;
-import com.jfeat.am.common.controller.BaseController;
-import com.jfeat.am.common.exception.BusinessCode;
-import com.jfeat.am.common.exception.BusinessException;
 import com.jfeat.am.core.jwt.JWTKit;
 import com.jfeat.am.module.cms.services.definition.ArticleType;
 import com.jfeat.am.module.cms.services.domain.dao.QueryArticleDao;
@@ -15,6 +10,10 @@ import com.jfeat.am.module.cms.services.domain.model.record.ArticleRecord;
 import com.jfeat.am.module.cms.services.domain.service.CMSArticleService;
 import com.jfeat.am.module.log.annotation.BusinessLog;
 import com.jfeat.am.module.notification.services.crud.service.SubscriptionService;
+import com.jfeat.crud.base.exception.BusinessCode;
+import com.jfeat.crud.base.exception.BusinessException;
+import com.jfeat.crud.base.tips.SuccessTip;
+import com.jfeat.crud.base.tips.Tip;
 import com.jfeat.images.services.domain.service.StockImagesService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -29,7 +28,7 @@ import java.util.List;
 @RestController
 @Api("网站美丽知识，潮流资讯")
 @RequestMapping("/api")
-public class CMSWebsiteInfEndpoint extends BaseController {
+public class CMSWebsiteInfEndpoint  {
 
 
     @Resource
@@ -47,10 +46,10 @@ public class CMSWebsiteInfEndpoint extends BaseController {
     public Tip createLore(@RequestBody ArticleModel entity) {
         Integer affected = 0;
         entity.setContent("美丽知识");
-        Long userId = JWTKit.getUserId(getHttpServletRequest());
+        Long userId = JWTKit.getUserId();
         // author由gw传入
         if(entity.getAuthor() == null || ("").equals(entity.getAuthor())) {
-            entity.setAuthor(JWTKit.getAccount(getHttpServletRequest()));
+            entity.setAuthor(JWTKit.getAccount());
         }
         entity.setType(ArticleType.LORE.toString());
         entity.setUserId(userId);
@@ -70,10 +69,10 @@ public class CMSWebsiteInfEndpoint extends BaseController {
     public Tip createFashion(@RequestBody ArticleModel entity) {
         Integer affected = 0;
         entity.setContent("潮流资讯");
-        Long userId = JWTKit.getUserId(getHttpServletRequest());
+        Long userId = JWTKit.getUserId();
         // author由gw传入
         if(entity.getAuthor() == null || ("").equals(entity.getAuthor())) {
-            entity.setAuthor(JWTKit.getAccount(getHttpServletRequest()));
+            entity.setAuthor(JWTKit.getAccount());
         }
         entity.setType(ArticleType.FASHION.toString());
 

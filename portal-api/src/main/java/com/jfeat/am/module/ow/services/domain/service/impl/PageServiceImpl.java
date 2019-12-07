@@ -2,7 +2,6 @@ package com.jfeat.am.module.ow.services.domain.service.impl;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.toolkit.StringUtils;
-import com.jfeat.am.common.constant.tips.Ids;
 import com.jfeat.am.module.ow.services.crud.service.impl.CRUDPageServiceImpl;
 import com.jfeat.am.module.ow.services.definite.PageType;
 import com.jfeat.am.module.ow.services.definite.RootMenu;
@@ -17,6 +16,7 @@ import com.jfeat.am.module.ow.services.persistence.dao.PageTextMapper;
 import com.jfeat.am.module.ow.services.persistence.model.Menu;
 import com.jfeat.am.module.ow.services.persistence.model.Page;
 import com.jfeat.am.module.ow.services.persistence.model.PageText;
+import com.jfeat.crud.base.request.Ids;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

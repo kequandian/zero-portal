@@ -1,7 +1,6 @@
 package com.jfeat.am.module.ow.services.crud.service;
-            import com.jfeat.am.common.crud.CRUDServiceOnly;
 import com.jfeat.am.module.ow.services.persistence.model.PageText;
-import com.jfeat.am.common.constant.tips.Ids;
+import com.jfeat.crud.plus.CRUDServiceOnly;
 
 /**
  * <p>
