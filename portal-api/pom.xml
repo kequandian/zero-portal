@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.jfeat</groupId>
-    <artifactId>muaskin-portal-api</artifactId>
+    <artifactId>portal-api</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <parent>
@@ -25,26 +25,20 @@
         <!---only produce, scope provided-->
         <crud-log.version>0.0.1</crud-log.version>
         <zero-io.version>0.0.1</zero-io.version>
+        <io.swagger.version>1.5.16</io.swagger.version>
     </properties>
 
     <dependencies>
-       <!-- <dependency>
-            <groupId>com.jfeat</groupId>
-            <artifactId>sb-ad</artifactId>
-            <version>1.1.0</version>
-        </dependency>-->
         <dependency>
             <groupId>com.jfeat</groupId>
             <artifactId>cms-api</artifactId>
             <version>1.0.0</version>
         </dependency>
-
         <dependency>
             <groupId>com.jfeat</groupId>
             <artifactId>zero-io</artifactId>
             <version>${zero-io.version}</version>
         </dependency>
-
 
         <!-- dev only -->
         <dependency>
@@ -96,6 +90,13 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>${commons-lang3.version}</version>
+        </dependency>
+        <!--swagger-->
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-core</artifactId>
+            <version>${io.swagger.version}</version>
+            <scope>compile</scope>
         </dependency>
 
         <!--allow swagger support java 11 (above java9)-->
