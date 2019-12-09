@@ -2,6 +2,8 @@ package com.jfeat.am.module.ow.api;
 
 
 import com.jfeat.am.common.controller.FileInfo;
+import com.jfeat.crud.base.tips.SuccessTip;
+import com.jfeat.crud.base.tips.Tip;
 import com.jfeat.oss.OSSUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
