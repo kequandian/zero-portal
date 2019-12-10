@@ -1,20 +1,19 @@
-package com.jfeat.am.module.ow.services.crud.filter;
+package com.jfeat.am.module.ow.services.domain.filter;
 
-
-import com.jfeat.am.module.ow.services.persistence.model.Page;
+import com.jfeat.am.module.ow.services.persistence.model.Menu;
 import com.jfeat.crud.plus.CRUDFilter;
 
 
 /**
- * Created by Code Generator on 2018-11-28
+ * Created by Code Generator on 2019-12-10
  */
-public class PageFilter implements CRUDFilter<Page> {
+public class MenuFilter implements CRUDFilter<Menu> {
 
     private String[] ignoreFields = new String[]{};
     private String[] updateIgnoreFields = new String[]{};
 
     @Override
-    public void filter(Page entity, boolean insertOrUpdate) {
+    public void filter(Menu entity, boolean insertOrUpdate) {
 
         //if insertOrUpdate is true,means for insert, do this
         if (insertOrUpdate){

@@ -7,7 +7,7 @@ import com.jfeat.am.module.ow.services.persistence.model.Page;
  * Created by Code Generator on 2018-11-28
  */
 @TableName("ow_page")
-public class PageRecord extends Page{
+public class PageRecord extends Page {
     private String content;
 
     public String getContent() {

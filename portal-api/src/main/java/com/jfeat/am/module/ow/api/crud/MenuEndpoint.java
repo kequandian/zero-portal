@@ -94,6 +94,7 @@ public class MenuEndpoint  {
         return SuccessTip.create(queryMenuDao.queryMenu(record, status));
     }
 
+
     @BusinessLog(name = "Page", value = "create Page")
     @ApiOperation("新增成分党 [即菜单api的基础上加上content]")
     @PostMapping("/element")
