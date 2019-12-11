@@ -126,7 +126,7 @@ public class PublicEndpoint {
     @ApiOperation("页面列表")
     @GetMapping("/pages")
     public Tip queryPage(com.baomidou.mybatisplus.plugins.Page<PageRecord> page,
-                              @RequestParam(name = "current", required = false, defaultValue = "1") Integer pageNum,
+                              @RequestParam(name = "pageNum", required = false, defaultValue = "1") Integer pageNum,
                               @RequestParam(name = "pageSize", required = false, defaultValue = "10") Integer pageSize,
                               @RequestParam(name = "name", required = false) String name,
                               @RequestParam(name = "type", required = false) String type,

@@ -21,6 +21,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * <p>
@@ -267,7 +268,16 @@ public class PageServiceImpl extends CRUDPageServiceImpl implements PageService 
             if(pageRecord.getContent() != null) {
                 PageText textVo = new PageText();
                 textVo.setContent(pageRecord.getContent());
-                affected += pageTextMapper.update(textVo, new EntityWrapper<PageText>().eq(PageText.PAGE_ID, page.getId()));
+                List<PageText> pageText = pageTextMapper.selectList(new EntityWrapper<PageText>().eq(PageText.PAGE_ID, page.getId()));
+
+                if(pageText!=null||pageText.size()>0){
+                    //更新
+                    affected += pageTextMapper.update(textVo, new EntityWrapper<PageText>().eq(PageText.PAGE_ID, page.getId()));
+                }else{
+                    //插入
+                    affected += pageTextMapper.insert(textVo);
+                }
+
             }
         }
         return affected;
