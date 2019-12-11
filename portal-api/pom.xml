@@ -38,6 +38,12 @@
             <groupId>com.jfeat</groupId>
             <artifactId>zero-io</artifactId>
             <version>${zero-io.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <!-- dev only -->
