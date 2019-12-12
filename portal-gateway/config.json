@@ -1,5 +1,5 @@
 {
-  "imgPath": "/home/mall/muaskin-portal/dist/img",
-  "imgEndpoint": "http://www.isoftto.com/img",
-  "webPath": "/home/mall/muaskin-portal/dist"
+  "imgPath": "G:/newTest/Front-Web/WEB/zero-portal/portal/img",
+  "imgEndpoint": "http://192.168.3.88:8020/portal/img",
+  "webPath": "G:/newTest/Front-Web/WEB/zero-portal/portal"
 }

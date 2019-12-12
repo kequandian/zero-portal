@@ -19,8 +19,8 @@ const context = [
       app.get('/api/gw/portal/images', async (req, res) => {
         try {
           const list = displayAllFile(configJson.imgPath);
-          const { current = 1, pageSize = 10 } = req.query;
-          const currentPageData = list.slice((current - 1) * pageSize, current * pageSize);
+          const { pageNum = 1, pageSize = 10 } = req.query;
+          const currentPageData = list.slice((pageNum - 1) * pageSize, pageNum * pageSize);
           const records = currentPageData.map(imgPath => {
             const name = imgPath.replace(/\\/g, '/').replace(configJson.imgPath, '');
             return {
@@ -33,7 +33,7 @@ const context = [
           res.json({
             code: 200, message: 'OK', data: {
               records: records,
-              current: Number(current),
+              current: Number(pageNum),
               size: Number(pageSize),
               pages: Math.floor(list.length / pageSize),
               total: list.length,
