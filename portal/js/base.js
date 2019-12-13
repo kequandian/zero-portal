@@ -8,12 +8,9 @@
 	});
 
 	window.SearchObject = function (name) {
-		var searchString = window.location.search.replace('?', '');
+		/*var searchString = window.location.search.replace('?', '');
 		var searchArray = searchString.split('=');
 
-		// var index = searchArray.findIndex(function (item) {
-		// 	return item === name;
-		// });
 
 		var index = -1;
 		for(var i = 0; i < searchArray.length; i++){
@@ -23,7 +20,18 @@
 				}
 			}
 		}
-		return searchArray[index + 1];
+		return searchArray[index + 1];*/
+		
+	  var queryString = window.location.search.replace('?', '');
+       var queryList = queryString.split('&');
+       var data = {};
+
+       queryList.forEach(item => {
+      var rst = item.match(/(\S+)=(\S+)/);
+       data[rst[1]] = rst[2];
+       });
+
+    return data;
 	}
 
 	//当设备屏幕小于1800时
@@ -725,7 +733,8 @@
 						match.append(html.join(''));
 
 						// 高亮对应的富文本页导航条目
-						var id = SearchObject('id') || -2;
+						//var id = SearchObject('id') || -2;
+						var id = SearchObject().id || -2;
 						$('.nav-menu [data-pageId="' + id + '"]').addClass('active');
 					}
 				});

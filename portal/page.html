@@ -112,7 +112,7 @@
   <script src="./js/jqueryCode.js"></script>
   <script>
     $(function () {
-      var id = SearchObject('id');
+      var id = SearchObject().id;
       console.log('==== id = ',id);
       var request = $.ajax({
         url: window.MC.HOST + '/api/pub/ow/pages/' + id,

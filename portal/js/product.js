@@ -174,7 +174,8 @@
     }
   };
   Product.prototype.getProductDetails = function (func) {
-    var id = SearchObject('id');
+   // var id = SearchObject('id');
+   var id = SearchObject().id;
     if (id) {
       var request = $.ajax({
         url: window.MC.HOST + '/rest/product/' + id,
