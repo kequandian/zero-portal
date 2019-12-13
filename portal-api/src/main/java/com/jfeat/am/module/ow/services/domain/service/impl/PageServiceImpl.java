@@ -270,11 +270,12 @@ public class PageServiceImpl extends CRUDPageServiceImpl implements PageService 
                 textVo.setContent(pageRecord.getContent());
                 List<PageText> pageText = pageTextMapper.selectList(new EntityWrapper<PageText>().eq(PageText.PAGE_ID, page.getId()));
 
-                if(pageText!=null||pageText.size()>0){
+                if(pageText!=null && pageText.size()>0){
                     //更新
                     affected += pageTextMapper.update(textVo, new EntityWrapper<PageText>().eq(PageText.PAGE_ID, page.getId()));
                 }else{
                     //插入
+                    textVo.setPageId(pageRecord.getId());
                     affected += pageTextMapper.insert(textVo);
                 }
 
