@@ -38,7 +38,7 @@ public class PageTextEndpoint {
     @Resource
     QueryPageTextDao queryPageTextDao;
 
-    @BusinessLog(name = "PageText", value = "create PageText")
+    @BusinessLog(name = "网站页面内容", value = "新建网站页面内容")
     @PostMapping
     public Tip createPageText(@RequestBody PageText entity) {
 
@@ -54,7 +54,7 @@ public class PageTextEndpoint {
     }
 
 
-    @BusinessLog(name = "PageText", value = "update PageText")
+    @BusinessLog(name = "网站页面内容", value = "更新网站页面内容")
     @PutMapping("/{id}")
     @ApiOperation("更新富文本")
     public Tip updatePageText(@PathVariable("id") Long id, @RequestBody PageText entity) {
@@ -62,7 +62,7 @@ public class PageTextEndpoint {
         return SuccessTip.create(pageTextService.updateMaster(entity));
     }
 
-    @BusinessLog(name = "PageText", value = "delete PageText")
+    @BusinessLog(name = "网站页面内容", value = "删除网站页面内容")
     @DeleteMapping("/{id}")
     @ApiOperation("删除富文本")
     public Tip deletePageText(@PathVariable Long id) {

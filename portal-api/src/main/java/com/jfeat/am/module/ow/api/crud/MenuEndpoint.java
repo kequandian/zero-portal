@@ -42,7 +42,7 @@ public class MenuEndpoint  {
     @Resource
     PageService pageService;
 
-    @BusinessLog(name = "Menu", value = "create Menu")
+    @BusinessLog(name = "网站菜单项", value = "新建网站菜单项")
     @PostMapping
     @ApiOperation("新建菜单")
     public Tip createMenu(@RequestBody Menu entity) {
@@ -55,7 +55,7 @@ public class MenuEndpoint  {
         return SuccessTip.create(affected);
     }
 
-    @BusinessLog(name = "Menu", value = "update Menu")
+    @BusinessLog(name = "网站菜单项", value = "更新网站菜单项")
     @PutMapping("/{id}")
     @ApiOperation("更新菜单项")
     public Tip updateMenu(@PathVariable Long id, @RequestBody Menu entity) {
@@ -69,7 +69,7 @@ public class MenuEndpoint  {
     }
 
 
-    @BusinessLog(name = "Menu", value = "delete Menu")
+    @BusinessLog(name = "网站菜单项", value = "删除网站菜单项")
     @ApiOperation("删除菜单项")
     @DeleteMapping("/{id}")
     public Tip deleteMenu(@PathVariable("id") Long id) {
@@ -95,14 +95,14 @@ public class MenuEndpoint  {
     }
 
 
-    @BusinessLog(name = "Page", value = "create Page")
+    @BusinessLog(name = "网站菜单项", value = "新增网站菜单项")
     @ApiOperation("新增成分党 [即菜单api的基础上加上content]")
     @PostMapping("/element")
     public Tip createElement(@RequestBody ElementRequest entity) {
         return SuccessTip.create(pageService.addElement(entity));
     }
 
-    @BusinessLog(name = "Page", value = "create Page")
+    @BusinessLog(name = "网站菜单项", value = "修改网站菜单项")
     @ApiOperation("更新成分党 [即菜单api的基础上加上content]")
     @PutMapping("/element/{id}")
     public Tip updateElement(@PathVariable Long id, @RequestBody ElementRequest entity) {

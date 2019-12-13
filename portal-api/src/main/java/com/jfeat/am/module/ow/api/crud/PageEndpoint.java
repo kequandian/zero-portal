@@ -38,31 +38,33 @@ public class PageEndpoint  {
     @Resource
     private PageMapper pageMapper;
 
-    @BusinessLog(name = "Page", value = "create Page")
-    @ApiOperation("新增页面")
+    @BusinessLog(name = "网站页面", value = "新增网站页面")
+    @ApiOperation("新增网站页面")
     @PostMapping
     public Tip createPage(@RequestBody PageRecord entity) {
         return SuccessTip.create(pageService.addPage(entity));
     }
 
+    @BusinessLog(name = "网站页面", value = "新增网站页面")
     @PostMapping("/one/{identifier}")
     public Tip createPageById(@PathVariable String identifier, @RequestBody PageRecord pageRecord) {
         return SuccessTip.create(pageService.insertByIdentifier(identifier, pageRecord));
     }
 
+    @BusinessLog(name = "网站页面", value = "修改网站页面")
     @PutMapping("/one/{identifier}")
     public Tip updatePageById(@PathVariable String identifier, @RequestBody PageRecord pageRecord) {
         return SuccessTip.create(pageService.updateByIdentifier(identifier, pageRecord));
     }
 
-    @BusinessLog(name = "Page", value = "update Page")
+    @BusinessLog(name = "网站页面", value = "根据id 修改网站页面")
     @ApiOperation("更新页面")
     @PutMapping("/{id}")
     public Tip updatePage(@PathVariable Long id, @RequestBody PageRecord entity) {
         return SuccessTip.create(pageService.updatePage(id, entity));
     }
 
-    @BusinessLog(name = "Page", value = "delete Page")
+    @BusinessLog(name = "网站页面", value = "删除网站页面")
     @DeleteMapping("/{id}")
     @ApiOperation("删除页面")
     public Tip deletePage(@PathVariable Long id) {

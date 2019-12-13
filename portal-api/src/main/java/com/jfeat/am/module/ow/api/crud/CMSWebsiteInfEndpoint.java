@@ -40,7 +40,7 @@ public class CMSWebsiteInfEndpoint  {
     @Resource
     StockImagesService stockImagesService;
 
-    @BusinessLog(name = "website-lore", value = "create website-lore")
+    @BusinessLog(name = "美丽知识", value = "新增美丽知识")
     @PostMapping("/cms/website/lore")
     @ApiOperation("新美丽知识")
     public Tip createLore(@RequestBody ArticleModel entity) {
@@ -63,7 +63,7 @@ public class CMSWebsiteInfEndpoint  {
         return SuccessTip.create(affected);
     }
 
-    @BusinessLog(name = "website-lore", value = "create website-lore")
+    @BusinessLog(name = "潮流资讯", value = "新增潮流资讯")
     @PostMapping("/cms/website/fashion")
     @ApiOperation("新潮流资讯")
     public Tip createFashion(@RequestBody ArticleModel entity) {
