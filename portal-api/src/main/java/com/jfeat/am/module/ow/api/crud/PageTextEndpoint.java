@@ -81,14 +81,11 @@ public class PageTextEndpoint {
                               @RequestParam(name = "sort", required = false) String sort) {
         page.setCurrent(pageNum);
         page.setSize(pageSize);
-
         PageTextRecord record = new PageTextRecord();
         record.setId(id);
         record.setPageId(pageId);
         record.setContent(content);
-
         page.setRecords(queryPageTextDao.findPageTextPage(page, record, orderBy));
-
         return SuccessTip.create(page);
     }
 

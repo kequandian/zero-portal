@@ -1,6 +1,8 @@
 package com.jfeat.am.module.ow.api;
 
 
+import com.jfeat.am.common.annotation.Permission;
+import com.jfeat.am.module.ow.api.permission.MenuPermission;
 import com.jfeat.am.module.ow.services.persistence.model.Menu;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -48,6 +50,7 @@ public class MenuGroupEndpoint {
         return SuccessTip.create(menuGroupService.getGroupChildren(id));
     }
 
+    @Permission(MenuPermission.MENU_VIEW)
     @ApiOperation(value = "菜单 列表信息")
     @GetMapping
     public Tip queryMenus( ) {

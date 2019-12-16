@@ -1,6 +1,8 @@
 package com.jfeat.am.module.ow.api.crud;
 
+import com.jfeat.am.common.annotation.Permission;
 import com.jfeat.am.module.log.annotation.BusinessLog;
+import com.jfeat.am.module.ow.api.permission.PagePermission;
 import com.jfeat.am.module.ow.services.domain.dao.QueryPageDao;
 import com.jfeat.am.module.ow.services.domain.model.record.PageRecord;
 import com.jfeat.am.module.ow.services.domain.service.PageService;
@@ -51,12 +53,14 @@ public class PageEndpoint  {
         return SuccessTip.create(pageService.insertByIdentifier(identifier, pageRecord));
     }
 
+    @Permission(PagePermission.PAGE_EDIT)
     @BusinessLog(name = "网站页面", value = "修改网站页面")
     @PutMapping("/one/{identifier}")
     public Tip updatePageById(@PathVariable String identifier, @RequestBody PageRecord pageRecord) {
         return SuccessTip.create(pageService.updateByIdentifier(identifier, pageRecord));
     }
 
+    @Permission(PagePermission.PAGE_EDIT)
     @BusinessLog(name = "网站页面", value = "根据id 修改网站页面")
     @ApiOperation("更新页面")
     @PutMapping("/{id}")

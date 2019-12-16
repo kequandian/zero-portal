@@ -1,6 +1,8 @@
 package com.jfeat.am.module.ow.api.crud;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
+import com.jfeat.am.common.annotation.Permission;
+import com.jfeat.am.module.ow.api.permission.PagePermission;
 import com.jfeat.am.module.ow.services.definite.RootMenu;
 import com.jfeat.am.module.ow.services.domain.dao.QueryMenuDao;
 import com.jfeat.am.module.ow.services.domain.dao.QueryPageDao;
@@ -57,6 +59,7 @@ public class PublicEndpoint {
     QueryMenuDao queryMenuDao;
     @Resource
     StockImagesService stockImagesService;
+
 
     @ApiOperation("根据identifier获取页面详情")
     @GetMapping("/pages/one/{identifier}")
@@ -122,7 +125,7 @@ public class PublicEndpoint {
         return SuccessTip.create(page);
     }
 
-
+    @Permission(PagePermission.PAGE_VIEW)
     @ApiOperation("页面列表")
     @GetMapping("/pages")
     public Tip queryPage(com.baomidou.mybatisplus.plugins.Page<PageRecord> page,
