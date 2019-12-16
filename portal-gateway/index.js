@@ -1,6 +1,3 @@
-const gateway = require('kqd-api-gateway/gateway');
-const config = require('./config');
+require("@babel/register");
 
-gateway.config(config);
-gateway.handlerPath(__dirname);
-gateway.run();
+require('./src/index');

@@ -1,1 +1,0 @@
-window.CarouselList = [{"enabled":1,"groupId":"3","id":"8","image":"[{\"uid\":0,\"url\":\"http://muaskin.oss-cn-shenzhen.aliyuncs.com/77182f41-88fc-4608-8344-0878eff3bc47.jpg\",\"status\":\"done\"}]","name":"1","seq":0,"targetUrl":""}]
