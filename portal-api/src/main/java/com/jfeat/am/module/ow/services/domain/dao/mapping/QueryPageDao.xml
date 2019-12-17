@@ -19,8 +19,8 @@
         <if test="record.id != null and record.id>0 ">
             AND ow_page.id LIKE CONCAT('%',#{record.id},'%')
         </if>
-        <if test="record.name != null and record.name !=''">
-            AND ow_page.name LIKE CONCAT('%',#{record.name},'%')
+        <if test="search != null and search !=''">
+            AND ow_page.name LIKE CONCAT('%',#{search},'%')
         </if>
         <if test="record.type != null and record.type!= ''">
             AND ow_page.type LIKE CONCAT('%',#{record.type},'%')
@@ -28,5 +28,6 @@
         <if test="record.url != null and record.url!= ''">
             AND ow_page.url LIKE CONCAT('%',#{record.url},'%')
         </if>
+
     </select>
 </mapper>
