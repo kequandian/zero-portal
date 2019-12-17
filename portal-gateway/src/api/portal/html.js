@@ -11,8 +11,8 @@ module.exports = function (api, { Must, List }) {
   api.get('/api/gw/portal/html', async (ctx) => {
     try {
       const list = displayAllFile(configJson.webPath).filter(filePath => path.extname(filePath) === '.html');
-      const { current = 1, pageSize = 10 } = ctx.query;
-      const currentPageData = list.slice((current - 1) * pageSize, current * pageSize);
+      const { pageNum = 1, pageSize = 10 } = ctx.query;
+      const currentPageData = list.slice((pageNum - 1) * pageSize, pageNum * pageSize);
       const records = currentPageData.map(webPath => {
         const name = webPath.replace(/\\/g, '/').replace(configJson.webPath, '');
         const fName = name.replace(/^\//, '');
@@ -27,7 +27,7 @@ module.exports = function (api, { Must, List }) {
         message: 'success',
         data: {
           records: records,
-          current: Number(current),
+          current: Number(pageNum),
           size: Number(pageSize),
           pages: Math.floor(list.length / pageSize),
           total: list.length,
