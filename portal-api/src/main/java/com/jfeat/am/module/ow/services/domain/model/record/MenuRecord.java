@@ -8,8 +8,18 @@ import java.util.List;
  * Created by Code Generator on 2018-11-28
  */
 public class MenuRecord extends Menu{
+    private String pageName;
+
     private List<Menu> items;
     private String url;
+
+    public String getPageName() {
+        return pageName;
+    }
+
+    public void setPageName(String pageName) {
+        this.pageName = pageName;
+    }
 
     public List<Menu> getItems() {
         return items;

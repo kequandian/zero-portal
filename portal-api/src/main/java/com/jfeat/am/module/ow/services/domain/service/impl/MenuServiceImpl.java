@@ -1,5 +1,8 @@
 package com.jfeat.am.module.ow.services.domain.service.impl;
 
+import com.jfeat.am.module.ow.services.domain.dao.QueryMenuDao;
+import com.jfeat.am.module.ow.services.domain.model.MenuModel;
+import com.jfeat.am.module.ow.services.domain.model.record.MenuRecord;
 import com.jfeat.am.module.ow.services.domain.service.MenuService;
 
 import com.jfeat.am.module.ow.services.crud.service.impl.CRUDMenuServiceImpl;
@@ -23,6 +26,9 @@ public class MenuServiceImpl extends CRUDMenuServiceImpl implements MenuService 
     @Resource
     private MenuMapper menuMapper;
 
+    @Resource
+    private QueryMenuDao queryMenuDao;
+
     @Override
     public Integer bulkDelete(Ids ids) {
         Integer success = 0;
@@ -30,5 +36,10 @@ public class MenuServiceImpl extends CRUDMenuServiceImpl implements MenuService 
             success += menuMapper.deleteById(id);
         }
         return success;
+    }
+
+    @Override
+    public MenuRecord getMenuById(Long id) {
+        return queryMenuDao.selectMenuById(id);
     }
 }

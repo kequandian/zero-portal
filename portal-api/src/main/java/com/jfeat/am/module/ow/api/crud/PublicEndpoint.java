@@ -7,6 +7,7 @@ import com.jfeat.am.module.ow.services.definite.RootMenu;
 import com.jfeat.am.module.ow.services.domain.dao.QueryMenuDao;
 import com.jfeat.am.module.ow.services.domain.dao.QueryPageDao;
 import com.jfeat.am.module.ow.services.domain.dao.QueryPageTextDao;
+import com.jfeat.am.module.ow.services.domain.model.MenuModel;
 import com.jfeat.am.module.ow.services.domain.model.record.MenuRecord;
 import com.jfeat.am.module.ow.services.domain.model.record.PageRecord;
 import com.jfeat.am.module.ow.services.domain.model.record.PageTextRecord;
@@ -159,11 +160,12 @@ public class PublicEndpoint {
                        @RequestParam(name = "constant", required = false) String constant,
                        @RequestParam(name = "display", required = false) String display
                        ) {
-        Menu menu = menuService.retrieveGroup(id);
-        if(menu == null) {
+        Long ids=id;
+        MenuRecord record = menuService.getMenuById(id);
+        if(record == null) {
             return SuccessTip.create(null);
         }
-        MenuRecord record = CRUD.castObject(menu, MenuRecord.class);
+
         record.setItems(record.getItems() == null ? new ArrayList<Menu>() : record.getItems());
         Stream<Menu> menuStream = record.getItems().stream();
         if(constant != null && constant != ""){
