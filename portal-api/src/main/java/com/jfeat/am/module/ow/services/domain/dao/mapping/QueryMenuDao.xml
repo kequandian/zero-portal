@@ -54,4 +54,11 @@
         </if>
 
     </select>
+
+    <select id="selectMenuById" resultType="MenuRecord">
+        SELECT ow_menu.*,ow_page.`name` as pageName
+        FROM ow_menu left join ow_page ON ow_page.id = ow_menu.page_id
+        where  ow_menu.id = #{id}
+    </select>
+
 </mapper>

@@ -43,6 +43,20 @@ public class MenuEndpoint  {
     PageService pageService;
 
     @BusinessLog(name = "网站菜单项", value = "新建网站菜单项")
+    @PostMapping("/{pid}")
+    @ApiOperation("根据pid新建菜单")
+    public Tip createMenu(@PathVariable Long pid, @RequestBody Menu entity) {
+        Integer affected = 0;
+        try {
+            entity.setPid(pid);
+            affected = menuService.createGroup(entity);
+        } catch (DuplicateKeyException e) {
+            throw new BusinessException(BusinessCode.DuplicateKey);
+        }
+        return SuccessTip.create(affected);
+    }
+
+    @BusinessLog(name = "网站菜单项", value = "新建网站菜单项")
     @PostMapping
     @ApiOperation("新建菜单")
     public Tip createMenu(@RequestBody Menu entity) {

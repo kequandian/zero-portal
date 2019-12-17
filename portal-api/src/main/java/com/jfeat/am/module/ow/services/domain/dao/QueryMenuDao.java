@@ -1,5 +1,6 @@
 package com.jfeat.am.module.ow.services.domain.dao;
 
+import com.jfeat.am.module.ow.services.domain.model.MenuModel;
 import com.jfeat.am.module.ow.services.domain.model.record.MenuRecord;
 
 import com.baomidou.mybatisplus.plugins.Page;
@@ -14,4 +15,6 @@ public interface QueryMenuDao extends BaseMapper<MenuRecord> {
     List<MenuRecord> findMenuPage(Page<MenuRecord> page, @Param("record") MenuRecord record);
 
     List<MenuRecord> queryMenu(@Param("record") MenuRecord record, @Param("status") List<String> status);
+
+    MenuRecord selectMenuById(@Param("id") Long id);
 }
