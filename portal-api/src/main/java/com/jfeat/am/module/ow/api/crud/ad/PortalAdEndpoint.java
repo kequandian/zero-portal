@@ -82,7 +82,10 @@ public class PortalAdEndpoint {
 
     @PutMapping("/banner/{id}")
     @ApiOperation("更新轮播图")
-    public Tip updateAd(@PathVariable Long id, @RequestBody Ad entity) {
+    public Tip updateAd(@PathVariable Long id, @RequestBody AdRecord entity) {
+        if(entity.getImages()!=null && entity.getImages().size()>0){
+            entity.setImage(entity.getImages().get(0).getUrl()) ;
+        }
         return SuccessTip.create(adService.updateMaster(entity));
     }
 
