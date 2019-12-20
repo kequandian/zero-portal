@@ -129,6 +129,7 @@
 		var topNav = new Nav();
 		topNav.init();
 		if (window.OsSlider && window.CarouselUrl) {
+			console.log("----init topNav initCarousel----");
 			initCarousel(window.CarouselUrl);
 		}
 		if (window.RichTextUrl) {
@@ -301,13 +302,20 @@
 		});
 
 		request.done(function (response) {
-			console.log('hh 首页');
+			console.log('返回内容',response);
 			if (response.code === 200) {
+				
 				var urlList = response.data.map(function (item) {
+					console.log("item",item);
 					var url = '';
 					try {
-						url = JSON.parse(item.image)[0].url;
-					} catch (error) { }
+						console.log("===========try===============");
+						console.log("item",item.image);
+						url = item.image;
+						console.log('url= ',url);
+					} catch (error) { 
+					console.log("===========error===============",error);
+					}
 					return {
 						url:url,
 						targetUrl: item.targetUrl,

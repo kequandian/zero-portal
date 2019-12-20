@@ -3,6 +3,7 @@ package com.jfeat.am.module.ow.api.crud.ad;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.jfeat.am.module.advertisement.services.domain.dao.QueryAdLibraryDao;
 import com.jfeat.am.module.advertisement.services.domain.model.record.AdLibraryRecord;
+import com.jfeat.am.module.advertisement.services.domain.model.record.AdRecord;
 import com.jfeat.am.module.advertisement.services.persistence.dao.AdGroupMapper;
 import com.jfeat.am.module.advertisement.services.persistence.model.Ad;
 import com.jfeat.am.module.advertisement.services.persistence.model.AdGroup;
@@ -67,8 +68,11 @@ public class PortalAdEndpoint {
 
     @PostMapping("/banner/id/{identifier}")
     @ApiOperation("根据identifier添加轮播图")
-    public Tip createAdByIdentifier(@PathVariable String identifier, @RequestBody Ad entity) {
+    public Tip createAdByIdentifier(@PathVariable String identifier, @RequestBody AdRecord entity) {
         entity.setEnabled(1);
+        if(entity.getImages()!=null && entity.getImages().size()>0){
+            entity.setImage(entity.getImages().get(0).getUrl()) ;
+        }
         AdGroup adGroup = new AdGroup();
         adGroup.setIdentifier(identifier);
         AdGroup query = adGroupMapper.selectOne(adGroup);
@@ -78,7 +82,10 @@ public class PortalAdEndpoint {
 
     @PutMapping("/banner/{id}")
     @ApiOperation("更新轮播图")
-    public Tip updateAd(@PathVariable Long id, @RequestBody Ad entity) {
+    public Tip updateAd(@PathVariable Long id, @RequestBody AdRecord entity) {
+        if(entity.getImages()!=null && entity.getImages().size()>0){
+            entity.setImage(entity.getImages().get(0).getUrl()) ;
+        }
         return SuccessTip.create(adService.updateMaster(entity));
     }
 

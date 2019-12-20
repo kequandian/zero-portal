@@ -12,5 +12,6 @@ import java.util.List;
  * Created by Code Generator on 2018-11-28
  */
 public interface QueryPageDao extends BaseMapper<PageRecord> {
-    List<PageRecord> findPagePage(Page<PageRecord> page, @Param("record") PageRecord record);
+    List<PageRecord> findPagePage(Page<PageRecord> page, @Param("record") PageRecord record ,
+                                     @Param("search")   String search);
 }

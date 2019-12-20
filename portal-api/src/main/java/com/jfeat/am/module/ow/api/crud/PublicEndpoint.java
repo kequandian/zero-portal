@@ -7,6 +7,7 @@ import com.jfeat.am.module.ow.services.definite.RootMenu;
 import com.jfeat.am.module.ow.services.domain.dao.QueryMenuDao;
 import com.jfeat.am.module.ow.services.domain.dao.QueryPageDao;
 import com.jfeat.am.module.ow.services.domain.dao.QueryPageTextDao;
+import com.jfeat.am.module.ow.services.domain.model.MenuModel;
 import com.jfeat.am.module.ow.services.domain.model.record.MenuRecord;
 import com.jfeat.am.module.ow.services.domain.model.record.PageRecord;
 import com.jfeat.am.module.ow.services.domain.model.record.PageTextRecord;
@@ -131,6 +132,7 @@ public class PublicEndpoint {
     public Tip queryPage(com.baomidou.mybatisplus.plugins.Page<PageRecord> page,
                               @RequestParam(name = "pageNum", required = false, defaultValue = "1") Integer pageNum,
                               @RequestParam(name = "pageSize", required = false, defaultValue = "10") Integer pageSize,
+                              @RequestParam(name = "search", required = false) String search,
                               @RequestParam(name = "name", required = false) String name,
                               @RequestParam(name = "type", required = false) String type,
                               @RequestParam(name = "url", required = false) String url) {
@@ -141,7 +143,7 @@ public class PublicEndpoint {
         record.setName(name);
         record.setType(type);
         record.setUrl(url);
-        page.setRecords(queryPageDao.findPagePage(page, record));
+        page.setRecords(queryPageDao.findPagePage(page, record,search));
         return SuccessTip.create(page);
     }
 
@@ -159,11 +161,12 @@ public class PublicEndpoint {
                        @RequestParam(name = "constant", required = false) String constant,
                        @RequestParam(name = "display", required = false) String display
                        ) {
-        Menu menu = menuService.retrieveGroup(id);
-        if(menu == null) {
+        Long ids=id;
+        MenuRecord record = menuService.getMenuById(id);
+        if(record == null) {
             return SuccessTip.create(null);
         }
-        MenuRecord record = CRUD.castObject(menu, MenuRecord.class);
+
         record.setItems(record.getItems() == null ? new ArrayList<Menu>() : record.getItems());
         Stream<Menu> menuStream = record.getItems().stream();
         if(constant != null && constant != ""){

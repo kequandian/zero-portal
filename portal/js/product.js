@@ -31,7 +31,7 @@
 
   Product.prototype.getCategory = function () {
     var request = $.ajax({
-      url: window.MC.HOST + '/rest/product_category?promoted=true',
+      url: window.MC.HOST + '/openapi/crud/productCategoryies?promoted=true',
       type: 'get',
       context: this,
     });
@@ -75,7 +75,7 @@
   Product.prototype.getItems = function () {
     $('.product-list').html('<div class="product-empty">Loading...</div>');
     var request = $.ajax({
-      url: window.MC.HOST + '/rest/product_category/' + this.categoryId + '?tag=' + this.tag,
+      url: window.MC.HOST + '/openapi/crud/productCategoryies/' + this.categoryId + '?tag=' + this.tag,
       type: 'get',
       context: this,
     });
