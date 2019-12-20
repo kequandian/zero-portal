@@ -74,7 +74,14 @@ module.exports = function (api, { Must, List }) {
   api.post('/api/gw/portal/images', async (ctx) => {
     const { name, url } = ctx.request.body;
 
-    saveImgFile(url, configJson.imgPath, name);
+    if (url[0]) {
+      saveImgFile(url[0].url, configJson.imgPath, name);
+    } else {
+      ctx.body = {
+        code: 500,
+        message: '请提交有效的图片',
+      }
+    }
     ctx.body = {
       code: 200,
       message: 'success',
@@ -91,15 +98,23 @@ module.exports = function (api, { Must, List }) {
     const fId = `/${id}`;
     const fName = id.replace(/\|/g, '/');
 
-    return fs.remove(`${configJson.imgPath}/${fName}`)
-      .then(_ => {
-        saveImgFile(url, configJson.imgPath, name);
+    if (url[0]) {
+      return fs.remove(`${configJson.imgPath}/${fName}`)
+        .then(_ => {
+          saveImgFile(url[0].url, configJson.imgPath, name);
 
-        ctx.body = {
-          code: 200,
-          message: 'success',
-        }
-      })
+          ctx.body = {
+            code: 200,
+            message: 'success',
+          }
+        })
+    } else {
+      ctx.body = {
+        code: 500,
+        message: '请提交有效的图片',
+      }
+    }
+
   });
 
   /** 
