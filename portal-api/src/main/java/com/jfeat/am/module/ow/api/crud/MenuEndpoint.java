@@ -16,6 +16,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.web.bind.annotation.*;
+import com.jfeat.am.module.ow.services.persistence.model.Page;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -49,6 +50,13 @@ public class MenuEndpoint  {
         Integer affected = 0;
         try {
             entity.setPid(pid);
+            Page page=new Page();
+            page.setName(entity.getName());
+            page.setConstant(0);
+            page.setIdentifier(entity.getIdentifier());
+            page.setType("rtf");
+            pageService.createMaster(page);
+            entity.setPageId(page.getId());
             affected = menuService.createGroup(entity);
         } catch (DuplicateKeyException e) {
             throw new BusinessException(BusinessCode.DuplicateKey);
