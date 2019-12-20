@@ -62,7 +62,7 @@ module.exports = function (api, { Must, List }) {
       data: {
         id: id,
         name: fName,
-        url: [{ url: `${configJson.imgEndpoint}${fId}` }],
+        url: [{ url: `${configJson.imgEndpoint}/${fName}` }],
       },
     }
 
