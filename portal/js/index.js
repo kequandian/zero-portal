@@ -1,7 +1,9 @@
 ; (function (window) {
 
   $(function(){
-    $(".headTabBar").load("../common.headTabBar.html");
+    // ../common/headTabBar.html
+    $(".headTabBar").load("<div>123456</div>");
+    console.log('fdfdfdfdfd ======= ', $(".headTabBar").load("<div>123456</div>"))
     $.nicenav(300, "210px");
   })
 
