@@ -50,6 +50,12 @@ body>div {
 	position: relative;
 	transition: all .2s;
 }
+
+.htmlStringCss{
+	display: flex;
+	justify-content: center;
+}
+
 .hidden{
 	opacity: 0;
 }
