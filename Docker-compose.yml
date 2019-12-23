@@ -1,0 +1,73 @@
+version: "3"
+services:
+  portal-gateway:
+    privileged: true
+    container_name: portal-gateway
+    image: 'app-node11:dev'
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./portal-gateway:/webapps/web
+      - ./portal:/webapps/portal
+    environment:
+      TZ: "Asia/Shanghai"
+
+  portal:
+    container_name: portal-index
+    image: 'daocloud.io/library/nginx:latest'
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./portal:/usr/share/nginx/html
+    environment:
+      TZ: "Asia/Shanghai"
+
+  portal-api:
+    container_name: portal-api
+    image: 'app-openjre11:dev'
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./portal-api:/webapps
+      - ./portal/images:/images
+    environment:
+      TZ: "Asia/Shanghai"
+      #GREENFIELD: 'run'
+      URL_SHORT: mall-mysql:3306/malldb
+      USERNAME: root
+      PASSWORD: root
+  portal-management:
+    container_name: portal-management
+    image: 'daocloud.io/library/nginx:latest'
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./portal-management/dist:/usr/share/nginx/html
+    environment:
+      TZ: "Asia/Shanghai"
+  nginx:
+    container_name: mall-nginx
+    image: 'daocloud.io/library/nginx:latest'
+    ports:
+      - 80:80
+      #- 80:80
+      #- 443:443
+    volumes:
+      - ./mall-nginx/conf.d:/etc/nginx/conf.d
+      - ./mall-nginx/logs:/var/log/nginx
+      - ./mall-nginx/cert:/cert
+      - ./images:/images
+    environment:
+      TZ: "Asia/Shanghai"
+  mysql:
+    container_name: mall-mysql
+    image: 'daocloud.io/library/mysql:5.7'
+    restart: always
+    environment:
+      TZ: "Asia/Shanghai"
+      MYSQL_DATABASE: 'malldb'
+      MYSQL_ROOT_PASSWORD: 'root'
+      MYSQL_USER: 'jfeat'
+      MYSQL_PASSWORD: 'jfeat'
+    volumes:
+      - ./mall-mysql/data:/var/lib/mysql
+      - ./mall-mysql/config/my.cnf:/etc/my.cnf
+      #- ./mall-mysql/init:/docker-entrypoint-initdb.d/
+    #ports:
+    #  - '3306:3306'
