@@ -1,6 +1,11 @@
 ; (function (window) {
 
   $(function(){
+    $(".headTabBar").load("../common.headTabBar.html");
+    $.nicenav(300, "210px");
+  })
+
+  $(function(){
     if(location.pathname.indexOf('addIndex') == -1){
       var setArraw = setInterval(function(){
         var height = $('.index_photo_gallery_right_first .right_top_item1 img').height();
