@@ -595,25 +595,25 @@ body {
 @media screen and (max-width: 668px) {
 	.pc-banner {
 		background-size: auto 100%;
-	},
+	}
   .swiper-container {
 		margin: 20px 0 15px;
-	},
+	}
   .swiper-slide {
 		-webkit-transform: scale(0.97);
 		transform: scale(0.97);
-	},
+	}
   .swiper-slide-active,.swiper-slide-duplicate-active {
 		-webkit-transform: scale(0.97);
 		transform: scale(0.97);
-	},
+	}
   .swiper-slide a {
 		padding: 5px;
 		border-radius: 2px;
-	},
+	}
   .swiper-slide img {
 		border-radius: 2px;
-	},
+	}
   .swiper-pagination {
 		position: relative;
 		margin-bottom: 20px;
@@ -634,7 +634,7 @@ body {
 		background: #FFF;
 		border: 3px solid #00a0e9;
 		margin-bottom: 0;
-	},
+	}
   .button div {
 		width: 28px;
 		height: 28px;
@@ -796,7 +796,7 @@ body {
 }
 
 
-/* 体验中心样式 */
+/* 产品中心样式 */
 
 .test_appoinment {
   position: relative;

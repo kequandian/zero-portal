@@ -38,7 +38,7 @@
       context: this,
     });
 		request.done(function (response) {
-      console.log('会员中心富文本', response);
+      console.log('新闻中心富文本', response);
       // $('#renderHTML').html(response.data.content || '')
 		});
 

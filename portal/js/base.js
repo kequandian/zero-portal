@@ -500,37 +500,37 @@
 	$(function() {
 		const data = {
 			index:'首页',
-			about:'关于i-softto',
-			test:'体验中心',
+			about:'关于我们',
+			test:'服务优势',
 			product:'产品中心',
-			ingredient: '成分党',
-			vipCenter: '会员中心',
-			beautyClass: '美丽课堂',
+			ingredient: '合作方式',
+			vipCenter: '新闻中心',
+			beautyClass: '人才招聘',
 			dynamic:'最新动态',
 		}
 
 		const secondData = {
-			'品牌介绍':'关于i-softto&about.html',
-			'品牌故事':'关于i-softto&about.html',
-			'品牌特色':'关于i-softto&about.html',
-			'成分的奥秘':'成分党&ingredient.html',
-			'337':'成分党&ingredient.html',
-			'左旋VC':'成分党&ingredient.html',
-			'烟酰胺':'成分党&ingredient.html',
-			'玻尿酸':'成分党&ingredient.html',
-			'神经酰胺':'成分党&ingredient.html',
-			'苯乙基间苯二酚':'成分党&ingredient.html',
-			'乙酰基六肽-8':'成分党&ingredient.html',
-			'加入会员':'会员中心&vipCenter.html',
-			'会员臻享':'会员中心&vipCenter.html',
-			'在线测试':'会员中心&vipCenter.html',
-			'检测报告':'会员中心&vipCenter.html',
-			'我的美肤方案':'会员中心&vipCenter.html',
-			'我的美肤方案':'会员中心&vipCenter.html',
-			'潮流美妆':'美丽课堂&beautyClass.html',
-			'美丽公开课':'美丽课堂&beautyClass.html',
-			'互动分享':'美丽课堂&beautyClass.html',
-			'动态详情':'最新动态&dynamic.html',
+			'品牌介绍':'关于我们&about.html',
+			'品牌故事':'关于我们&about.html',
+			'品牌特色':'关于我们&about.html',
+			'成分的奥秘':'合作方式&ingredient.html',
+			'337':'合作方式&ingredient.html',
+			'左旋VC':'合作方式&ingredient.html',
+			'烟酰胺':'合作方式&ingredient.html',
+			'玻尿酸':'合作方式&ingredient.html',
+			'神经酰胺':'合作方式&ingredient.html',
+			'苯乙基间苯二酚':'合作方式&ingredient.html',
+			'乙酰基六肽-8':'合作方式&ingredient.html',
+			'加入会员':'新闻中心&vipCenter.html',
+			'会员臻享':'新闻中心&vipCenter.html',
+			'在线测试':'新闻中心&vipCenter.html',
+			'检测报告':'新闻中心&vipCenter.html',
+			'我的美肤方案':'新闻中心&vipCenter.html',
+			'我的美肤方案':'新闻中心&vipCenter.html',
+			'潮流美妆':'人才招聘&beautyClass.html',
+			'美丽公开课':'人才招聘&beautyClass.html',
+			'互动分享':'人才招聘&beautyClass.html',
+			'动态详情':'最新动态&dynamic.html'
 		}
 
 		//获取一级索引
@@ -573,7 +573,7 @@
 				text = '潮流资讯详情'
 			}
 			if(text){
-				$('.common_crumbs .crumbs_two').text(' > ' + '美丽课堂');
+				$('.common_crumbs .crumbs_two').text(' > ' + '人才招聘');
 				$('.common_crumbs .crumbs_three').text(' > ' + text);
 				$('.common_crumbs .crumbs_two').click(function(){
 					$('.common_crumbs .crumbs_two').attr("href",'beautyClass.html')
