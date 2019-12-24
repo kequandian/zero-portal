@@ -47,13 +47,13 @@ public class MenuGroupEndpoint {
     @GetMapping("/{id}")
     @ApiOperation(value = "返回子菜单", response = Menu.class)
     public Tip getMenu(@PathVariable Long id) {
-        return SuccessTip.create(menuGroupService.getGroupChildren(id));
+        return SuccessTip.create(menuGroupService.getGroupChildrenOrderBySortField(id,"seq"));
     }
 
     @Permission(MenuPermission.MENU_VIEW)
     @ApiOperation(value = "菜单 列表信息")
     @GetMapping
     public Tip queryMenus( ) {
-        return SuccessTip.create( menuGroupService.getGroupTuples());
+        return SuccessTip.create( menuGroupService.getGroupTuplesBySortField("seq"));
     }
 }
