@@ -1,11 +1,8 @@
 ; (function (window) {
 
-  $(function(){
-    // ../common/headTabBar.html
-    $(".headTabBar").load("<div>123456</div>");
-    console.log('fdfdfdfdfd ======= ', $(".headTabBar").load("<div>123456</div>"))
-    $.nicenav(300, "210px");
-  })
+  // $(function(){
+  //   $("#headTabBar").load("../common/headTabBar.html");
+  // })
 
   $(function(){
     if(location.pathname.indexOf('addIndex') == -1){

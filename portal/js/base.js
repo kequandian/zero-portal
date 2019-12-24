@@ -21,7 +21,7 @@
 			}
 		}
 		return searchArray[index + 1];*/
-		
+
 	  var queryString = window.location.search.replace('?', '');
        var queryList = queryString.split('&');
        var data = {};
@@ -129,8 +129,10 @@
 		var topNav = new Nav();
 		topNav.init();
 		if (window.OsSlider && window.CarouselUrl) {
-			console.log("----init topNav initCarousel----");
-			initCarousel(window.CarouselUrl);
+			getCarouselList(window.CarouselUrl);
+		}
+		if (window.OsSlider && window.CarouselList) {
+			initCarousel(window.CarouselList);
 		}
 		if (window.RichTextUrl) {
 			renderRichText(window.RichTextUrl);
@@ -294,95 +296,78 @@
 
 	}
 
-
-	function initCarousel(api) {
+	function getCarouselList(api) {
 		var request = $.ajax({
 			url: window.MC.HOST + api,
 			type: 'get',
 		});
 
 		request.done(function (response) {
-			console.log('返回内容',response);
 			if (response.code === 200) {
-				
 				var urlList = response.data.map(function (item) {
-					console.log("item",item);
 					var url = '';
 					try {
-						console.log("===========try===============");
-						console.log("item",item.image);
 						url = item.image;
-						console.log('url= ',url);
-					} catch (error) { 
-					console.log("===========error===============",error);
+					} catch (error) {
+						console.log("广告 url 异常")
 					}
 					return {
 						url:url,
 						targetUrl: item.targetUrl,
 					};
 				});
-				urlList = urlList.filter(function (item) {
-					return item.url;
-				});
-
-				var html = [];
-				var originHtml = [];
-				var img = new Image();
-				img.src = urlList.length > 0 ? urlList[0].url : '';
-
-				console.log('YYYY img.height = ',img.height);
-				img.onload = function () {
-					$('.imgItem').css({
-						height: 'auto',
-						width: '100%',
-					});
-
-					var carousel = new OsSlider({
-						container: $('.carousel'),
-						main: $('.carousel ul'),
-						item: $('.carousel li'),
-						prev: $('.carousel-prev'),
-						next: $('.carousel-next'),
-						width: $('body').width(),
-						// height: img.height,
-						auto: true,
-						loop: true,
-						afterSlideCallback: function(data,b) {
-							 hoverAlign(data,b)
-						}
-					});
-					carousel.init();
-				}
-
-				urlList.forEach(function (item, index) {
-					html.push([
-						'<li>',
-						// '<div class="imgItem" style="height:'+ img.height +',background-image:url(' + item.url + ')"></div>',
-						'<img class="imgItem" src="' + item.url + '"/>',
-						'</li>',
-					].join(''));
-					originHtml.push([
-						'<span class="carousel_align_'+index+'"></span>'
-					])
-				})
-
-				console.log('%%% originHtml = ',originHtml);
-				$('.carousel-list').html(html.join(''));
-				$('.carousel_origin_list').html(originHtml.join(''))
-				// var carousel = new OsSlider({
-				// 	container: $('.carousel'),
-				// 	main: $('.carousel ul'),
-				// 	item: $('.carousel li'),
-				// 	prev: $('.carousel-prev'),
-				// 	next: $('.carousel-next'),
-				// 	width: $('body').width(),
-				// 	// height:img.height,
-				// 	auto: true,
-				// 	loop: true,
-				// });
-				// carousel.init();
+				initCarousel(urlList);
 			}
 		});
+	}
+
+	function initCarousel(list) {
+		var urlList = list.filter(function (item) {
+			return item.url;
+		});
+
+		var html = [];
+		var originHtml = [];
+		var img = new Image();
+		img.src = urlList.length > 0 ? urlList[0].url : '';
+
+		img.onload = function () {
+			$('.imgItem').css({
+				height: 'auto',
+				width: '100%',
+			});
+
+			var carousel = new OsSlider({
+				container: $('.carousel'),
+				main: $('.carousel ul'),
+				item: $('.carousel li'),
+				prev: $('.carousel-prev'),
+				next: $('.carousel-next'),
+				width: $('.body_content').width(),
+				// height: img.height,
+				auto: true,
+				loop: true,
+				afterSlideCallback: function(data,b) {
+					 hoverAlign(data,b)
+				}
+			});
+			carousel.init();
+		}
+
+		urlList.forEach(function (item, index) {
+			html.push([
+				'<li>',
+				// '<div class="imgItem" style="height:'+ img.height +',background-image:url(' + item.url + ')"></div>',
+				'<img class="imgItem" src="' + item.url + '"/>',
+				'</li>',
+			].join(''));
+			originHtml.push([
+				'<span class="carousel_align_'+index+'"></span>'
+			])
+		})
+
+		$('.carousel-list').html(html.join(''));
+		$('.carousel_origin_list').html(originHtml.join(''))
 	}
 
 	//定位轮播图的图标位置
@@ -391,9 +376,17 @@
 		var setArraw = setInterval(function(){
 			// var toTopHeight = $('.carousel-list').offset().top;  //轮播图距离顶部的高度
 			var topHeight = $('.carousel-list li').height();  //轮播图每张的高度
-			if($('.carousel-list li').length > 1 && topHeight >= 0){
+			if($('.carousel-list li').length > 1 && topHeight > 0){
 				getHeight(topHeight)
 				//设置轮播图的点的位置
+			}
+			if($('.carousel-list li').length < 1){
+				$('.carousel_arrows').css({
+					display:'none'
+				})
+				$('.carousel_origin_list').css({
+					display:'none'
+				})
 			}
 			if(topHeight > 0){
 				clearInterval(setArraw)
