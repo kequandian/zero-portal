@@ -64,7 +64,6 @@ body>div {
 	display: flex;
 	flex-direction: column;
 	margin-top: 20px;
-<<<<<<< HEAD
 } */
 
 #renderHTML {
@@ -87,10 +86,6 @@ body>div {
 
 #renderHTML.page img {
 	width:auto;
-=======
-	margin-left:81px;
-	margin-right:81px;
->>>>>>> fbde84d640eb3a92945c15d7923cf83860dbe919
 }
 
 .hidden{
