@@ -1,5 +1,9 @@
 ; (function (window) {
 
+  // $(function(){
+  //   $("#headTabBar").load("../common/headTabBar.html");
+  // })
+
   $(function(){
     if(location.pathname.indexOf('addIndex') == -1){
       var setArraw = setInterval(function(){

@@ -74,6 +74,10 @@ public class CMSWebsiteInfEndpoint  {
         if(entity.getAuthor() == null || ("").equals(entity.getAuthor())) {
             entity.setAuthor(JWTKit.getAccount());
         }
+        //设置图片
+        if(entity.getImage()!=null&&entity.getImage().size()>0){
+            entity.setCover(entity.getImage().get(0).getUrl());
+        }
         entity.setType(ArticleType.FASHION.toString());
 
 
