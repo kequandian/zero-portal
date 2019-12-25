@@ -19,7 +19,7 @@
   }
 
   Items.prototype.init = function () {
-    this.tabListData();
+    // this.tabListData();
   }
 
   Items.prototype.tabListData = function () {
