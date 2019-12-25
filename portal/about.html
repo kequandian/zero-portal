@@ -8,15 +8,6 @@
 
 	<link href="css/base.css" rel="stylesheet" />
 	<link href='css/about.css' rel="stylesheet"/>
-	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
-	 crossorigin="anonymous"></script>
-	<!-- <script src="//cdn.jsdelivr.net/npm/velocity-animate@2.0/velocity.min.js"></script> -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.0/velocity.min.js"></script>
-	<script src="js/polyfill.js" type="text/javascript" charset="utf-8"></script>
-	<script src="js/config.js" type="text/javascript" charset="utf-8"></script>
-	<script src="js/base.js" type="text/javascript" charset="utf-8"></script>
-	<script src="js/about.js" type="text/javascript" charset="utf-8"></script>
-	<script src='js/compatible.js' type="text/javascript" charset="utf-8"></script>
 </head>
 
 <body id='body'>
@@ -50,20 +41,23 @@
 				<a href="beautyClass.html">
 					<li id="nav-7"><span>人才招聘</span></li>
 				</a>
-				<!-- <div class='search'>
-					<img src='img/icon/search.png'/>
-					<input type='text'/>
-				</div> -->
 			</ul>
 			<div class="nav-menu"></div>
 		</div>
-		<!-- 面包屑/导航 -->
-		<div class='common_crumbs'>
-			<a href="index.html">首页</a>
-			<a class="crumbs_two"></a>
-			<span class="crumbs_three"></span>
-		</div>
 	</header>
+
+	<!-- 公共头部  -->
+	<!-- <header class="headTabBar">
+	</header> -->
+
+	<!-- 面包屑/导航 -->
+	<div class='common_crumbs'>
+		<a href="index.html">首页</a>
+		<a class="crumbs_two"></a>
+		<span class="crumbs_three"></span>
+	</div>
+
+
 	<section id='section_content'>
 
 		<div class='about_vedio_back' style="background-image:url('./img/about/about_header.jpg')">
@@ -283,16 +277,16 @@
 		<div class='icon_hover_show'>
 			<!-- <div class='icon_hover_qrcode'></div> -->
 			<img class='qrcode_servers' src='img/icon/icon_servers.png'/>
-			<img class='qrcode_public' src='img/icon/icon_public.png'/>
+			<img class='qrcode_public' src='img/icon/icon_public.jpg'/>
 			<div>打开微信扫码二维码</div>
 		</div>
 		<div class='footer_fixed'>
 			<div class='infomation'>
 				<div class='imfomation-icon'>
-					<div>
+					<!-- <div>
 						<img src="img/icon/mallIcon_new.png"/>
 						<span>服务号</span>
-					</div>
+					</div> -->
 					<!-- <div>
 						<img src="img/icon/wechatIcon.png"/>
 						<span>官方微信</span>
@@ -330,12 +324,12 @@
 		</div> -->
 		<div class='fixed-content-item'>
 			<img src='./img/icon/store.png'/>
-			<span>预约门店</span>
+			<span>名仁商城</span>
 		</div>
-		<div class='fixed-content-item'>
+		<!-- <div class='fixed-content-item'>
 			<img src='./img/icon/app.png'/>
 			<span>APP下载</span>
-		</div>
+		</div> -->
 		<a href='#' class='fixed-content-item-goTop'>
 			<img src='./img/icon/backTopIcon.png'/>
 			<span>TOP</span>
@@ -346,10 +340,21 @@
 		<div class='qrcode'></div>
 		<div>打开微信扫码二维码</div>
   </div>
-<script src="./js/jqueryCode.js"></script>
-<script type="text/javascript">
-	window.RichTextUrl = '/api/pub/ow/pages/one/about';
-</script>
+
+
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+	 crossorigin="anonymous"></script>
+	<!-- <script src="//cdn.jsdelivr.net/npm/velocity-animate@2.0/velocity.min.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.0/velocity.min.js"></script>
+	<script src="js/polyfill.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/config.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/base.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/about.js" type="text/javascript" charset="utf-8"></script>
+	<script src='js/compatible.js' type="text/javascript" charset="utf-8"></script>
+	<script src="./js/jqueryCode.js"></script>
+	<script type="text/javascript">
+		window.RichTextUrl = '/api/pub/ow/pages/one/about';
+	</script>
 </body>
 
 </html>

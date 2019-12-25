@@ -47,6 +47,7 @@
 				width:'100%'
 			})
 		}
+
 	})
 
 	//控制导航栏固定
@@ -153,7 +154,7 @@
 					 $(".qrcode-content").css("display","none")
 				 } else {
 					 $('.qrcode-content .qrcode').empty();
-					 var textUrl = text == '预约门店' ? 'https://www.muaskin.com/wx/?fallback=L3NraW5Ib3VzZWtlZXBlci9yZXNlcnZhdGlvbg%3D%3D&invite_code=7db1c97ffcf6ae7028bc8bcc530bafb9' : 'https://www.muaskin.com/download/';
+					 var textUrl = text == '名仁商城' ? 'https://mall.smallsaas.cn/app/app' : '';
 					 $('.qrcode-content .qrcode').qrcode({
 						 render:'canvas',
 						 text: textUrl,

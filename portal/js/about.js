@@ -6,6 +6,7 @@
   });
 
   var Items = function () {
+    this.tabIndex = 2; //头部导航索引
     this.brabdAble1 = false;
     this.brabdAble2 = false;
     this.brabdAble3 = false;
@@ -13,6 +14,7 @@
   }
 
   Items.prototype.init = function() {
+
     $('.bout_photo_bottom_content1 .content1').on('click','a',this.onShowBackImg1.bind(this));
     $('.bout_photo_bottom_content1 .img_back1').on('mouseout',this.onBlurImage1.bind(this));
 
