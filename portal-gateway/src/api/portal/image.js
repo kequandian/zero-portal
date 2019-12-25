@@ -1,5 +1,6 @@
 const fs = require('fs-extra');
 const http = require('http');
+const https = require('https');
 const { displayAllFile } = require('../../utils/fsUtils');
 const configJson = require('../../../config.json');
 const { logger } = require('../../logger');
@@ -142,7 +143,12 @@ function saveImgFile(url, outDir, fileName) {
   let imgName = url.split('.')[0].split('/').pop();
   const outFileName = fileName || imgName + '.' + ext;
 
-  http.get(url, (res) => {
+  let request = http;
+  if (url.indexOf('https') > -1) {
+    request = https;
+  }
+
+  request.get(url, (res) => {
     let imgData = '';
     res.setEncoding('binary');
     res.on('data', function (chunk) {
