@@ -8,36 +8,45 @@
   var Items = function () {
     this.tabIndex = 1;
     this.tabList = [
-      {id: 1, name:'首页', path:'index.html'},
-      {id: 2, name:'关于我们', path:'about.html'},
-      {id: 3, name:'产品中心', path:'product.html'},
-      {id: 4, name:'服务优势', path:'test.html'},
-      {id: 5, name:'合作方式', path:'ingredient.html'},
-      {id: 6, name:'新闻中心', path:'vipCenter.html'},
-      {id: 7, name:'人才招聘', path:'beautyClass.html'},
-    ];
+      {"id": 1, "name":"首页", "path":"index.html"},
+      {"id": 2, "name":"关于我们", "path":"about.html"},
+      {"id": 3, "name":"产品中心", "path":"product.html"},
+      {"id": 4, "name":"服务优势", "path":"test.html"},
+      {"id": 5, "name":"合作方式", "path":"ingredient.html"},
+      {"id": 6, "name":"新闻中心", "path":"vipCenter.html"},
+      {"id": 7, "name":"人才招聘", "path":"beautyClass.html"},
+    ]
   }
 
   Items.prototype.init = function () {
-    // this.tabListData();
+    this.tabListDataJson();
   }
 
-  Items.prototype.tabListData = function () {
+  // 加载头部tab
+  Items.prototype.tabListDataJson = function () {
     var that = this;
-    $(".headTabBar").load("../common/headTabBar/headTabBar.html",function(){
+
+    $.getJSON("https://mall.smallsaas.cn/api/pub/ow/father", "", function (data){
+      // console.log("json data = ", data);
+      if(data.code != 200){
+        console.log("tab list api error");
+        return;
+      }
+      var tabList = data.data;
+
       var html = [];
       // $('.head_tabs').addClass('head_tabs');
-      that.tabList.forEach(function (item, i) {
-        if(that.tabIndex == item.id){
+      tabList.forEach(function (item, i) {
+        if(tabList == item.id){
           html.push([
-            '<a href='+ item.path + '>'+
+            '<a href='+ item.html + '>'+
       				'<li id="nav-'+ item.id +'" class="active" ><span>'+ item.name+'</span></li>'+
       				'<div class="nav_line"></div>'+
       			'</a>'
           ].join(''));
         }else{
           html.push([
-            '<a href='+ item.path + '>'+
+            '<a href='+ item.html + '>'+
       				'<li id="nav-'+ item.id +'" ><span>'+ item.name+'</span></li>'+
       				'<div class="nav_line"></div>'+
       			'</a>'
@@ -45,27 +54,17 @@
         }
 
       })
+
       $('.head_tabs').html(html.join(''));
-    });
 
-    // $.getJSON("../common/headTabBar/headTabBar.json", function (data){
-    //   console.log("json data = ", data);
-      // var $jsontip = $("#jsonTip");
-      // var strHtml = "123";
-      // //存储数据的变量
-      // $jsontip.empty();
-      // //清空内容
-      // $.each(data, function (infoIndex, info){
-      //   strHtml += "姓名：" + info["name"] + "<br>";
-      //   strHtml += "性别：" + info["sex"] + "<br>";
-      //   strHtml += "邮箱：" + info["email"] + "<br>";
-      //   strHtml += "<hr>"
-      // })
-      // $jsontip.html(strHtml);
-      //显示处理后的数据
-    // })
+      $.getScript("js/tabBar.js",function(){  //加载test.js,成功后，并执行回调函数
+        console.log("加载tabbar");
+      });
 
-	}
+
+    })
+  }
+
 
   // 头部导航
   // $(function(){

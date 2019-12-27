@@ -27,7 +27,46 @@
 
     $('.bout_photo_bottom_content4 .content4').on('click','a',this.onShowBackImg4.bind(this));
     $('.bout_photo_bottom_content4 .img_back4').on('mouseout',this.onBlurImage4.bind(this));
+    this.tabListDataJson()
   }
+
+  // 加载头部tab
+  Items.prototype.tabListDataJson = function () {
+    console.log("xxxxxxxxxxxxxxxxx");
+    var that = this;
+    $.getJSON("https://mall.smallsaas.cn/api/pub/ow/father", "", function (data){
+      // console.log("json data = ", data);
+      if(data.code != 200){
+        console.log("tab list api error");
+        return;
+      }
+      var tabList = data.data;
+      var html = [];
+      // $('.head_tabs').addClass('head_tabs');
+      tabList.forEach(function (item, i) {
+        if(tabList == item.id){
+          html.push([
+            '<a href='+ item.html + '>'+
+      				'<li id="nav-'+ item.id +'" class="active" ><span>'+ item.name+'</span></li>'+
+      				'<div class="nav_line"></div>'+
+      			'</a>'
+          ].join(''));
+        }else{
+          html.push([
+            '<a href='+ item.html + '>'+
+      				'<li id="nav-'+ item.id +'" ><span>'+ item.name+'</span></li>'+
+      				'<div class="nav_line"></div>'+
+      			'</a>'
+          ].join(''));
+        }
+
+      })
+      $('.head_tabs').html(html.join(''));
+      $.getScript("js/tabBar.js",function(){  //加载test.js,成功后，并执行回调函数
+        console.log("加载tabbar");
+      });
+    })
+	}
 
   Items.prototype.onShowBackImg1 = function() {
     this.brabdAble1 = true;

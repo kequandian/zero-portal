@@ -7,64 +7,31 @@
   <title>i-Softto</title>
   <link href="css/base.css" rel="stylesheet" />
   <link href="css/items.css" rel="stylesheet" />
-  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
-    crossorigin="anonymous"></script>
-  <!-- <script src="//cdn.jsdelivr.net/npm/velocity-animate@2.0/velocity.min.js"></script> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.0/velocity.min.js"></script>
-  <script src="js/polyfill.js" type="text/javascript" charset="utf-8"></script>
-  <script src="js/config.js" type="text/javascript" charset="utf-8"></script>
-  <script src="js/base.js" type="text/javascript" charset="utf-8"></script>
-  <script src="js/items.js" type="text/javascript" charset="utf-8"></script>
-  <script src='js/compatible.js' type="text/javascript" charset="utf-8"></script>
 
 </head>
 
 <body id='body'>
 	<div class='version_update'></div>
-  <header>
-    <div class="roof-text">欢迎来到名人堂官网</div>
-    <div class="nav">
-      <div class='nav-logo'>
-        <img src="img/icon/logo.png">
-      </div>
-      <ul>
-        <a href="index.html">
-          <li><span>首页</span></li>
-          <div class='nav_line'></div>
-        </a>
-        <a href="about.html">
-          <li id="nav-2"><span>关于我们</span></li>
-        </a>
-          <a href="product.html">
-              <li id="nav-3"><span>产品中心</span></li>
-          </a>
-        <a href="test.html">
-          <li id="nav-4"><span>服务优势</span></li>
-        </a>
 
-        <a href="ingredient.html">
-          <li id="nav-5" class="active"><span>合作方式</span></li>
-        </a>
-        <a href="vipCenter.html">
-          <li id="nav-6"><span>新闻中心</span></li>
-        </a>
-        <a href="beautyClass.html">
-          <li id="nav-7"><span>人才招聘</span></li>
-        </a>
-        <!-- <div class='search'>
-					<img src='img/icon/search.png'/>
-					<input type='text'/>
-				</div> -->
-      </ul>
-      <div class="nav-menu"></div>
-    </div>
-    <!-- 面包屑/导航 -->
-		<div class='common_crumbs'>
-			<a href="index.html">首页</a>
-			<a class="crumbs_two"></a>
-			<span class="crumbs_three"></span>
+	<header class="headTabBar">
+		<div class="roof-text">欢迎来到名人堂官网</div>
+		<div class="nav">
+			<div class='nav-logo'>
+				<img src="img/icon/logo.png">
+			</div>
+			<ul class="head_tabs">
+			</ul>
+			<div class="nav-menu"></div>
 		</div>
-  </header>
+	</header>
+
+	<!-- 面包屑/导航 -->
+	<div class='common_crumbs'>
+		<a href="index.html">首页</a>
+		<a class="crumbs_two"></a>
+		<span class="crumbs_three"></span>
+	</div>
+
   <section id='section_content'>
 
     <div>
@@ -155,6 +122,16 @@
 		<div class='qrcode'></div>
 		<div>打开微信扫码二维码</div>
   </div>
+
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+    crossorigin="anonymous"></script>
+  <!-- <script src="//cdn.jsdelivr.net/npm/velocity-animate@2.0/velocity.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.0/velocity.min.js"></script>
+  <script src="js/polyfill.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/config.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/base.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/items.js" type="text/javascript" charset="utf-8"></script>
+  <script src='js/compatible.js' type="text/javascript" charset="utf-8"></script>
   <script src="js/OsSlider.js" type="text/javascript" charset="utf-8"></script>
   <script src="./js/jqueryCode.js"></script>
   <script>

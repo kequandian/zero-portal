@@ -1,5 +1,6 @@
 ; (function (window) {
   var Product = function () {
+    this.tabIndex = 3; //头部导航索引
     this.categoryId = null;
     this.categoryData = [];
     this.itemsData = [];
@@ -16,7 +17,45 @@
     $('.product-search input').blur(this.onSearch.bind(this));
     $('.product-list').on('click', '.product-list-item', this.onClick.bind(this));
     this.queryProduct();  //根据tag查询相应产品
+    this.tabListDataJson();
   };
+
+  // 加载头部tab
+  Product.prototype.tabListDataJson = function () {
+    var that = this;
+    $.getJSON("https://mall.smallsaas.cn/api/pub/ow/father", "", function (data){
+      // console.log("json data = ", data);
+      if(data.code != 200){
+        console.log("tab list api error");
+        return;
+      }
+      var tabList = data.data;
+      var html = [];
+      // $('.head_tabs').addClass('head_tabs');
+      tabList.forEach(function (item, i) {
+        if(tabIndex == item.id){
+          html.push([
+            '<a href='+ item.html + '>'+
+      				'<li id="nav-'+ item.id +'" class="active" ><span>'+ item.name+'</span></li>'+
+      				'<div class="nav_line"></div>'+
+      			'</a>'
+          ].join(''));
+        }else{
+          html.push([
+            '<a href='+ item.html + '>'+
+      				'<li id="nav-'+ item.id +'" ><span>'+ item.name+'</span></li>'+
+      				'<div class="nav_line"></div>'+
+      			'</a>'
+          ].join(''));
+        }
+
+      })
+      $('.head_tabs').html(html.join(''));
+      $.getScript("js/tabBar.js",function(){  //加载test.js,成功后，并执行回调函数
+        console.log("加载tabbar");
+      });
+    })
+	}
 
   Product.prototype.queryProduct = function () {
     var tag = '';
