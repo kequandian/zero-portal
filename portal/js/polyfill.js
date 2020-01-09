@@ -49,5 +49,5 @@ if (!Array.prototype.map) {
       k++;
     }
     return A;
-  };      
+  };
 }

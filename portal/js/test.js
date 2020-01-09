@@ -1,21 +1,18 @@
 ; (function (window) {
 
   $(function () {
-		var item = new Items();
-		item.init();
+		var items = new Items();
+		items.init();
 	});
 
   var Items = function () {
-    this.tabIndex = 6; //头部导航索引
-    this.itemsData = {};
+    this.tabIndex = 4; //头部导航索引
   }
 
   Items.prototype.init = function () {
-    // this.queryData();
-    // this.renderRichHtml();
-    this.tabListDataJson()
+    this.tabListDataJson();
   }
-  
+
   // 加载头部tab
   Items.prototype.tabListDataJson = function () {
     var that = this;
@@ -51,42 +48,6 @@
         console.log("加载tabbar");
       });
     })
-	}
-
-//   Items.prototype.renderRichHtml = function () {
-//     function renderRichText() {
-//   		var request = $.ajax({
-//   			url: window.MC.HOST + '/api/pub/ow/pages/6',
-//   			type: 'get',
-//   		});
-//
-//   		request.done(function ({ code, data }) {
-//   			if (code === 200) {
-//   				console.log('&&&&&&&&&&&&7 data = ',data);
-//   				$('#renderHTML').html(data.content);
-//   			}
-//   		});
-//   }
-// }
-
-  Items.prototype.queryData = function () {
-    var id = 1;
-    var request = $.ajax({
-      url: window.MC.HOST + '/api/ow/pages/6',
-      type: 'get',
-      context: this,
-    });
-		request.done(function (response) {
-      console.log('新闻中心富文本', response);
-      // $('#renderHTML').html(response.data.content || '')
-		});
-
-    var responseData = {
-      code:200,
-      records:"<img src='img/vipCetner/vipcentet_vip.jpg'/>"
-    }
-    $('#section_content .adContent').html(responseData.records)
-
 	}
 
 })(window);

@@ -7,6 +7,7 @@
 	});
 
   var Items = function () {
+    this.tabIndex = 7; //头部导航索引
     this.itemsData = {};
     this.knowledgeTotal = 0;  //美丽知识列表总条数
     this.knowledgeCurrent = 1;  //美丽知识当前页
@@ -20,6 +21,7 @@
   }
 
   Items.prototype.init = function () {
+    this.tabListDataJson();
     this.queryData();
     this.getBeautyKnowledge();
     this.getTrendInfomation();
@@ -33,6 +35,44 @@
     $('.trend_pagenation_continer').on('click','span',this.trendInfomationPageChange.bind(this));
     $('.trend_infomation_list').on('click','.beauty_knowledge_item',this.getTrendDetail);
  }
+
+
+ // 加载头部tab
+ Items.prototype.tabListDataJson = function () {
+   var that = this;
+   $.getJSON("https://mall.smallsaas.cn/api/pub/ow/father", "", function (data){
+     // console.log("json data = ", data);
+     if(data.code != 200){
+       console.log("tab list api error");
+       return;
+     }
+     var tabList = data.data;
+     var html = [];
+     // $('.head_tabs').addClass('head_tabs');
+     tabList.forEach(function (item, i) {
+       if(tabIndex == item.id){
+         html.push([
+           '<a href='+ item.html + '>'+
+     				'<li id="nav-'+ item.id +'" class="active" ><span>'+ item.name+'</span></li>'+
+     				'<div class="nav_line"></div>'+
+     			'</a>'
+         ].join(''));
+       }else{
+         html.push([
+           '<a href='+ item.html + '>'+
+     				'<li id="nav-'+ item.id +'" ><span>'+ item.name+'</span></li>'+
+     				'<div class="nav_line"></div>'+
+     			'</a>'
+         ].join(''));
+       }
+
+     })
+     $('.head_tabs').html(html.join(''));
+     $.getScript("js/tabBar.js",function(){  //加载test.js,成功后，并执行回调函数
+       console.log("加载tabbar");
+     });
+   })
+	}
 
 
  //获取美丽知识详情
