@@ -242,4 +242,11 @@ public class PublicEndpoint {
         PageTextRecord pageTextRecord = queryPageTextDao.selectOne(query);
         record.setContent(pageTextRecord == null ? null : pageTextRecord.getContent());
     }
+
+    @ApiOperation(value = "父菜单 列表信息")
+    @GetMapping("/father")
+    public Tip getFatherMenus( ) {
+        return SuccessTip.create( queryMenuDao.selectList(new EntityWrapper<Menu>().isNull(Menu.PID)));
+    }
+
 }

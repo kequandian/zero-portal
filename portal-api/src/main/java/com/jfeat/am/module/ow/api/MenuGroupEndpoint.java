@@ -1,8 +1,10 @@
 package com.jfeat.am.module.ow.api;
 
 
+import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.jfeat.am.common.annotation.Permission;
 import com.jfeat.am.module.ow.api.permission.MenuPermission;
+import com.jfeat.am.module.ow.services.domain.model.record.MenuRecord;
 import com.jfeat.am.module.ow.services.persistence.model.Menu;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -56,4 +58,7 @@ public class MenuGroupEndpoint {
     public Tip queryMenus( ) {
         return SuccessTip.create( menuGroupService.getGroupTuplesBySortField("seq"));
     }
+
+
+
 }
