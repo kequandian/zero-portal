@@ -24,10 +24,10 @@ public class UploadFileEndpoint   {
      **/
 
     public static final String endpoint = "http://oss-cn-shenzhen.aliyuncs.com";
-    public static final String accessKeyId = "LTAIRkCIKJHLaY2u";
-    public static final String accessKeySecret = "OiKb0l9Tv36rkCYsiSkYPYTUVVJPHp";
-    public static final String bucketName = "muaskin";
-    public static String username = "meice@1538428869664872.onaliyun.com";
+    public static final String accessKeyId = "";
+    public static final String accessKeySecret = "";
+    public static final String bucketName = "";
+    public static String username = "";
 
     /**
      * 图片压缩参数
