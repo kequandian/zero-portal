@@ -5,13 +5,15 @@
 	<!-- 通用查询映射结果 -->
 	<resultMap id="BaseResultMap" type="com.jfeat.am.module.ow.services.persistence.model.PageText">
 		<id column="id" property="id" />
+		<result column="orgId" property="org_id" />
+		<result column="orgTag" property="org_tag" />
 		<result column="page_id" property="pageId" />
 		<result column="content" property="content" />
 	</resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, page_id AS pageId, content
+        id, org_id AS orgId, org_tag AS orgTag, page_id AS pageId, content
     </sql>
 
 </mapper>

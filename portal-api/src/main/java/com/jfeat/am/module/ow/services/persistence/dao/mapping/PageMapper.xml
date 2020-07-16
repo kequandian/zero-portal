@@ -5,6 +5,8 @@
 	<!-- 通用查询映射结果 -->
 	<resultMap id="BaseResultMap" type="com.jfeat.am.module.ow.services.persistence.model.Page">
 		<id column="id" property="id" />
+		<result column="orgId" property="org_id" />
+		<result column="orgTag" property="org_tag" />
 		<result column="name" property="name" />
 		<result column="type" property="type" />
 		<result column="url" property="url" />
@@ -13,7 +15,7 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, name, type, url, seq
+        id, org_id AS orgId, org_tag AS orgTag, name, type, url, seq
     </sql>
 
 </mapper>

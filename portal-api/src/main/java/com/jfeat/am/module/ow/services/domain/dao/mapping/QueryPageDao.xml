@@ -7,6 +7,8 @@
     
     <resultMap id="PageMap" type="com.jfeat.am.module.ow.services.domain.model.record.PageRecord">
         <id column="id" property="id"></id>
+        <result column="orgId" property="org_id" />
+        <result column="orgTag" property="org_tag" />
         <result column="name" property="name"/>
         <result column="type" property="type"/>
         <result column="url" property="url"/>

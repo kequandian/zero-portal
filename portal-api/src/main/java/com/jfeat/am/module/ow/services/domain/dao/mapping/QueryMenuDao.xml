@@ -11,6 +11,12 @@
         <if test="record.id != null">
             AND ow_menu.id = #{record.id}
         </if>
+        <if test="record.orgId != null and record.orgId>0 ">
+            AND ow_menu.org_id = #{record.orgId}
+        </if>
+        <if test="record.orgTag != null and record.orgTag != ''">
+            AND ow_menu.org_tag = #{record.orgTag}
+        </if>
         <if test="record.pid != null and record.pid>0 ">
             AND ow_menu.pid = #{record.pid}
         </if>

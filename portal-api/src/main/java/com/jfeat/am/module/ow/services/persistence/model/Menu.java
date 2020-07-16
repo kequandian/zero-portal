@@ -27,6 +27,16 @@ public class Menu extends Model<Menu> {
      * 上级菜单
      */
 	private Long pid;
+	/**
+	 * 用于隔离的组织id, 由crud-plus维护
+	 */
+	@TableField("org_id")
+	private  Long orgId;
+	/**
+	 * 用于隔离的组织标识, 参考 docker而定
+	 */
+	@TableField("org_tag")
+	private String orgTag;
     /**
      * 菜单名
      */
@@ -66,6 +76,9 @@ public class Menu extends Model<Menu> {
 
 	private String html;
 	private String adIdentifier;
+
+	public Menu() {
+	}
 
 	public String getHtml() {
 		return html;
@@ -117,6 +130,21 @@ public class Menu extends Model<Menu> {
 
 	public Long getId() {
 		return id;
+	}
+
+	public Long getOrgId() {
+		return orgId;
+	}
+
+	public void setOrgId(Long orgId) {
+		this.orgId = orgId;
+	}
+
+	public String getOrgTag() {
+		return orgTag;
+	}
+	public void setOrgTag(String orgTag) {
+		this.orgTag = orgTag;
 	}
 
 	public Menu setId(Long id) {
@@ -181,6 +209,10 @@ public class Menu extends Model<Menu> {
 	public static final String ID = "id";
 
 	public static final String PID = "pid";
+
+	public static final String ORG_ID = "org_id";
+
+	public static final String ORG_TAG = "org_tag";
 
 	public static final String NAME = "name";
 

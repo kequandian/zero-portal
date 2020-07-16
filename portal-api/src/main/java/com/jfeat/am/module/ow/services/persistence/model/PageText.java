@@ -23,6 +23,16 @@ public class PageText extends Model<PageText> {
 
 	@TableId(value="id", type= IdType.AUTO)
 	private Long id;
+	/**
+	 * 用于隔离的组织id, 由crud-plus维护
+	 */
+	@TableField("org_id")
+	private  Long orgId;
+	/**
+	 * 用于隔离的组织标识, 参考 docker而定
+	 */
+	@TableField("org_tag")
+	private String orgTag;
     /**
      * 所属页id
      */
@@ -41,6 +51,22 @@ public class PageText extends Model<PageText> {
 	public PageText setId(Long id) {
 		this.id = id;
 		return this;
+	}
+
+	public Long getOrgId() {
+		return orgId;
+	}
+
+	public void setOrgId(Long orgId) {
+		this.orgId = orgId;
+	}
+
+	public String getOrgTag() {
+		return orgTag;
+	}
+
+	public void setOrgTag(String orgTag) {
+		this.orgTag = orgTag;
 	}
 
 	public Long getPageId() {
@@ -62,6 +88,10 @@ public class PageText extends Model<PageText> {
 	}
 
 	public static final String ID = "id";
+
+	public static final String ORG_ID = "org_id";
+
+	public static final String ORG_TAG = "org_tag";
 
 	public static final String PAGE_ID = "page_id";
 

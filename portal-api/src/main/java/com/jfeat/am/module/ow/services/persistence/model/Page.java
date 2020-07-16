@@ -1,6 +1,7 @@
 package com.jfeat.am.module.ow.services.persistence.model;
 
 import com.baomidou.mybatisplus.activerecord.Model;
+import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableName;
 import com.baomidou.mybatisplus.enums.IdType;
@@ -22,6 +23,16 @@ public class Page extends Model<Page> {
 
 	@TableId(value="id", type= IdType.AUTO)
 	private Long id;
+	/**
+	 * 用于隔离的组织id, 由crud-plus维护
+	 */
+	@TableField("org_id")
+	private  Long orgId;
+	/**
+	 * 用于隔离的组织标识, 参考 docker而定
+	 */
+	@TableField("org_tag")
+	private String orgTag;
     /**
      * 页面名称
      */
@@ -67,6 +78,22 @@ public class Page extends Model<Page> {
 		return this;
 	}
 
+	public Long getOrgId() {
+		return orgId;
+	}
+
+	public void setOrgId(Long orgId) {
+		this.orgId = orgId;
+	}
+
+	public String getOrgTag() {
+		return orgTag;
+	}
+
+	public void setOrgTag(String orgTag) {
+		this.orgTag = orgTag;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -96,6 +123,10 @@ public class Page extends Model<Page> {
 
 
 	public static final String ID = "id";
+
+	public static final String ORG_ID = "org_id";
+
+	public static final String ORG_TAG = "org_tag";
 
 	public static final String NAME = "name";
 

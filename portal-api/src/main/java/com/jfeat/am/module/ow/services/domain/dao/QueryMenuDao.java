@@ -8,7 +8,6 @@ import com.baomidou.mybatisplus.mapper.BaseMapper;
 import com.jfeat.am.module.ow.services.persistence.model.Menu;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;
-
 /**
  * Created by Code Generator on 2018-11-28
  */
