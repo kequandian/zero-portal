@@ -6,8 +6,8 @@
 	<resultMap id="BaseResultMap" type="com.jfeat.am.module.ow.services.persistence.model.Menu">
 		<id column="id" property="id" />
 		<result column="pid" property="pid" />
-		<result column="orgId" property="org_id" />
-		<result column="orgTag" property="org_tag" />
+		<result column="org_id" property="orgId" />
+		<result column="org_tag" property="orgTag" />
 		<result column="name" property="name" />
 		<result column="page_id" property="pageId" />
 		<result column="delete" property="delete" />
@@ -20,5 +20,6 @@
     <sql id="Base_Column_List">
         id, org_id AS orgId, org_tag AS orgTag, pid, name, page_id AS pageId, delete, status, seq, note
     </sql>
+
 
 </mapper>

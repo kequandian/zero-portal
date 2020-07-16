@@ -1,14 +1,14 @@
 -- 菜单项
-INSERT INTO ow_menu(`id`, page_id, `name`, `constant`, `identifier`) VALUES(1, 1, "首页" , 1, "portal");
-INSERT INTO ow_menu(`id`, page_id, `name`, `lowest`, `constant`, `identifier`) VALUES(2, 2, "关于MUASKIN", 0, 1, "about");
-INSERT INTO ow_menu(`id`, page_id, `name`, `lowest`, `constant`, `identifier`) VALUES(3, 3, "体验中心", 0 , 1, "trial");
-INSERT INTO ow_menu(`id`, page_id, `name`, `lowest`, `constant`, `identifier`) VALUES(4, 4, "所有产品" , 1, 1, "product");
-INSERT INTO ow_menu(`id`, page_id, `name`, `lowest`, `constant`, `identifier`) VALUES(5, 5, "成分党", 0, 1, "element");
-INSERT INTO ow_menu(`id`, page_id, `name`, `lowest`, `constant`, `identifier`) VALUES(6, 6, "会员中心", 1 , 1, "account");
-INSERT INTO ow_menu(`id`, page_id, `name`, `lowest`, `constant`, `identifier`) VALUES(7, 7, "美丽课堂", 0, 1, "course");
+INSERT INTO ow_menu(`id`, `page_id`,`name`, `constant`, `identifier`) VALUES(1, 1, "首页" , 1, "portal");
+INSERT INTO ow_menu(`id`, `page_id`,`name`, `lowest`, `constant`, `identifier`) VALUES(2, 2, "关于MUASKIN", 0, 1, "about");
+INSERT INTO ow_menu(`id`, `page_id`,`name`, `lowest`, `constant`, `identifier`) VALUES(3, 3, "体验中心", 0 , 1, "trial");
+INSERT INTO ow_menu(`id`, `page_id`,`name`, `lowest`, `constant`, `identifier`) VALUES(4, 4, "所有产品" , 1, 1, "product");
+INSERT INTO ow_menu(`id`, `page_id`,`name`, `lowest`, `constant`, `identifier`) VALUES(5, 5, "成分党", 0, 1, "element");
+INSERT INTO ow_menu(`id`, `page_id`,`name`, `lowest`, `constant`, `identifier`) VALUES(6, 6, "会员中心", 1 , 1, "account");
+INSERT INTO ow_menu(`id`, `page_id`,`name`, `lowest`, `constant`, `identifier`) VALUES(7, 7, "美丽课堂", 0, 1, "course");
 
 
-INSERT INTO ow_menu(`id`, `pid`, `name`, `constant`, `page_id` ) VALUES(8, 2,"品牌介绍", 1, 8 );
+INSERT INTO ow_menu(`id`,`pid`, `name`, `constant`, `page_id` ) VALUES(8, 2,"品牌介绍", 1, 8 );
 INSERT INTO ow_menu(`id`,`pid`, `name`, `constant`, `page_id`  ) VALUES(9, 2,"品牌故事", 1, 9 );
 INSERT INTO ow_menu(`id`,`pid`, `name`, `constant`, `page_id`  ) VALUES(10, 2,"品牌特色", 1, 10 );
 INSERT INTO ow_menu(`id`,`pid`, `name`, `constant` ) VALUES(11, 2,"最新动态", 0 );
@@ -47,6 +47,6 @@ INSERT INTO ow_page(`id`, `name`, `type`, `constant`, `identifier`) VALUES(11, '
 
 
 -- 轮播图分组
-INSERT INTO t_ad_group(`id`, `name`, `identifier`) VALUES(1, '首页轮播图', 'portal');
-INSERT INTO t_ad_group(`id`, `name`, `identifier`) VALUES(2, '产品轮播图', 'product');
-INSERT INTO t_ad_group(`id`, `name`, `identifier`) VALUES(3, '成分党轮播图', 'element');
+#INSERT INTO t_ad_group(`id`, `name`, `identifier`) VALUES(1, '首页轮播图', 'portal');
+#INSERT INTO t_ad_group(`id`, `name`, `identifier`) VALUES(2, '产品轮播图', 'product');
+#INSERT INTO t_ad_group(`id`, `name`, `identifier`) VALUES(3, '成分党轮播图', 'element');

@@ -5,8 +5,8 @@
 	<!-- 通用查询映射结果 -->
 	<resultMap id="BaseResultMap" type="com.jfeat.am.module.ow.services.persistence.model.PageText">
 		<id column="id" property="id" />
-		<result column="orgId" property="org_id" />
-		<result column="orgTag" property="org_tag" />
+		<result column="org_id" property="orgId" />
+		<result column="org_tag" property="orgTag" />
 		<result column="page_id" property="pageId" />
 		<result column="content" property="content" />
 	</resultMap>
