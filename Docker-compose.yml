@@ -22,7 +22,7 @@ services:
 
   portal-api:
     container_name: portal-api
-    image: 'app-openjre11:dev'
+    image: 'zelejs/allin-web:jdk11'
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ./portal-api:/webapps
@@ -33,6 +33,7 @@ services:
       URL_SHORT: mall-mysql:3306/malldb
       USERNAME: root
       PASSWORD: root
+
   portal-management:
     container_name: portal-management
     image: 'daocloud.io/library/nginx:latest'
@@ -59,12 +60,13 @@ services:
     container_name: mall-mysql
     image: 'daocloud.io/library/mysql:5.7'
     restart: always
+    init: true
     environment:
       TZ: "Asia/Shanghai"
       MYSQL_DATABASE: 'malldb'
       MYSQL_ROOT_PASSWORD: 'root'
-      MYSQL_USER: 'jfeat'
-      MYSQL_PASSWORD: 'jfeat'
+      MYSQL_USER: 'root'
+      MYSQL_PASSWORD: 'root'
     volumes:
       - ./mall-mysql/data:/var/lib/mysql
       - ./mall-mysql/config/my.cnf:/etc/my.cnf

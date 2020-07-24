@@ -232,6 +232,15 @@
                     </resources>
                 </configuration>
             </plugin>
+            <!--断点测试-->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <fork>false</fork>
+                    <jvmArguments>-Dfile.encoding=UTF-8</jvmArguments>
+                </configuration>
+            </plugin>
         </plugins>
         <resources>
             <resource>

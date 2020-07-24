@@ -1,5 +1,5 @@
 {
-  "imgPath": "D:/work/otherProject/zero-portal/portal/img",
-  "imgEndpoint": "http://192.168.3.88:8020/portal/img",
-  "webPath": "D:/work/otherProject/zero-portal/portal"
+  "imgPath": "/portal/img",
+  "imgEndpoint": "http://mall.smallsaas.cn/portal/img",
+  "webPath": "/portal"
 }
