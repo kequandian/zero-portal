@@ -95,14 +95,13 @@ spring:
       #url: jdbc:mysql://192.168.3.88:3307/alliance?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
       #username: root
       #password: root
-      url: jdbc:mysql://120.24.235.88/test?characterEncoding=utf8&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=GMT%2B8
+      url: jdbc:mysql://120.24.235.88/test?characterEncoding=utf8&autoReconnect=true&useUnicode=true&useSSL=false
       username: zb
       password: zb2014
       filters: log4j,wall,mergeStat
-      #schema: classpath*:sql/*-schema.sql
-      #data: classpath*:sql/*-data.sql
-      driver-class-name: com.mysql.cj.jdbc.Driver
-      initialize: true
+      initialize: false
+      schema: classpath*:sql/*-schema.sql
+      data: classpath*:sql/*-data.sql
 logging:
   level: debug
   file: logs/sbseed.log
@@ -126,16 +125,6 @@ spring:
       port: 5672
       username: jfeat
       password: jfeat
-
----
-spring:
-  profiles: produce
-  datasource:
-    url: jdbc:mysql://192.168.3.129:3306/malldb?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
-    username: root
-    password: root
-    filters: log4j,wall,mergeStat
-
 
 logging:
   level: warn

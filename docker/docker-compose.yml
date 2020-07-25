@@ -1,13 +1,21 @@
 version: "3"
 services:
+  # docker-compose -f docker-compose.yml up --detach --build  ## for recreating th
   portal-gateway:
     privileged: true
     container_name: portal-gateway
-    image: 'app-node11:dev'
+    image: 'daocloud.io/library/node:12'
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ./portal-gateway:/webapps/web
-      - ./portal:/webapps/portal
+      #- ./portal-gateway/config.json:/gateway/config.json
+      - ./portal-gateway/logs:/gateway/logs
+      - ./portal-gateway/dist:/gateway
+    #ports:
+      #- 8093:8081
+    entrypoint:
+      - npm
+      - start
+    working_dir: /gateway
     environment:
       TZ: "Asia/Shanghai"
 
@@ -42,25 +50,26 @@ services:
       - ./portal-management/dist:/usr/share/nginx/html
     environment:
       TZ: "Asia/Shanghai"
+
   nginx:
-    container_name: mall-nginx
+    container_name: nginx
     image: 'daocloud.io/library/nginx:latest'
     ports:
       - 80:80
       #- 80:80
       #- 443:443
     volumes:
-      - ./mall-nginx/conf.d:/etc/nginx/conf.d
-      - ./mall-nginx/logs:/var/log/nginx
-      - ./mall-nginx/cert:/cert
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./nginx/logs:/var/log/nginx
+      - ./nginx/cert:/cert
       - ./images:/images
     environment:
       TZ: "Asia/Shanghai"
+
   mysql:
     container_name: mall-mysql
     image: 'daocloud.io/library/mysql:5.7'
     restart: always
-    init: true
     environment:
       TZ: "Asia/Shanghai"
       MYSQL_DATABASE: 'malldb'
