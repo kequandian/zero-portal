@@ -34,7 +34,7 @@
   Items.prototype.tabListDataJson = function () {
     console.log("xxxxxxxxxxxxxxxxx");
     var that = this;
-    $.getJSON("https://mall.smallsaas.cn/api/pub/ow/father", "", function (data){
+    $.getJSON(window.MC.HOST+"/api/pub/ow/father", "", function (data){
       // console.log("json data = ", data);
       if(data.code != 200){
         console.log("tab list api error");

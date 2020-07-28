@@ -40,7 +40,8 @@
  // 加载头部tab
  Items.prototype.tabListDataJson = function () {
    var that = this;
-   $.getJSON("https://mall.smallsaas.cn/api/pub/ow/father", "", function (data){
+   //mall.smallsaas.cn
+   $.getJSON(window.MC.HOST+"/api/pub/ow/father", "", function (data){
      // console.log("json data = ", data);
      if(data.code != 200){
        console.log("tab list api error");

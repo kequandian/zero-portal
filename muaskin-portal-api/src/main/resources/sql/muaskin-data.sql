@@ -47,9 +47,9 @@ INSERT INTO ow_page(`id`, `name`, `type`, `constant`, `identifier`) VALUES(11, '
 
 
 -- 轮播图分组
-#INSERT INTO t_ad_group(`id`, `name`, `identifier`) VALUES(1, '首页轮播图', 'portal');
-#INSERT INTO t_ad_group(`id`, `name`, `identifier`) VALUES(2, '产品轮播图', 'product');
-#INSERT INTO t_ad_group(`id`, `name`, `identifier`) VALUES(3, '成分党轮播图', 'element');
+INSERT INTO t_ad_group(`id`, `name`, `identifier`) VALUES(100, '首页轮播图', 'portal');
+INSERT INTO t_ad_group(`id`, `name`, `identifier`) VALUES(101, '产品轮播图', 'product');
+INSERT INTO t_ad_group(`id`, `name`, `identifier`) VALUES(102, '成分党轮播图', 'element');
 
-#INSERT INTO perm(`id`, `groudid`, `identifier`, `name`) VALUES(1026783397059710978, 1026783397089071107, 'ImagesService.view', '查看ImagesService');
-#INSERT INTO perm(`id`, `groudid`, `identifier`, `name`) VALUES(1026783397089071105, 1026783397089071107, 'ImagesService.edit', '编辑ImagesService');
+-- INSERT INTO perm(`id`, `groudid`, `identifier`, `name`) VALUES(1026783397059710978, 1026783397089071107, 'ImagesService.view', '查看ImagesService');
+-- INSERT INTO perm(`id`, `groudid`, `identifier`, `name`) VALUES(1026783397089071105, 1026783397089071107, 'ImagesService.edit', '编辑ImagesService');

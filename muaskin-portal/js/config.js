@@ -1,7 +1,7 @@
 ; (function (window) {
   // window.MC = { HOST: 'http://120.79.77.207:8080' };
   // window.MC = { HOST: 'http://192.168.3.88:8080' };
-  window.MC = { HOST: 'https://192.168.3.129' };
+  window.MC = { HOST: 'http://192.168.3.129' };
   // window.MC = { HOST: 'https://www.muaskin.com' };
 
   //兼容性问题测试工具

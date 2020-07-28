@@ -51,25 +51,35 @@ create table `sb_system_config`(
    PRIMARY KEY (`id`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 collate utf8mb4_unicode_ci;
 
-#DROP TABLE IF EXISTS `perm`;
-#CREATE TABLE `perm` (
-#  `id` bigint(20) NOT NULL,
-#  `groupid` bigint(20) DEFAULT NULL,
-#  `identifier` varchar(50) NOT NULL,
-#  `name` varchar(50) DEFAULT NULL,
-#  PRIMARY KEY (`id`),
-#  KEY `groupid` (`groupid`),
-#  CONSTRAINT `perm_ibfk_1` FOREIGN KEY (`groupid`) REFERENCES `perm_group` (`id`) ON DELETE CASCADE
-#) ENGINE=InnoDB DEFAULT CHARSET=utf8
+--
+-- DROP TABLE IF EXISTS `perm`;
+-- CREATE TABLE `perm` (
+--   `id` bigint(20) NOT NULL,
+--   `groupid` bigint(20) DEFAULT NULL,
+--   `identifier` varchar(50) NOT NULL,
+--   `name` varchar(50) DEFAULT NULL,
+--   PRIMARY KEY (`id`),
+--   KEY `groupid` (`groupid`),
+--   CONSTRAINT `perm_ibfk_1` FOREIGN KEY (`groupid`) REFERENCES `perm_group` (`id`) ON DELETE CASCADE
+-- ) ENGINE=InnoDB DEFAULT CHARSET=utf8
 
-#DROP TABLE IF EXISTS `perm_group`;
-#CREATE TABLE `perm_group` (
-#  `id` bigint(20) NOT NULL,
-#  `identifier` varchar(50) NOT NULL,
-#  `name` varchar(50) DEFAULT NULL,
-#  PRIMARY KEY (`id`)
-#) ENGINE=InnoDB DEFAULT CHARSET=utf8
+--
+-- DROP TABLE IF EXISTS `perm_group`;
+-- CREATE TABLE `perm_group` (
+--   `id` bigint(20) NOT NULL,
+--   `identifier` varchar(50) NOT NULL,
+--   `name` varchar(50) DEFAULT NULL,
+--    PRIMARY KEY (`id`)
+-- ) ENGINE=InnoDB DEFAULT CHARSET=utf8
 
+-- DROP TABLE IF EXISTS `ow_page_image`;
+-- CREATE TABLE `ow_page_image` (
+--   `id` bigint(20) NOT NULL AUTO_INCREMENT,
+--   `page_id` bigint(20) DEFAULT NULL COMMENT '页面Id',
+--   `url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '图片url',
+--   `carousel` bigint(20) DEFAULT NULL COMMENT ' ',
+--   PRIMARY KEY (`id`)
+-- ) ENGINE=InnoDB DEFAULT CHARSET=utf8
 
 
 

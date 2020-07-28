@@ -28,8 +28,8 @@ services:
     environment:
       TZ: "Asia/Shanghai"
 
-  portal-api:
-    container_name: portal-api
+  muaskin-portal-api:
+    container_name: muaskin-portal-api
     image: 'zelejs/allin-web:jdk11'
     volumes:
       - /etc/localtime:/etc/localtime:ro
@@ -79,6 +79,7 @@ services:
     volumes:
       - ./mall-mysql/data:/var/lib/mysql
       - ./mall-mysql/config/my.cnf:/etc/my.cnf
+      - ./mall-mysql/sql_mode.cnf:/etc/mysql/mysql.conf.d/sql_mode.cnf
       #- ./mall-mysql/init:/docker-entrypoint-initdb.d/
-    #ports:
-    #  - '3306:3306'
+    ports:
+      - '3306:3306'

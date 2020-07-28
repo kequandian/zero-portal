@@ -154,7 +154,7 @@
 					 $(".qrcode-content").css("display","none")
 				 } else {
 					 $('.qrcode-content .qrcode').empty();
-					 var textUrl = text == '名仁商城' ? 'https://mall.smallsaas.cn/app/app' : '';
+					 var textUrl = text == '名仁商城' ? window.MC.HOST+'/app/app' : '';
 					 $('.qrcode-content .qrcode').qrcode({
 						 render:'canvas',
 						 text: textUrl,

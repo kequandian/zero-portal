@@ -67,23 +67,23 @@ mybatis-plus:
 ##########################################################
 ###################  测试环境的profile  ###################
 ##########################################################
-spring:
-  profiles: test
-  datasource:
-      url: jdbc:h2:mem:jobs;DB_CLOSE_DELAY=-1;DATABASE_TO_UPPER=false
-      driver-class-name: org.h2.Driver
-      username: sa
-      password:
-      filters: log4j,wall,mergeStat
-      schema: classpath*:sql/*-schema.sql
-      data: classpath*:sql/*-data.sql
+#spring:
+#profiles: test
+    #datasource:
+  #url: jdbc:h2:mem:jobs;DB_CLOSE_DELAY=-1;DATABASE_TO_UPPER=false
+    #driver-class-name: org.h2.Driver
+    #username: sa
+    #password:
+    #filters: log4j,wall,mergeStat
+    #schema: classpath*:sql/*-schema.sql
+    #data: classpath*:sql/*-data.sql
 
-logging:
-  level: debug
-  file: logs/sbseed.log
+  #logging:
+  #level: debug
+#file: logs/sbseed.log
 
-am:
-  shiro-cache-redis: false
+  #am:
+  #shiro-cache-redis: false
 ---
 
 ##########################################################
@@ -102,7 +102,7 @@ spring:
       schema: classpath*:sql/*-schema.sql
       data: classpath*:sql/*-data.sql
       driver-class-name: com.mysql.cj.jdbc.Driver
-      initialize: true
+      initialize: false
 logging:
   level: debug
   file: logs/sbseed.log
@@ -121,25 +121,30 @@ spring:
       username: root
       password: root
       filters: log4j,wall,mergeStat
-  rabbitmq:
-      host: 112.74.26.228
-      port: 5672
-      username: jfeat
-      password: jfeat
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      initialize: true
+logging:
+  level: debug
+  file: logs/sbseed.log
+  #rabbitmq:
+      #: 112.74.26.228
+      #port: 5672
+      #username: jfeat
+      #password: jfeat
 
 ---
-spring:
-  profiles: produce
-  datasource:
-    url: jdbc:mysql://192.168.3.129:3306/malldb?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
-    username: root
-    password: root
-    filters: log4j,wall,mergeStat
+#spring:
+  #profiles: produce
+  #datasource:
+    #url: jdbc:mysql://192.168.3.129:3306/malldb?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
+    #username: root
+    #password: root
+    #filters: log4j,wall,mergeStat
 
 
-logging:
-  level: warn
-  file: logs/sbseed.log
+#logging:
+  #level: warn
+  #file: logs/sbseed.log
 
-am:
-  shiro-cache-redis: true
+#am:
+  #shiro-cache-redis: true
