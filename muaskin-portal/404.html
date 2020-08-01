@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+
+<title>404-对不起！您访问的页面不存在</title>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+ crossorigin="anonymous"></script>
+<style type="text/css">
+body {
+  background-color:#fff;
+  display:flex;
+  justify-content: center;
+  margin:0;
+  height:100vh;
+}
+
+.continer {
+  text-align: center;
+  margin-top:10%;
+  width:100%;
+}
+
+.continer .status {
+  font-size: 120px;
+  text-align: center;
+  color: #000;
+}
+
+.continer .message {
+  font-size:20px;
+  color: #928888;
+}
+
+#time {
+  color: red;
+  margin: 0 5px;
+  font-size:22px;
+}
+
+</style>
+</head>
+
+<body>
+  <div class="continer">
+    <div class="status">404</div>
+    <p class="message">对不起，您请求的页面无法找到。</p>
+    <div style="display:flex;align-items:center;justify-content:center">
+      <span id='time'>3</span><span style="font-size:20px">秒后返回首页</span>
+    </div>
+  </div>
+  <script>
+    $(function () {
+      function countDown(){
+  				var time = document.getElementById("time");
+  				if (time.innerHTML == 0){
+  					window.location.href = "index.html";
+  				} else {
+  					time.innerHTML = time.innerHTML-1;
+  				}
+  			}
+  			window.setInterval(countDown,1000);
+    });
+  </script>
+</body>
+
+</html>
+</html>

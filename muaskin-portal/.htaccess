@@ -1,0 +1,3 @@
+if ( $host != "www.isoftto.com" ) {
+	rewrite ^/(.*)$ http://www.isoftto.com/$1 permanent;
+}

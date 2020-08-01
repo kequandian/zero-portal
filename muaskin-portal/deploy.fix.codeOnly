@@ -1,0 +1,20 @@
+
+codeOnly='codeOnly'
+
+
+git pull origin master
+
+if [ -f  muaskin-portal.tar.gz ];then
+   echo '=>m muaskin-portal.tar.gz'
+   rm  muaskin-portal.tar.gz
+fi
+
+if [ $codeOnly ];then
+   echo "=>zcvf muaskin-portal.tar.gz * --exclude .git --exclude mp4 --exclude img"
+   tar zcvf muaskin-portal.tar.gz * --exclude .git --exclude mp4 --exclude img --exclude deploy.fix* > /dev/null
+else 
+   echo "=>tar zcvf muaskin-portal.tar.gz * --exclude .git"
+   tar zcvf muaskin-portal.tar.gz * --exclude .git --exclude deploy.fix* > /dev/null
+fi
+echo Done.
+
