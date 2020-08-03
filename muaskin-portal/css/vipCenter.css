@@ -1,0 +1,108 @@
+.adContent{
+  width: 100vw;
+  /* margin-top: 45px; */
+}
+
+.adContent img{
+  width: 100%;
+}
+
+.vipDiscountBody{
+  margin: 2em 0;
+}
+
+.vipDiscount{
+  width: 100%;
+  background-color: #fff;
+}
+
+.vdBody{
+  width: 100%;
+  position: relative;
+  /* height: 300px; */
+  /* border: 2px solid #E5B290; */
+  /* display: flex;
+  flex-direction: column; */
+  /* background: radial-gradient(#FCF6F6, #FDF7F7, #F3E5DC); */
+  /* background: radial-gradient(at 60% 20%,white 10%,#DCCBC1); */
+  /* background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain; */
+}
+
+.vdBody img {
+  width:100%;
+}
+
+.vdBodyTop{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.topContent{
+  width: 360px;
+  height: 45px;
+  line-height: 45px;
+  /* background-color: #8A6048; */
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  color: #000;
+  letter-spacing: 6px;
+  /* background-repeat: no-repeat;
+  background-image: url('img/ipCetner/server_title_icon.png'); */
+}
+
+.topContent img{
+  width: 100%;
+}
+
+.vdBodyBottom{
+  width: 100%;
+  height:100%;
+  flex: 1;
+  position: absolute;
+  top:0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottomList{
+  width: 100%;
+  display: flex;
+  margin-top: 1.2em;
+}
+
+.bListItem{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width:25%;
+}
+
+.itemImage{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1em 0;
+}
+
+.itemImage img{
+  width: 85px;
+  height: 85px;
+}
+
+.itemText{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 16px;
+  color: #863D20;
+}
+
+.itemText span:last-child{
+  font-size:12px;
+  margin-top: 5px;
+}

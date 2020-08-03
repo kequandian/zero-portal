@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+  <title>i-Softto 智慧美妆精准护肤</title>
+  <link href="css/base.css" rel="stylesheet" />
+</head>
+
+<body id='body'>
+	<div class='version_update'></div>
+  <div class="roof-text">欢迎来到i-softto官网</div>
+  <header id='header'>
+    <div class="nav">
+      <div class='nav-logo'>
+        <img src="img/icon/logo.png">
+      </div>
+      <ul>
+        <a href="index.html">
+          <li><span>首页</span></li>
+          <div class='nav_line'></div>
+        </a>
+        <a href="about.html">
+          <li id="nav-2"><span>关于i-Softto</span></li>
+        </a>
+        <a href="test.html">
+          <li id="nav-3"><span>智慧测肤</span></li>
+        </a>
+        <a href="product.html">
+          <li id="nav-4"><span>产品中心</span></li>
+        </a>
+        <a href="ingredient.html">
+          <li id="nav-5"><span>成分天地</span></li>
+        </a>
+        <a href="beautyClass.html">
+          <li id="nav-7"><span>精准护肤课堂</span></li>
+        </a>
+        <a href="vipCenter.html">
+          <li id="nav-6"><span>会员中心</span></li>
+        </a>
+        <!-- <div class='search'>
+          <img src='img/icon/search.png'/>
+          <input type='text'/>
+        </div> -->
+      </ul>
+      <div class="nav-menu"></div>
+    </div>
+  </header>
+  <!-- 面包屑/导航 -->
+  <div class='common_crumbs'>
+    <a href="index.html">首页</a>
+    <a class="crumbs_two"></a>
+    <span class="crumbs_three"></span>
+  </div>
+  <div class='body_content'>
+    <section id='section_content' class='container'>
+
+    <div id="renderHTML" class='page'></div>
+  </section>
+
+    <div id='stern-style'>
+    <div class='icon_hover_show'>
+			<!-- <div class='icon_hover_qrcode'></div> -->
+			<img class='qrcode_servers' src='img/icon/icon_servers.png'/>
+			<img class='qrcode_public' src='img/icon/icon_public.png'/>
+			<div>打开微信扫码二维码</div>
+		</div>
+    <div class='footer_fixed'>
+      <div class='infomation'>
+        <div class='imfomation-icon'>
+          <div>
+            <img src="img/icon/mallIcon_new.png"/>
+            <span>服务号</span>
+          </div>
+          <!-- <div>
+            <img src="img/icon/wechatIcon.png"/>
+            <span>官方微信</span>
+          </div> -->
+          <div>
+            <img src="img/icon/publicIcon_new.png"/>
+            <span>公众号</span>
+          </div>
+        </div>
+        <div class='imfomation-text'>
+          <div>地址：广州市天河区珠江西路17号广晟国际大厦12楼</div>
+          <div>Copyright © 2015-2018 索芙特智慧个人护理用品有限公司 版权所有 粤ICP备18075692号-2</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class='stern'>
+    <div class='stern-dec'>
+      <img src='img/icon/footerIcon.png'/>
+      <span>懂成分&nbsp;&nbsp;&nbsp;更懂你</span>
+    </div>
+    <div class='stern-backtop'>
+      <div class='stern-backtop-flex'>
+				<div>
+					<a href='index.html'>首页</a>
+					<a href='about.html'>关于i-Softto</a>
+					<a href='test.html'>智慧测肤</a>
+					<a href='product.html'>产品中心</a>
+					<a href='ingredient.html'>成分天地</a>
+					<a href='beautyClass.html'>精准护肤课堂</a>
+					<a href='vipCenter.html'>会员中心</a>
+				</div>
+				<a href="#">
+					<img src='img/icon/backTopIcon.png' />
+					<span>返回顶部</span>
+				</a>
+			</div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+    crossorigin="anonymous"></script>
+  <!-- <script src="//cdn.jsdelivr.net/npm/velocity-animate@2.0/velocity.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.0/velocity.min.js"></script>
+  <script src="js/polyfill.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/config.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/base.js" type="text/javascript" charset="utf-8"></script>
+  <script src='js/compatible.js' type="text/javascript" charset="utf-8"></script>
+  <script src="./js/jqueryCode.js"></script>
+  <script>
+    $(function () {
+      // var id = SearchObject('id');
+      var pathname = location.pathname.split('/')[location.pathname.split('/').length - 1];
+      var id = pathname.split('.')[0].split('-')[1] || ''
+      if (!id) {
+        window.location.href = 'ingredient.html'
+        return
+      }
+      var request = $.ajax({
+        url: window.MC.HOST + '/api/pub/ow/pages/' + id,
+        type: 'get',
+      });
+      request.done(function (response) {
+        if (response.code === 200) {
+           $('#renderHTML').html(response.data.content);
+        }
+      });
+
+      if(location.search){
+        var searchStr = location.search.split('&').length > 1 ? location.search.split('&')[1] : '';
+        var parentStr = location.search.split('&').length > 2 ? location.search.split('&')[2] : '';
+        // var search = searchStr && searchStr.split('=').length > 1 ? decodeURIComponent(searchStr.split('=')[1]) : ''
+        var parent = parentStr && parentStr.split('=').length > 1 ? decodeURIComponent(parentStr.split('=')[1]) : ''
+      }
+      parent = 'ing' ? '成分天地' : parent;
+
+      var url = '';
+      switch (parent) {
+        case '关于i-softto': url = 'about.html';break;
+        case '体验中心': url = 'test.html';break;
+        case '成分天地': url = 'ingredient.html';break;
+        case '会员中心': url = 'vipCenter.html';break;
+        case '美丽课堂': url = 'beautyClass.html';break;
+        case '产品中心': url = 'product.html';break;
+        default:url = '';break;
+      }
+      $('.common_crumbs .crumbs_two').text(' > ' + parent);
+      $('.common_crumbs .crumbs_three').text(' > ' + window.localStorage.pageTitle);
+      $('.common_crumbs .crumbs_two').css({
+        cursor:'pointer'
+      })
+      $('.common_crumbs .crumbs_two').click(function(){
+        $('.common_crumbs .crumbs_two').attr("href",url)
+        window.location.href = url
+      })
+
+    });
+  </script>
+</body>
+
+</html>
