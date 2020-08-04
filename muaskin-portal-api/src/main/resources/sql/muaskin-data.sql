@@ -1,3 +1,9 @@
+SET FOREIGN_KEY_CHECKS=0;
+
+
+INSERT INTO `t_config_global` (`id`, `lang`, `selected`) VALUES ('1', 'zh', '1');
+INSERT INTO `t_config_global` (`id`, `lang`, `selected`) VALUES ('2', 'en', '0');
+
 -- 菜单项
 INSERT INTO ow_menu(`id`, `page_id`,`name`, `constant`, `identifier`) VALUES(1, 1, "首页" , 1, "portal");
 INSERT INTO ow_menu(`id`, `page_id`,`name`, `lowest`, `constant`, `identifier`) VALUES(2, 2, "关于MUASKIN", 0, 1, "about");
@@ -53,3 +59,37 @@ INSERT INTO t_ad_group(`id`, `name`, `identifier`) VALUES(102, '成分党轮播�
 
 -- INSERT INTO perm(`id`, `groudid`, `identifier`, `name`) VALUES(1026783397059710978, 1026783397089071107, 'ImagesService.view', '查看ImagesService');
 -- INSERT INTO perm(`id`, `groudid`, `identifier`, `name`) VALUES(1026783397089071105, 1026783397089071107, 'ImagesService.edit', '编辑ImagesService');
+
+
+-- ----------------------------
+-- Table structure for t_config
+-- ----------------------------
+
+INSERT INTO `t_config_field_group` (`id`, `pid`, `lang`, `name`, `comment`, `sort`, `type`) VALUES ('2', NULL, 'zh', '数据字典', NULL, '1', 'OPTION');
+
+
+INSERT INTO `t_ad_group` (`id`, `name`, `identifier`) VALUES ('4', 'banner', 'banner');
+INSERT INTO `t_ad_group` (`id`, `name`, `identifier`) VALUES ('6', 'about', 'about');
+INSERT INTO `t_ad_group` (`id`, `name`, `identifier`) VALUES ('7', 'trial', 'trial');
+INSERT INTO `t_ad_group` (`id`, `name`, `identifier`) VALUES ('8', 'account', 'account');
+INSERT INTO `t_ad_group` (`id`, `name`, `identifier`) VALUES ('9', 'course', 'course');
+
+INSERT INTO `t_ad` (`id`, `group_id`, `name`, `image`, `type`, `enabled`, `target_url`, `strategy`, `seq`) VALUES ('103', '5', '三步直达美肤', '/portal/images/100000000000000001/0e2ff29d-ecf7-4dd8-b25b-18f23b51995e.jpg', NULL, '1', NULL, NULL, '0');
+INSERT INTO `t_ad` (`id`, `group_id`, `name`, `image`, `type`, `enabled`, `target_url`, `strategy`, `seq`) VALUES ('4', '5', '首页轮播-为新生代成分党而生', '/portal/images/100000000000000001/0fe9d859-190a-488c-8aaa-a2fa363da4b9.gif', NULL, '1', NULL, NULL, '0');
+INSERT INTO `t_ad` (`id`, `group_id`, `name`, `image`, `type`, `enabled`, `target_url`, `strategy`, `seq`) VALUES ('5', '5', '首页轮播-肌肤管理定制时代', '/portal/images/100000000000000001/738c8dc2-e9b4-41a6-b639-542da8c52967.jpg', NULL, '1', NULL, NULL, '0');
+INSERT INTO `t_ad` (`id`, `group_id`, `name`, `image`, `type`, `enabled`, `target_url`, `strategy`, `seq`) VALUES ('6', '2', '产品轮播-产品', '/portal/images/100000000000000001/7d0ce01a-30d8-410c-8f6c-82913ba4e588.png', NULL, '1', NULL, NULL, '0');
+INSERT INTO `t_ad` (`id`, `group_id`, `name`, `image`, `type`, `enabled`, `target_url`, `strategy`, `seq`) VALUES ('7', '3', '成分党', '/portal/images/100000000000000001/97c606be-4f94-42ce-a1f0-c0546df78e2c.jpg', NULL, '1', NULL, NULL, '0');
+
+
+
+
+
+
+INSERT INTO `sys_perm_group` (`id`, `pid`,`org_id`,`name`, `identifier`) VALUES
+('100600000000000001' ,'100000000000000006', '100000000000000001','日志配置', 'contract.management');
+INSERT INTO `sys_perm` (`id`, `group_id`, `name`, `identifier`) VALUES
+('100000000000006001', '100600000000000001', '查看日志', 'OperationLog.view');
+
+
+INSERT INTO `t_notice` ( `author`, `title`, `content`, `type`, `status`, `enabled`, `create_time`, `update_time`, `end_time`, `sort_num`) VALUES ('admin', '系统公告', '欢迎使用本系统', 'System', 'Draft', '1', '2019-05-01 09:11:35', NULL, '2050-12-04 09:06:48', '1');
+INSERT INTO `t_notice` ( `author`, `title`, `content`, `type`, `status`, `enabled`, `create_time`, `update_time`, `end_time`, `sort_num`) VALUES ('admin', '外部公告', '你好，新朋友！', 'External', 'Draft', '1', '2019-09-01 09:12:08', NULL, '2049-12-01 09:06:48', '3');

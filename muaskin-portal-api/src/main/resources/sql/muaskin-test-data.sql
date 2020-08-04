@@ -46,3 +46,6 @@ INSERT INTO ow_menu(`id`, `pid`, `name` ,`page_id`) VALUES(15, 4,"保湿嫩肤",
 INSERT INTO ow_menu(`id`, `pid`, `name` ,`page_id`) VALUES(16, 4,"抗哀逆时", 1 );
 INSERT INTO ow_menu(`id`, `pid`, `name` ,`page_id`) VALUES(17, 4,"抗敏舒缓", 1 );
 INSERT INTO ow_menu(`id`, `pid`, `name` ,`page_id`) VALUES(18, 4,"抗痘无形", 1 );
+
+
+
