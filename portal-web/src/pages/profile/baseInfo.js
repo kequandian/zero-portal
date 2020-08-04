@@ -46,7 +46,7 @@ const config = {
 };
 
 export default function (props) {
-  useBreadcrumb(props, [
+  useBreadcrumb([
     { title: '首页', path: '/' },
     { title: '个人中心' },
     { title: '修改个人信息' },

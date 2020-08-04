@@ -6,7 +6,7 @@ import config from './config/Ad/index.config';
 export default function Ad(props) {
   const { location } = props;
 
-  useBreadcrumb(props, [
+  useBreadcrumb([
     { title: '主页', path: '/' },
     { title: '商城配置' },
     { title: '广告配置', path: '/setting/adGroup' },

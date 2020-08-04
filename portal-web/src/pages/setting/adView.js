@@ -10,7 +10,7 @@ export default function ProductView(props) {
 
   const [details, loading] = useDetails('ad', props);
 
-  useBreadcrumb(props, [
+  useBreadcrumb([
     { title: '主页', path: '/' },
     { title: '广告配置' },
     { title: '广告' },

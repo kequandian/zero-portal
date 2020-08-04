@@ -4,7 +4,7 @@ import useBreadcrumb from '@/framework/useBreadcrumb';
 import config from './config/HTMLEdit';
 
 export default function WebHTMLEdit(props) {
-  useBreadcrumb(props, [
+  useBreadcrumb([
     { title: '首页', path: '/' },
     { title: '网站管理' },
     { title: 'HTML 管理', path: '/web/html' },

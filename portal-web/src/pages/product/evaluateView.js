@@ -7,7 +7,7 @@ export default function EvaluateView(props) {
 
   const [details, loading] = useDetails('product', props);
 
-  useBreadcrumb(props, [
+  useBreadcrumb([
     { title: '主页', path: '/' },
     { title: '产品管理' },
     { title: '产品评价', path: '/product/evaluate' },

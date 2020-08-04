@@ -10,7 +10,7 @@ import { Flex } from 'layout-flex';
 const { FlexItem } = Flex;
 
 export default function Carousels(props) {
-  useBreadcrumb(props, [
+  useBreadcrumb([
     { title: '首页', path: '/' },
     { title: '网站管理' },
     { title: '菜单管理', path: '/web/menu' },

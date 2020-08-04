@@ -4,7 +4,7 @@ import useBreadcrumb from '@/framework/useBreadcrumb';
 import config from './config/Categroy';
 
 export default function Categroy(props) {
-  useBreadcrumb(props, [
+  useBreadcrumb([
     { title: '首页', path: '/' },
     { title: '产品管理' },
     { title: '产品类别' },

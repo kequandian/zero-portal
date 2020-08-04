@@ -6,7 +6,7 @@ import Content from '@/layouts/Content';
 export default function OrderView(props) {
   const [details, loading] = useDetails('order', props);
 
-  useBreadcrumb(props, [
+  useBreadcrumb([
     { title: '主页', path: '/' },
     { title: '订单管理' },
     { title: '订单' },

@@ -10,7 +10,7 @@ const { TabPane } = Tabs;
 
 export default function Term(props) {
 
-  useBreadcrumb(props, [
+  useBreadcrumb([
     { title: '首页', path: '/' },
     { title: '系统管理' },
     { title: '系统配置' },

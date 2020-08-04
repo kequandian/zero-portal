@@ -6,7 +6,7 @@ import Content from '@/layouts/Content';
 export default function FreightView(props) {
   const [details, loading] = useDetails('product', props);
 
-  useBreadcrumb(props, [
+  useBreadcrumb([
     { title: '主页', path: '/' },
     { title: '试用装管理', path: '/product/trial' },
     { title: '试用装详情' },
