@@ -20,9 +20,13 @@ module.exports = [
         path: '/web/html',
         name: 'HTML 管理',
       },
+      {
+        name: '广告配置',
+        path: '/setting/adGroup',
+      },
     ]
   },
-  {
+/*  {
     name: '商城配置',
     path: '/setting',
     items: [
@@ -31,27 +35,23 @@ module.exports = [
         path: '/setting/notice',
       },
       {
-        name: '广告配置',
-        path: '/setting/adGroup',
-      },
-      {
         name: '规则配置',
         path: '/setting/term',
       },
-     /* {
+     /!* {
         name: '商城配置',
         path: '/setting/shopConfig',
-      },*/
+      },*!/
     ]
-  },
+  },*/
   {
     name: '系统管理',
     path: '/sys',
     items: [
-      {
+    /*  {
         name: '组织管理',
         path: '/sys/org',
-      },
+      },*/
       {
         name: '用户管理',
         path: '/sys/user',
@@ -64,10 +64,10 @@ module.exports = [
         path: '/sys/eav',
         name: '表单配置',
       },*/
-      {
+     /* {
         name: '系统配置',
         path: '/sys/setting',
-      },
+      },*/
       {
         path: '/sys/logs',
         name: '操作日志',

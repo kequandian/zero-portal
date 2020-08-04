@@ -67,12 +67,10 @@ module.exports = {
         operation: [
           /*查看该组所有广告，查看该组在播广告*/
           {
-            title: '查看该组广告', action: 'path',
+            title: '查看该组广告', type: 'path',
             options: {
               outside:true,
               path: '/setting/ad',
-              // permission:'apply.view',
-              // location:true
               query: {
                 id: "id",
                 name: "name",
@@ -81,7 +79,7 @@ module.exports = {
           },
 
           {
-            title: '编辑', action: 'modal',
+            title: '编辑', type: 'modal',
             options: {
               modalTitle: '编辑广告组',
               modalWidth: 800,

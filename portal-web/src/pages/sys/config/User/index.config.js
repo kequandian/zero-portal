@@ -78,7 +78,7 @@ module.exports = {
                 '0': '停用',
                 '1': '正常',
               },
-              colorMap: {
+              color: {
                 '0': '#ff2233',
                 // '1': '',
               }
@@ -87,7 +87,7 @@ module.exports = {
         ],
         operation: [
           {
-            title: '编辑', action: 'modal',
+            title: '编辑', type: 'modal',
             options: {
               modalTitle: '编辑用户',
               modalWidth: 800,
@@ -110,7 +110,7 @@ module.exports = {
             }
           },
           {
-            title: '停用', action: 'request',
+            title: '停用', type: 'request',
             options: {
               expectedField: 'status',
               expectedValue: 1,
@@ -119,7 +119,7 @@ module.exports = {
             }
           },
           {
-            title: '启用', action: 'request',
+            title: '启用', type: 'request',
             options: {
               expectedField: 'status',
               expectedValue: 0,
@@ -128,7 +128,7 @@ module.exports = {
             }
           },
           {
-            title: '删除', action: 'delete'
+            title: '删除', type: 'delete'
           }
         ]
       },

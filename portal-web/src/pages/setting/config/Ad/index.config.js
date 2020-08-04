@@ -89,7 +89,7 @@ module.exports = {
                 '0': '停用',
                 '1': '正常',
               },
-              colorMap: {
+              color: {
                 '0': '#999999',
                 // '1': '',
               }
@@ -99,7 +99,7 @@ module.exports = {
         ],
         operation: [
           {
-            title: '编辑', action: 'modal',
+            title: '编辑', type: 'modal',
             options: {
               modalTitle: '编辑广告',
               modalWidth: 800,
@@ -124,7 +124,7 @@ module.exports = {
           }
           ,
           {
-            title: '停用', action: 'request',
+            title: '停用', type: 'request',
             options: {
               outside: true,
               expectedField: 'enabled',
@@ -134,25 +134,20 @@ module.exports = {
             }
           },
           {
-            title: '启用', action: 'request',
+            title: '启用', type: 'request',
 
             options: {
               outside: true,
-              expectedField: 'enabled',
-              expectedValue: 0,
               API: '/api/cms/ad/(id)/enable',
               method: 'put',
-            }
+            },
+              expect:{field: 'enabled',value: 0}
           },
           {
-            title: '删除', action: 'delete',
+            title: '删除', type: 'delete',
             options: {
               outside: true,
-              expectedField: 'enabled',
-              expectedValue: 0,
-
-
-            }
+            },expect:{field: 'enabled',value: 0}
           }
 
 
