@@ -90,7 +90,7 @@ module.exports = {
                 'Internal': '内部',
                 'External': '外部',
               },
-              colorMap: {
+              color: {
                 'System': '#000000',
                 'Internal': '#3399CC',
                 'External': '#00CCCC',
@@ -108,7 +108,7 @@ module.exports = {
                 'Deprecated': '已取消',
                 'Expired': '已过期',
               },
-              colorMap: {
+              color: {
                 'Draft': '#AAAAAA',
                 'Publish': '#3399CC',
                 'Deprecated': '#999',
@@ -132,7 +132,7 @@ module.exports = {
                 '1': '正常',
                 '2': '已过期',
               },
-              colorMap: {
+              color: {
                 '0': '#999999',
                 '2': '#666',
                 // '1': '',
@@ -147,13 +147,13 @@ module.exports = {
         ],
         operation: [
           {
-            title: '排序', action: 'sort',
+            title: '排序', type: 'sort',
             options: {
               entity: 'notice',
             }
           },
           {
-            title: '编辑', action: 'modal',
+            title: '编辑', type: 'modal',
             options: {
               modalTitle: '编辑通知',
               modalWidth: 800,
@@ -176,7 +176,7 @@ module.exports = {
             }
           },
           {
-            title: '下架', action: 'request',
+            title: '下架', type: 'request',
             options: {
               outside: true,
               API: '/api/cms/notice/notices/(id)/deprecate',
@@ -184,7 +184,7 @@ module.exports = {
             }, expect: {field: 'status',value: 'Publish'}
           },
           {
-            title: '发布', action: 'request',
+            title: '发布', type: 'request',
             options: {
               outside: true,
               API: '/api/cms/notice/notices/(id)/publish',
@@ -192,7 +192,7 @@ module.exports = {
             },expect: {field: 'status',value: 'Draft'}
           },
           {
-            title: '重新发布', action: 'request',
+            title: '重新发布', type: 'request',
             options: {
               outside: true,
               API: '/api/cms/notice/notices/(id)/publish',
@@ -200,7 +200,7 @@ module.exports = {
             },expect: {field: 'status',value: 'Deprecated'}
           },
           {
-            title: '停用', action: 'request',
+            title: '停用', type: 'request',
             options: {
               outside: true,
               API: '/api/cms/notice/notices/(id)/disable',
@@ -209,7 +209,7 @@ module.exports = {
             },expect: {field: 'enabled',value: 1}
           },
           {
-            title: '启用', action: 'request',
+            title: '启用', type: 'request',
             options: {
               outside: true,
               API: '/api/cms/notice/notices/(id)/enable',
@@ -217,7 +217,7 @@ module.exports = {
             },expect: {field: 'enabled',value: 0}
           },
           {
-            title: '删除', action: 'delete',
+            title: '删除', type: 'delete',
             options: {},expect: {field: 'enabled',value: '/(0|2)/'}
           },
         ]

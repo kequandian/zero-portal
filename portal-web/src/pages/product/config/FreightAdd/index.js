@@ -99,9 +99,9 @@ export default {
               ],
               fields: [
                 {
-                  field: 'carryWay', label: '快递类型', valueType: 'status',
+                  field: 'carryWay', label: '快递类型', valueType: 'map',
                   options: {
-                    statusMap: {
+                    map: {
                       0: '快递',
                       1: 'EMS',
                       2: '平邮',
@@ -109,9 +109,9 @@ export default {
                   }
                 },
                 {
-                  field: 'region', label: '地区', valueType: 'status',
+                  field: 'region', label: '地区', valueType: 'map',
                   options: {
-                    statusMap: {
+                    map: {
                       '': '默认地区',
                     }
                   }

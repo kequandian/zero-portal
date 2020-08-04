@@ -54,9 +54,9 @@ export default function FreightView(props) {
           label: '运送方式', field: 'items',
           columns: [
             {
-              label: '类型', field: 'carryWay', valueType: 'status',
+              label: '类型', field: 'carryWay', valueType: 'map',
               options: {
-                statusMap: {
+                map: {
                   0: '快递',
                   1: 'EMS',
                   2: '平邮'

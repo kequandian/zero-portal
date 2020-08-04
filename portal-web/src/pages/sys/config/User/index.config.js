@@ -59,9 +59,9 @@ module.exports = {
           // { field: 'f2', label: '附属部门' },
           { field: 'positionName', label: '职位' },
           // {
-          //   field: 'platformRoles', label: '角色', valueType: 'status',
+          //   field: 'platformRoles', label: '角色', valueType: 'map',
           //   options: {
-          //     statusMap: {
+          //     map: {
           //       'SUBSYS_OWNER': '子系统持有者',
           //       'MODULE_OWNER': '模块持有者',
           //       'TENANT': '租户',

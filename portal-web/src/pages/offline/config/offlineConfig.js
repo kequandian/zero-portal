@@ -146,9 +146,9 @@ export default {
 
 
           {
-            field: 'paymentType', label: '支付类型', valueType: 'status',
+            field: 'paymentType', label: '支付类型', valueType: 'map',
             options: {
-              statusMap: {
+              map: {
                 'WECHAT': '微信支付',
                 'ALIPAY': '支付宝',
                 'POINT': '积分支付',

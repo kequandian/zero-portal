@@ -64,9 +64,9 @@ export default function CategroyView(props) {
 
             { label: '显示名称', field: 'displayName' },
             {
-              label: '值类型', field: 'valueType', valueType: 'status',
+              label: '值类型', field: 'valueType', valueType: 'map',
               options: {
-                statusMap: {
+                map: {
                   'STRING': '字符串',
                   'INTEGER': '整形',
                   'BOOLEAN': '布尔值',
@@ -75,9 +75,9 @@ export default function CategroyView(props) {
               }
             },
             {
-              label: '输入类型', field: 'inputType', valueType: 'status',
+              label: '输入类型', field: 'inputType', valueType: 'map',
               options: {
-                statusMap: {
+                map: {
                   'INPUT_TEXT': '文本输入框',
                   'INPUT_NUMBER': '数字输入框',
                   'INPUT_DATE': '日期输入框',

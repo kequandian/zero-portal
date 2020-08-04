@@ -91,9 +91,9 @@ export default {
             },
           },
           {
-            field: 'paymentType', label: '支付类型', valueType: 'status',
+            field: 'paymentType', label: '支付类型', valueType: 'map',
             options: {
-              statusMap: {
+              map: {
                 'WECHAT': '微信支付',
                 'ALIPAY': '支付宝',
                 'POINT': '积分支付',
@@ -105,9 +105,9 @@ export default {
             }
           },
           {
-            field: 'deliveryType', label: '配送方式', valueType: 'status',
+            field: 'deliveryType', label: '配送方式', valueType: 'map',
             options: {
-              statusMap: {
+              map: {
                 'EXPRESS': '快递',
                 'SELF_PICK': '自提',
                 'FLASH': '极速送达'
@@ -115,9 +115,9 @@ export default {
             }
           },
           {
-            field: 'origin', label: '来源', valueType: 'status',
+            field: 'origin', label: '来源', valueType: 'map',
             options: {
-              statusMap: {
+              map: {
                 'WPA': '微信公众号',
                 'MINI_PROGRAM': '小程序',
                 'APP_ANDROID': '手机应用程序',

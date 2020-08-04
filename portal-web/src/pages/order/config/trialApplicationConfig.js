@@ -39,9 +39,9 @@ export default {
           { field: 'name', label: '试用名称' },
           { field: 'orderNumber', label: '订单号' },
           {
-            field: 'status', label: '状态', valueType: 'status',
+            field: 'status', label: '状态', valueType: 'map',
             options: {
-              statusMap: {
+              map: {
 
               }
             }

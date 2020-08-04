@@ -32,14 +32,14 @@ export default {
           { field: 'createTime', label: '评价时间' },
           { field: 'replyTime', label: '回复时间' },
           {
-            field: 'isStick', label: '置顶', valueType: 'status',
+            field: 'isStick', label: '置顶', valueType: 'map',
             options: {
               0: '不置顶',
               1: '置顶'
             }
           },
           {
-            field: 'isDisplay', label: '屏蔽', valueType: 'status',
+            field: 'isDisplay', label: '屏蔽', valueType: 'map',
             options: {
               0: '不屏蔽',
               1: '屏蔽'
