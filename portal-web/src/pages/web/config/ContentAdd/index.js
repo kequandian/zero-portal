@@ -1,6 +1,6 @@
 
 export default {
-  layout: 'EmptyTitle',
+  layout: 'BaseTitle',
   title: '添加文章',
   items: [
     {

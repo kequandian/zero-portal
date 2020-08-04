@@ -141,9 +141,7 @@ module.exports = {
           },
           {
             "field": "endDate",
-
             "label": "距离过期天数",
-
           },
 
         ],
@@ -181,59 +179,46 @@ module.exports = {
             title: '下架', action: 'request',
             options: {
               outside: true,
-              expectedField: 'status',
-              expectedValue: 'Publish',
               API: '/api/cms/notice/notices/(id)/deprecate',
               method: 'put',
-            }
+            }, expect: {field: 'status',value: 'Publish'}
           },
           {
             title: '发布', action: 'request',
             options: {
               outside: true,
-              expectedField: 'status',
-              expectedValue: 'Draft',
               API: '/api/cms/notice/notices/(id)/publish',
               method: 'put',
-            }
+            },expect: {field: 'status',value: 'Draft'}
           },
           {
             title: '重新发布', action: 'request',
             options: {
               outside: true,
-              expectedField: 'status',
-              expectedValue: 'Deprecated',
               API: '/api/cms/notice/notices/(id)/publish',
               method: 'put',
-            }
+            },expect: {field: 'status',value: 'Deprecated'}
           },
           {
             title: '停用', action: 'request',
             options: {
               outside: true,
-              expectedField: 'enabled',
-              expectedValue: 1,
               API: '/api/cms/notice/notices/(id)/disable',
               method: 'put',
               tips: '确定要停用这条公告吗?',
-            }
+            },expect: {field: 'enabled',value: 1}
           },
           {
             title: '启用', action: 'request',
             options: {
               outside: true,
-              expectedField: 'enabled',
-              expectedValue: 0,
               API: '/api/cms/notice/notices/(id)/enable',
               method: 'put',
-            }
+            },expect: {field: 'enabled',value: 0}
           },
           {
             title: '删除', action: 'delete',
-            options: {
-              expectedField: 'enabled',
-              expectedValue: '/(0|2)/',
-            }
+            options: {},expect: {field: 'enabled',value: '/(0|2)/'}
           },
         ]
       },
