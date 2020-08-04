@@ -18,6 +18,9 @@ import { set as AITSet } from 'zero-element/lib/config/actionItemType';
 import { set as VTSet } from 'zero-element/lib/config/valueType';
 
 
+import Dictionary from './container/Dictionary';
+import Setting from './container/Setting';
+
 import onPath from '@/listAction/onPath';
 
 import path from '@/actionItemType/path';
@@ -84,6 +87,11 @@ LASet({
 
 AITSet({
   path,
+});
+
+CSet({
+  Dictionary,
+  Setting,
 });
 
 VTSet({
