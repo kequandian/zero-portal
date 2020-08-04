@@ -4,7 +4,7 @@ import useBreadcrumb from '@/framework/useBreadcrumb';
 import config from './config/FreightEdit';
 
 export default function FreightEdit(props) {
-  useBreadcrumb(props, [
+  useBreadcrumb([
     { title: '首页', path: '/' },
     { title: '产品管理' },
     { title: '运费模板', path: '/product/freight' },

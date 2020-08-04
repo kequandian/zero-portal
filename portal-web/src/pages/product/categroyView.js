@@ -7,7 +7,7 @@ import ImageView from 'zero-element-antd/lib/components/ImageView';
 export default function CategroyView(props) {
   const [details, loading] = useDetails('product', props);
 
-  useBreadcrumb(props, [
+  useBreadcrumb([
     { title: '主页', path: '/' },
     { title: '产品管理' },
     { title: '产品类别', path: '/product/categroy' },

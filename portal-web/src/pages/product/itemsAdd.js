@@ -4,7 +4,7 @@ import useBreadcrumb from '@/framework/useBreadcrumb';
 import config from './config/ItemsAdd';
 
 export default function ItemsAdd(props) {
-  useBreadcrumb(props, [
+  useBreadcrumb([
     { title: '首页', path: '/' },
     { title: '产品管理' },
     { title: '产品', path: '/product/items' },

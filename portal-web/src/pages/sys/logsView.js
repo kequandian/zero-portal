@@ -7,7 +7,7 @@ import { Typography } from 'antd';
 export default function LogsView(props) {
   const [details, loading] = useDetails('logs', props);
 
-  useBreadcrumb(props, [
+  useBreadcrumb([
     { title: '主页', path: '/' },
     { title: '系统配置' },
     { title: '操作日志', path: '/sys/logs' },

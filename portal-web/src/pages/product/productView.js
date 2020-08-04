@@ -12,7 +12,7 @@ export default function ProductView(props) {
 
   const [details, loading] = useDetails('product', props);
 
-  useBreadcrumb(props, [
+  useBreadcrumb([
     { title: '主页', path: '/' },
     { title: '产品管理' },
     { title: '产品', path: '/product/items' },
