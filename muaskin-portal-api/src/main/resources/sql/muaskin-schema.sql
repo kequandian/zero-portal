@@ -1,49 +1,67 @@
 SET FOREIGN_KEY_CHECKS=0;
+--
+-- Table structure for table `ow_menu`
+--
+
 DROP TABLE IF EXISTS `ow_menu`;
 CREATE TABLE `ow_menu` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `pid` bigint(20) DEFAULT NULL COMMENT '上级菜单',
-  `org_id` bigint(20) DEFAULT  NULL  COMMENT '用于隔离的组织id, 由crud-plus维护',
-  `org_tag` varchar (100) DEFAULT NULL COMMENT '用于隔离的组织标识, 参考 docker而定',
-  `name` varchar(50) NOT NULL COMMENT '菜单名',
-	`page_id` bigint(20) DEFAULT NULL COMMENT '页面Id',
-	`constant` smallint(6) DEFAULT 0 COMMENT '是否不可修改',
-	`display` smallint(6) DEFAULT 1 COMMENT '是否显示',
-	`seq` smallint(6) DEFAULT 0 NOT NULL COMMENT '排序号',
-	`note` varchar(50) DEFAULT NULL COMMENT '备注',
-	`lowest` smallint(6) DEFAULT 1 COMMENT '是否为最下级',
-	`identifier` VARCHAR(50) DEFAULT NULL COMMENT '唯一标识(一级菜单)',
-	`cover` varchar(255) DEFAULT NULL COMMENT '图片url',
+  `name` varchar(50)  NOT NULL COMMENT '菜单名',
+  `page_id` bigint(20) DEFAULT NULL COMMENT '页面Id',
+  `constant` smallint(6) DEFAULT '0' COMMENT '是否不可修改',
+  `display` smallint(6) DEFAULT '1' COMMENT '是否显示',
+  `seq` smallint(6) NOT NULL DEFAULT '0' COMMENT '排序号',
+  `note` varchar(50)  DEFAULT NULL COMMENT '备注',
+  `lowest` smallint(6) DEFAULT '1' COMMENT '是否为最下级',
+  `identifier` varchar(50)  DEFAULT NULL COMMENT '唯一标识(一级菜单)',
+  `cover` varchar(255)  DEFAULT NULL COMMENT '图片url',
+  `html` varchar(50)  DEFAULT NULL COMMENT '基础页面关联的html名字',
+   `org_id` bigint(20) default null comment 'org_id',
+      org_tag varchar(50)   DEFAULT NULL COMMENT '隔离字段',
+  `ad_identifier` varchar(50)  DEFAULT NULL COMMENT '对应广告组identifier',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 collate utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=79 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 
--- 富文本页面
-DROP TABLE IF EXISTS `ow_page_text`;
-CREATE TABLE `ow_page_text` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `org_id` bigint(20) DEFAULT  NULL  COMMENT '用于隔离的组织id, 由crud-plus维护',
-  `org_tag` varchar (100) DEFAULT NULL COMMENT '用于隔离的组织标识, 参考 docker而定',
-  `page_id` bigint(20) DEFAULT NULL COMMENT '所属页id',
-  `content` text DEFAULT NULL COMMENT '文本内容',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `page_id` (`page_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 collate utf8mb4_unicode_ci;
+--
+-- Table structure for table `ow_page`
+--
 
--- 页面
 DROP TABLE IF EXISTS `ow_page`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ow_page` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `org_id` bigint(20) DEFAULT  NULL  COMMENT '用于隔离的组织id, 由crud-plus维护',
-  `org_tag` varchar (100) DEFAULT NULL COMMENT '用于隔离的组织标识, 参考 docker而定',
-  `name` varchar(50) DEFAULT NULL COMMENT '页面名称',
-  `type` varchar(50) DEFAULT 'rtf' COMMENT '页面类型[HTML,RTF]',
-	`url` varchar(255) DEFAULT NULL COMMENT '页面url',
-	`constant` smallint(6) DEFAULT 0 COMMENT '页面是否不可修改',
-	`identifier` VARCHAR(50) DEFAULT NULL COMMENT '唯一标识',
+  `name` varchar(50)  DEFAULT NULL COMMENT '页面名称',
+  `type` varchar(50)  DEFAULT 'rtf' COMMENT '页面类型[HTML,RTF]',
+  `url` varchar(255)  DEFAULT NULL COMMENT '页面url',
+  `constant` smallint(6) DEFAULT '0' COMMENT '页面是否不可修改',
+   `org_id` bigint(20) default null comment 'org_id',
+   org_tag varchar(50)   DEFAULT NULL COMMENT '隔离字段',
+  `identifier` varchar(50)  DEFAULT NULL COMMENT '唯一标识',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 collate utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+
+--
+-- Table structure for table `ow_page_text`
+--
+
+DROP TABLE IF EXISTS `ow_page_text`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ow_page_text` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `page_id` bigint(20) DEFAULT NULL COMMENT '所属页id',
+  `content` longtext COLLATE utf8mb4_unicode_ci,
+   `org_id` bigint(20) default null comment 'org_id',
+   org_tag varchar(50)   DEFAULT NULL COMMENT '隔离字段',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `page_id` (`page_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
 
@@ -476,46 +494,6 @@ CREATE TABLE `t_operation_log` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-
-
--- ----------------------------
--- Table structure for t_ad
--- ----------------------------
-DROP TABLE IF EXISTS `t_ad`;
-CREATE TABLE `t_ad` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `group_id` bigint(20) DEFAULT NULL,
-  `name` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `image` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `enabled` smallint(5) NOT NULL DEFAULT '1',
-  `target_url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `seq` smallint(6) DEFAULT '0' COMMENT '排序号',
-  PRIMARY KEY (`id`),
-  KEY `group_id` (`group_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- ----------------------------
--- Table structure for t_ad_group
--- ----------------------------
-DROP TABLE IF EXISTS `t_ad_group`;
-CREATE TABLE `t_ad_group` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `identifier` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '广告组标识',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `identifier` (`identifier`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- ----------------------------
--- Table structure for t_ad_library
--- ----------------------------
-DROP TABLE IF EXISTS `t_ad_library`;
-CREATE TABLE `t_ad_library` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `url` varchar(200) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `url` (`url`)
-) ENGINE=InnoDB AUTO_INCREMENT=119 DEFAULT CHARSET=utf8;
 
 
 
