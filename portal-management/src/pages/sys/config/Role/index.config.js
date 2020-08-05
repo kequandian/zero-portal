@@ -39,7 +39,7 @@ module.exports = {
         ],
         operation: [
           {
-            title: '编辑', action: 'path',
+            title: '编辑', type: 'path',
             options: {
               outside: true,
               path: '/sys/role-edit',

@@ -9,7 +9,7 @@ import { set as APIConfig } from 'zero-element/lib/config/APIConfig';
 
 import { set as setEndpoint } from 'zero-element/lib/utils/request/endpoint';
 import { saveToken, removeToken } from 'zero-element/lib/utils/request/token';
-
+import Perm from './formItemType/Perm';
 import { set as LayoutSet } from 'zero-element/lib/config/layout';
 import { set as CSet } from 'zero-element/lib/config/container';
 import { set as LASet } from 'zero-element/lib/config/listAction';
@@ -88,4 +88,8 @@ AITSet({
 
 VTSet({
   'path': vPath,
+});
+
+FITSet({
+  'perm': Perm,
 });

@@ -8,10 +8,10 @@ module.exports = [
         path: '/web/menu',
         name: '菜单管理',
       },
-      {
+     /* {
         path: '/web/content',
         name: '资讯管理',
-      },
+      },*/
       {
         path: '/web/image',
         name: '图片管理',
