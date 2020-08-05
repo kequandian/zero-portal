@@ -74,29 +74,29 @@ public class Menu extends Model<Menu> {
 	private String identifier;
 	private String cover;
 
-	//private String html;
-	//private String adIdentifier;
+	private String html;
+	private String adIdentifier;
 
 	public Menu() {
 	}
 
-	/**
+
 	public String getHtml() {
 		return html;
 	}
 
 	public void setHtml(String html) {
 		this.html = html;
-	} **/
+	}
 
-	/**
+
 	public String getAdIdentifier() {
 		return adIdentifier;
 	}
 
 	public void setAdIdentifier(String adIdentifier) {
 		this.adIdentifier = adIdentifier;
-	} **/
+	}
 
 	public String getCover() {
 		return cover;
