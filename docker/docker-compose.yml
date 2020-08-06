@@ -67,19 +67,19 @@ services:
       TZ: "Asia/Shanghai"
 
   mysql:
-    container_name: mall-mysql
+    container_name: zero-mysql
     image: 'daocloud.io/library/mysql:5.7'
     restart: always
     environment:
       TZ: "Asia/Shanghai"
-      MYSQL_DATABASE: 'malldb'
+      MYSQL_DATABASE: 'portal'
       MYSQL_ROOT_PASSWORD: 'root'
-      MYSQL_USER: 'root'
-      MYSQL_PASSWORD: 'root'
+      #MYSQL_USER: 'smallsaas'
+      #MYSQL_PASSWORD: 'small@saas'
     volumes:
-      - ./mall-mysql/data:/var/lib/mysql
-      - ./mall-mysql/config/my.cnf:/etc/my.cnf
-      - ./mall-mysql/sql_mode.cnf:/etc/mysql/mysql.conf.d/sql_mode.cnf
+      - ./zero-mysql/data:/var/lib/mysql
+      - ./zero-mysql/config/my.cnf:/etc/my.cnf
+      - ./zero-mysql/sql_mode.cnf:/etc/mysql/mysql.conf.d/sql_mode.cnf
       #- ./mall-mysql/init:/docker-entrypoint-initdb.d/
     ports:
       - '3306:3306'
