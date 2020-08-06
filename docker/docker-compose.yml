@@ -10,8 +10,6 @@ services:
       #- ./portal-gateway/config.json:/gateway/config.json
       - ./portal-gateway/logs:/gateway/logs
       - ./portal-gateway/dist:/gateway
-    #ports:
-      #- 8093:8081
     entrypoint:
       - npm
       - start
@@ -20,7 +18,7 @@ services:
       TZ: "Asia/Shanghai"
 
   portal:
-    container_name: portal-index
+    container_name: portal-site
     image: 'daocloud.io/library/nginx:latest'
     volumes:
       - /etc/localtime:/etc/localtime:ro
@@ -38,9 +36,6 @@ services:
     environment:
       TZ: "Asia/Shanghai"
       #GREENFIELD: 'run'
-      URL_SHORT: mall-mysql:3306/malldb
-      USERNAME: root
-      PASSWORD: root
 
   portal-management:
     container_name: portal-management
@@ -56,30 +51,25 @@ services:
     image: 'daocloud.io/library/nginx:latest'
     ports:
       - 80:80
-      #- 80:80
       #- 443:443
     volumes:
       - ./nginx/conf.d:/etc/nginx/conf.d
       - ./nginx/logs:/var/log/nginx
       - ./nginx/cert:/cert
-      - ./images:/images
+      - ./nginx/images:/images
     environment:
       TZ: "Asia/Shanghai"
 
-  mysql:
-    container_name: zero-mysql
+  portal-mysql:
+    container_name: portal-mysql
     image: 'daocloud.io/library/mysql:5.7'
     restart: always
     environment:
       TZ: "Asia/Shanghai"
       MYSQL_DATABASE: 'portal'
-      MYSQL_ROOT_PASSWORD: 'root'
-      #MYSQL_USER: 'smallsaas'
-      #MYSQL_PASSWORD: 'small@saas'
+      MYSQL_ROOT_PASSWORD: 'root@portal'
     volumes:
-      - ./zero-mysql/data:/var/lib/mysql
-      - ./zero-mysql/config/my.cnf:/etc/my.cnf
-      - ./zero-mysql/sql_mode.cnf:/etc/mysql/mysql.conf.d/sql_mode.cnf
-      #- ./mall-mysql/init:/docker-entrypoint-initdb.d/
-    ports:
-      - '3306:3306'
+      - ./portal-mysql/data:/var/lib/mysql
+      - ./portal-mysql/sql_mode.cnf:/etc/mysql/mysql.conf.d/sql_mode.cnf
+    #ports:  ## 无需暴露端口
+    #  - '3306:3306'
