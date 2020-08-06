@@ -30,14 +30,10 @@ public class CRUDMenuServiceImpl  extends CRUDServiceGroupImpl<Menu> implements 
         @Resource
         private MenuMapper menuMapper;
 
-        @Override
+        //@Override
         protected BaseMapper<Menu> getGroupMapper() {
                 return menuMapper;
         }
-
-
-
-
 
 
 }

@@ -1,6 +1,7 @@
 target/
 build/
 .idea/
+logs/
 .gradle/
 .svn/
 *.iml
