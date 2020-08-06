@@ -1,0 +1,140 @@
+.dynamicText {
+  padding: 1.5em 10% 1.5em 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dynamicText div {
+  border-bottom: 2px solid #456;
+  padding: 0 0.5em 0.5em 0.5em;
+}
+
+.dynamic-list {
+  width: 80%;
+  margin:0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dynamic-list .dynamic-list-item:hover,
+.dynamic-list .dynamic-list-item.active{
+  box-shadow: 0 2px 5px #A4A2A2;
+}
+
+
+.dynamic-list-item {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  margin-bottom: 10px;
+  padding: 1em;
+  width:100%;
+}
+
+.item-img {
+  width:170px;
+  height:130px;
+  background-position: center;
+  background-size: cover;
+  /* background-size: contain; */
+  background-repeat: no-repeat;
+}
+
+.item-continer {
+  display: flex;
+  flex-direction: column;
+  width:75%;
+  padding:0 20px;
+  height:130px;
+  border-right: 1px solid #ddd;
+}
+
+.item-continer-title {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.item-continer-content {
+  color:#999;
+  height:69px;
+  /* text-indent: 35px; */
+  margin: 10px 0;
+  line-height: 22px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  /*autoprefixer: off*/
+  -webkit-box-orient: vertical;
+  /*autoprefixer: on*/
+}
+
+.item-continer-time {
+  color:#999;
+}
+
+.item-icon {
+  width: calc(100% - 170px - 75%);
+  display: flex;
+  justify-content: center;
+  color: #625E5E;
+  font-weight: 900;
+  font-size: 25px;
+}
+
+.pagenation {
+  width: 80%;
+  margin: 2em auto;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.pagenation-number {
+  display: inline-block;
+}
+
+.pagenation-continer span {
+  padding: 0.3em 0.8em;
+  background-color: #fff;
+  border:1px solid #ddd;
+  border-radius: 4px;
+}
+
+.disabled{
+	border-color: #d9d9d9;
+	color: #d9d9d9;
+	cursor: not-allowed;
+}
+
+.pagenation-continer ul li{
+	padding: 0.3em 0.8em;
+	display: inline-block;
+	text-align: center;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	margin: 0 4px;
+	cursor: pointer;
+}
+
+/*动态详情*/
+.dynamic-detail {
+  width:80%;
+  margin: 0 auto;
+}
+
+.dynamic-detail-title {
+  font-size: 1.2rem;
+}
+
+.dynamic-detail-subContent {
+  font-size: 0.8rem;
+  color: #333;
+  margin-top: 0.5em;
+}
+
+.dynamic-detail-content {
+  background-color: #fff;
+  margin: 1em 0;
+}
