@@ -10,6 +10,7 @@ services:
       #- ./portal-gateway/config.json:/gateway/config.json
       - ./portal-gateway/logs:/gateway/logs
       - ./portal-gateway/dist:/gateway
+      - ./portal/images:/gateway/images
     entrypoint:
       - npm
       - start
@@ -31,8 +32,7 @@ services:
     image: 'zelejs/allin-web:jdk11'
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ./portal-api:/webapps
-      - ./portal/images:/images
+      - ./muaskin-portal-api:/webapps
     environment:
       TZ: "Asia/Shanghai"
       #GREENFIELD: 'run'
