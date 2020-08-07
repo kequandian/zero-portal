@@ -22,22 +22,22 @@ $ git clone git@github.com:kequandian/zero-portal.git
 * 将portal文件夹里面的文件复制到映射路径./portal下
 
 #### 将portal-gateway文件夹的文件复制到映射路径./portal-gateway下
-* 先在portal-gateway目录下，执行npm install命令，生成mode_modules目录
+> 先在portal-gateway目录下，执行npm install命令，生成mode_modules目录
 ```shell
 $ cd ./portal-gateway
 $ npm install
 ```
-* 然后将portal-gateway目录下的文件复制到映射路径./portal-gateway下
+> 然后将portal-gateway目录下的文件复制到映射路径./portal-gateway下
 
 #### 将portal-manage文件夹下的dist目录复制到映射路径./portal-manage下
-* 先在portal-manage目录下，执行npm install命令，生成mode_modules目录
-* 再执行npm run build命令
+> 先在portal-manage目录下，执行npm install命令，生成mode_modules目录
+> 再执行npm run build命令
 ```shell
 $ cd ./portal-manage
 $ npm install
 $ npm run build
 ```
-* 然后将portal-manage文件夹下的dist目录复制到映射路径./portal-manage下
+> 然后将portal-manage文件夹下的dist目录复制到映射路径./portal-manage下
 
 #### 然后执行命令 docker-compose up -d 
 ```shell
