@@ -18,6 +18,7 @@ export default {
   },
   antd: {},
   dva: false,
+  base: '/admin/',
 
   ignoreMomentLocale: true, // 忽略 moment 的 locale 文件
 }
