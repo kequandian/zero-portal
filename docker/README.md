@@ -4,10 +4,7 @@
 #### 首先在Linux系统准备好 `docker` 以及 `docker-compose`环境
 - [安装docker容器环境指引](https://github.com/kequandian/dev_docs/blob/master/ops/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%20docker%E5%92%8Cocker-compose.md)
 
-#### 通过root登录，创建一个部署目录（比如 /webapps/portal) 
-> 或创建用户（如portal），然后通过用户名登录，在用户home目录下直接进行部署（/home/portal) 
-
-#### 源代码中获取配置好容器环境
+### 获取源代码（其中包含已配置好的容器环境 `docker目录`）
 ```shell
 # 在本地获取源代码
 $ git clone git@github.com:kequandian/zero-portal.git
@@ -43,7 +40,13 @@ docker/portal-mysql/sql_mode.cnf
 docker/README.md
 ```
 
-#### 先 docker下面的所有部署配置文件通过 ftp 工具（如 WinScp）拷贝至部署目录 (/webapps/portal)
+### 部署到服务器
+
+#### 通过root登录，创建一个部署目录（比如 /webapps/portal) 
+> 或创建用户（如portal），然后通过用户名登录，在用户home目录下直接进行部署（/home/portal) 
+
+#### 先将 docker下面的所有部署配置文件通过ftp工具（如 WinScp）拷贝至服务器上的部署目录 (/webapps/portal)
+> 或先准备好所有安装包，再一次性上传至服务吕
 ```bash
 $ find /webapps/portal
 /webapps/portal/
@@ -115,11 +118,6 @@ $ ls /webapps/portal/portal-management
 ...
 ```
 
-#### 执行一键部署命令 docker-compose up -d 
-```shell
-$ docker-compose up -d 
-```
-
 #### 如何配置域名
 
 > * 将已备案域名(www.sample.com) 替换 localhost
@@ -148,3 +146,8 @@ server{
  }
  ```
  
+ ### 最后执行一键部署命令 docker-compose up -d 
+```shell
+$ docker-compose up -d 
+```
+
