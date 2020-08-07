@@ -19,8 +19,9 @@ import LayoutSet_Items from '@/../zero-antd-dep/layout/Items';
 import CSet_Empty from '@/../zero-antd-dep/container/Empty';
 import CSet_Table from '@/../zero-antd-dep/container/List/Table';
 import CSet_ReportList from '@/../zero-antd-dep/container/List/ReportList';
+import CSet_ReportTable from '@/../zero-antd-dep/container/List/ReportList';
 import CSet_TreeTable from '@/../zero-antd-dep/container/List/TreeTable';
-import CSet_ChildrenList from '@/../zero-antd-dep/container/List/ChildrenList';
+import CSet_ChildrenTable from '@/../zero-antd-dep/container/List/ChildrenTable';
 import CSet_TreeList from '@/../zero-antd-dep/container/List/TreeList';
 import CSet_AutoReport from '@/../zero-antd-dep/container/List/AutoReport';
 import CSet_TableSelect from '@/../zero-antd-dep/container/List/TableSelect';
@@ -96,8 +97,9 @@ CSet({
 'Empty': CSet_Empty,
 'Table': CSet_Table,
 'ReportList': CSet_ReportList,
+'ReportTable': CSet_ReportTable,
 'TreeTable': CSet_TreeTable,
-'ChildrenList': CSet_ChildrenList,
+'ChildrenTable': CSet_ChildrenTable,
 'TreeList': CSet_TreeList,
 'AutoReport': CSet_AutoReport,
 'TableSelect': CSet_TableSelect,
