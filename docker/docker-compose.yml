@@ -10,7 +10,8 @@ services:
       #- ./portal-gateway/config.json:/gateway/config.json
       - ./portal-gateway/logs:/gateway/logs
       - ./portal-gateway/dist:/gateway
-      - ./portal/images:/gateway/images
+      - ./portal/images:/portal/images
+      - ./portal/html:/portal/html
     entrypoint:
       - npm
       - start
@@ -67,7 +68,7 @@ services:
     environment:
       TZ: "Asia/Shanghai"
       MYSQL_DATABASE: 'portal'
-      MYSQL_ROOT_PASSWORD: 'root@portal'
+      MYSQL_ROOT_PASSWORD: 'root'
     volumes:
       - ./portal-mysql/data:/var/lib/mysql
       - ./portal-mysql/sql_mode.cnf:/etc/mysql/mysql.conf.d/sql_mode.cnf
