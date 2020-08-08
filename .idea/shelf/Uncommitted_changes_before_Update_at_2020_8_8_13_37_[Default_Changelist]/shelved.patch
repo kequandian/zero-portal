@@ -1,0 +1,34 @@
+Index: docker/greenfield.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- docker/greenfield.yml	(date 1596865013765)
++++ docker/greenfield.yml	(date 1596865013765)
+@@ -0,0 +1,26 @@
++version: "3"
++services:
++  # docker-compose -f docker-compose.yml up --detach --build  ## for recreating th
++  muaskin-portal-api:
++    container_name: muaskin-portal-api
++    image: 'zelejs/allin-web:jdk11'
++    volumes:
++      - /etc/localtime:/etc/localtime:ro
++      - ./muaskin-portal-api:/webapps
++    environment:
++      TZ: "Asia/Shanghai"
++      GREENFIELD: 'run'
++
++  portal-mysql:
++    container_name: portal-mysql
++    image: 'daocloud.io/library/mysql:5.7'
++    restart: always
++    environment:
++      TZ: "Asia/Shanghai"
++      MYSQL_DATABASE: 'portal'
++      MYSQL_ROOT_PASSWORD: 'root'
++    volumes:
++      - ./portal-mysql/data:/var/lib/mysql
++      - ./portal-mysql/sql_mode.cnf:/etc/mysql/mysql.conf.d/sql_mode.cnf
++    #ports:  ## 无需暴露端口
++    #  - '3306:3306'

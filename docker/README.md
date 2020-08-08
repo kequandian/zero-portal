@@ -85,7 +85,7 @@ $ ls /webapps/portal/muaskin-portal-api
 ```
 
 * nodejs api
-> 配置pconfig.json
+> 配置config.json
 ```bash
 $ cat /webapps/portal/portal-gateway/config.json
 {
@@ -154,9 +154,25 @@ server{
   ...
  }
  ```
- 
- ### 最后执行一键部署命令 docker-compose up -d 
+ ### 先执行docker-compose -f greenfield.yml up -d 初始化数据库
+ ```shell
+$ cd /webapps/portal
+$ docker-compose -f greenfield.yml up -d
+ ```
+### 然后docker-compose down 关闭容器
+ ```shell
+$ docker ps
+CONTAINER ID        IMAGE                           COMMAND                  CREATED             STATUS              PORTS                               NAMES
+b59b6c751682        daocloud.io/library/mysql:5.7   "docker-entrypoint.s…"   7 seconds ago       Up 3 seconds        0.0.0.0:3306->3306/tcp, 33060/tcp   portal-mysql
+f1b22c55f3e5        zelejs/allin-web:jdk11          "/bin/sh -c 'sh /usr…"   7 seconds ago       Up 3 seconds                                            muaskin-portal-api
+$ docker-compose down
+Stopping portal-mysql       ... done
+Stopping muaskin-portal-api ... done
+Removing portal-mysql       ... done
+Removing muaskin-portal-api ... done
+ ```
+ ### 最后执行一键部署命令 docker-compose -f docker-compose.yml up -d 
 ```shell
-$ docker-compose up -d 
+$ docker-compose -f docker-compose.yml up -d 
 ```
 
