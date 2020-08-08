@@ -46,7 +46,7 @@ docker/README.md
 > 或创建用户（如portal），然后通过用户名登录，在用户home目录下直接进行部署（/home/portal) 
 
 #### 先将 docker下面的所有部署配置文件通过ftp工具（如 WinScp）拷贝至服务器上的部署目录 (/webapps/portal)
-> 或先准备好所有安装包，再一次性上传至服务吕
+> 或先准备好所有安装包，再一次性上传至服务器
 ```bash
 $ find /webapps/portal
 /webapps/portal/
@@ -85,6 +85,15 @@ $ ls /webapps/portal/muaskin-portal-api
 ```
 
 * nodejs api
+> 配置pconfig.json
+```bash
+$ cat /webapps/portal/portal-gateway/config.json
+{
+  "imgPath": "/portal/images",            
+  "imgEndpoint": "http://localhost/images",  将已备案域名(www.sample.com) 替换 localhost
+  "webPath": "/portal/html"
+}
+```
 > 在本地进入portal-gateway目录，执行npm install命令
 ```bash
 # 本地安装

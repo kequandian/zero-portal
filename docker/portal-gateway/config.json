@@ -1,5 +1,5 @@
 {
   "imgPath": "/portal/images",
-  "imgEndpoint": "http://localhost/images",
+  "imgEndpoint": "http://192.168.3.129/images",
   "webPath": "/portal/html"
 }

@@ -7,7 +7,7 @@ services:
     image: 'daocloud.io/library/node:12'
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      #- ./portal-gateway/config.json:/gateway/config.json
+      - ./portal-gateway/config.json:/gateway/config.json
       - ./portal-gateway/logs:/gateway/logs
       - ./portal-gateway/dist:/gateway
       - ./portal/images:/portal/images
@@ -57,7 +57,7 @@ services:
       - ./nginx/conf.d:/etc/nginx/conf.d
       - ./nginx/logs:/var/log/nginx
       - ./nginx/cert:/cert
-      - ./nginx/images:/images
+      - ./portal/images:/usr/share/nginx/html/images
     environment:
       TZ: "Asia/Shanghai"
 
