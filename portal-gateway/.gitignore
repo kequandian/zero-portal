@@ -2,8 +2,8 @@ node_modules
 src/assets/*
 cruds.xml
 gen/*
-
-package-lock.json
+.idea/
+.vscode/
 
 src/api/test/*
 logs/
