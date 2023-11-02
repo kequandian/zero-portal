@@ -1,7 +1,7 @@
 import React from 'react';
-import { Flex } from 'layout-flex';
+import Flex from '@/../zero-antd-dep/layout/Flex';
 import { Spin, Divider, Row, Col, Button } from 'antd';
-import ReportList from 'zero-element-antd/lib/container/List/ReportList';
+import ZEle from 'zero-element';
 import global from 'zero-element/lib/config/global';
 import useDetails from './hooks'
 
@@ -119,16 +119,37 @@ function readAppendValue(data, append) {
 }
 
 function RenderList({ columns, data = [] }) {
-  return <ReportList
+  // return <ReportList
+  //   config={{
+  //     fields: columns.map(col => {
+  //       return {
+  //         ...col,
+  //         key: col.field,
+  //         dataIndex: col.field,
+  //         title: col.label,
+  //       }
+  //     })
+  //   }}
+  //   data={data}
+  // />
+  return <ZEle
+    namespace={namespace}
     config={{
-      fields: columns.map(col => {
-        return {
-          ...col,
-          key: col.field,
-          dataIndex: col.field,
-          title: col.label,
+      items: [
+        {
+          component: 'ReportList',
+          config: {
+            fields: columns.map(col => {
+              return {
+                ...col,
+                key: col.field,
+                dataIndex: col.field,
+                title: col.label,
+              }
+            })
+          }
         }
-      })
+      ]
     }}
     data={data}
   />

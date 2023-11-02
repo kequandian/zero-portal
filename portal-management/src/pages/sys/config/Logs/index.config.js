@@ -30,7 +30,7 @@ module.exports = {
     },
     {
       layout: 'Empty',
-      component: 'ReportList',
+      component: 'Table',
       config: {
 
         pageSize: 15,

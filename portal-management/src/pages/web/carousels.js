@@ -5,7 +5,7 @@ import config from './config/Carousels';
 import { Button } from 'antd';
 import Content from '@/layouts/Content';
 import { history } from 'umi';
-import { Flex } from 'layout-flex';
+import Flex from '@/../zero-antd-dep/layout/Flex';
 
 const { FlexItem } = Flex;
 

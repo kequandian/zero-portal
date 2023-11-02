@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex } from 'layout-flex';
+import Flex from '@/../zero-antd-dep/layout/Flex';
 
 import styles from './index.less';
 

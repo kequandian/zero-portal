@@ -68,11 +68,11 @@ golbalSet({
 
 
 if (process.env.NODE_ENV === 'development') {
-  setEndpoint('http://localhost:8080');
+  setEndpoint('http://202.63.172.43:8000');
 
-  saveToken({
-    token: '',
-  });
+  // saveToken({
+  //   token: '',
+  // });
 }
 
 LayoutSet({

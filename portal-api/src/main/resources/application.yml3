@@ -92,7 +92,7 @@ am:
 spring:
   profiles: dev
   datasource:
-      url: jdbc:mysql://localhost:3307/alliance?characterEncoding=utf8&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=GMT%2B8
+      url: jdbc:mysql://202.63.172.43:3307/alliance?characterEncoding=utf8&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=GMT%2B8
       username: root
       password: root
       #url: jdbc:mysql://192.168.3.129:3306/malldb?characterEncoding=utf8&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=GMT%2B8

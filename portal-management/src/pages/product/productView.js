@@ -6,7 +6,7 @@ import { Button } from 'antd';
 import { history } from 'umi';
 import ImageView from 'zero-element-antd/lib/components/ImageView';
 import Panel from 'zero-element-antd/lib/components/Panel';
-import { Flex } from 'layout-flex';
+import Flex from '@/../zero-antd-dep/layout/Flex';
 
 export default function ProductView(props) {
 

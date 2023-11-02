@@ -1,7 +1,7 @@
 import React from 'react';
 // import { Card } from 'antd';
 import ImageView from 'zero-element-antd/lib/components/ImageView';
-import { Flex } from 'layout-flex';
+import Flex from '@/../zero-antd-dep/layout/Flex';
 
 const { FlexItem } = Flex;
 

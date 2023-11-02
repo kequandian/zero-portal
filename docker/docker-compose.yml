@@ -4,14 +4,17 @@ services:
   portal-gateway:
     privileged: true
     container_name: portal-gateway
-    image: 'daocloud.io/library/node:12'
+    #image: 'daocloud.io/library/node:12'
+    image: portal-gateway:latest
+    restart: always
+    user: root
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ./portal-gateway/config.json:/gateway/config.json
-      - ./portal-gateway/logs:/gateway/logs
-      - ./portal-gateway/dist:/gateway
+      # - ./portal-gateway/config.json:/gateway/config.json
+      # - ./portal-gateway/logs:/gateway/logs
+      - ./portal-gateway:/gateway
       - ./portal/images:/portal/images
-      - ./portal/html:/portal/html
+      # - ./portal/html:/portal/html
     entrypoint:
       - npm
       - start
@@ -24,19 +27,30 @@ services:
     image: 'daocloud.io/library/nginx:latest'
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ./portal:/usr/share/nginx/html
+      - ./portal/html:/usr/share/nginx/html
     environment:
       TZ: "Asia/Shanghai"
 
   muaskin-portal-api:
     container_name: muaskin-portal-api
-    image: 'zelejs/allin-web:jdk11'
+    image: 'adoptopenjdk:11-jre-hotspot'
+    restart: always
+    working_dir: /webapps
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ./muaskin-portal-api:/webapps
     environment:
       TZ: "Asia/Shanghai"
       #GREENFIELD: 'run'
+    logging: 
+      driver: "json-file"
+      options: 
+        max-size: "5m"
+    command:
+      - /bin/sh
+      - -c
+      - |
+        java -jar *-standalone.jar --spring.profiles.active=produce --server.port=8080
 
   portal-management:
     container_name: portal-management
@@ -51,7 +65,7 @@ services:
     container_name: nginx
     image: 'daocloud.io/library/nginx:latest'
     ports:
-      - 80:80
+      - 8000:80
       #- 443:443
     volumes:
       - ./nginx/conf.d:/etc/nginx/conf.d
@@ -63,7 +77,7 @@ services:
 
   portal-mysql:
     container_name: portal-mysql
-    image: 'daocloud.io/library/mysql:5.7'
+    image: 'biarms/mysql:5.7'
     restart: always
     environment:
       TZ: "Asia/Shanghai"
@@ -72,5 +86,5 @@ services:
     volumes:
       - ./portal-mysql/data:/var/lib/mysql
       - ./portal-mysql/sql_mode.cnf:/etc/mysql/mysql.conf.d/sql_mode.cnf
-    #ports:  ## 无需暴露端口
-    #  - '3306:3306'
+    ports:  ## 无需暴露端口
+     - '3307:3306'

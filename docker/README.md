@@ -74,7 +74,7 @@ $ find /webapps/portal
 ```bash
 $ ls /webapps/portal/portal
 ...
-/webapps/portal/portal/index.html
+/webapps/portal/html/index.html
 ...
 ``````
 
@@ -101,11 +101,11 @@ $ cd ./portal-gateway
 $ npm install
 ```
 
-> 复制至远程部署服务器
+> portal-gateway内所有容复制至远程部署服务器
 ```bash
 $ ls /webapps/portal/portal-gateway
 ...
-/webapps/portal/portal-gateway/index.js
+/webapps/portal/portal-gateway
 ...
 ```
 
@@ -115,7 +115,7 @@ $ ls /webapps/portal/portal-gateway
 ```bash
 # 本地安装
 $ cd ./portal-management
-$ npm install
+$ npm install --force
 $ npm run build
 ```
 
@@ -163,7 +163,7 @@ $ docker-compose -f greenfield.yml up -d
  ```shell
 $ docker ps
 CONTAINER ID        IMAGE                           COMMAND                  CREATED             STATUS              PORTS                               NAMES
-b59b6c751682        daocloud.io/library/mysql:5.7   "docker-entrypoint.s…"   7 seconds ago       Up 3 seconds        0.0.0.0:3306->3306/tcp, 33060/tcp   portal-mysql
+b59b6c751682        daocloud.io/library/mysql:5.7   "docker-entrypoint.s…"   7 seconds ago       Up 3 seconds        0.0.0.0:3307->3306/tcp, 33060/tcp   portal-mysql
 f1b22c55f3e5        zelejs/allin-web:jdk11          "/bin/sh -c 'sh /usr…"   7 seconds ago       Up 3 seconds                                            muaskin-portal-api
 $ docker-compose down
 Stopping portal-mysql       ... done
